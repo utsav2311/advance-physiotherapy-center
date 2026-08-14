@@ -451,14 +451,18 @@ function initHeroBackgroundSlider() {
   let currentSlide = 0;
   let slideTimer = null;
 
+  const mobileSlides = document.querySelectorAll('.mobile-showcase-slide');
+
   function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
+    slides[currentSlide]?.classList.remove('active');
     if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+    if (mobileSlides[currentSlide]) mobileSlides[currentSlide].classList.remove('active');
 
     currentSlide = (index + slides.length) % slides.length;
 
-    slides[currentSlide].classList.add('active');
+    slides[currentSlide]?.classList.add('active');
     if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+    if (mobileSlides[currentSlide]) mobileSlides[currentSlide].classList.add('active');
 
     if (captionEl && captions[currentSlide]) {
       captionEl.style.opacity = '0';
