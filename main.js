@@ -462,11 +462,11 @@ function initHeroBackgroundSlider() {
 
     if (captionEl && captions[currentSlide]) {
       captionEl.style.opacity = '0';
-      captionEl.style.transition = 'opacity 0.3s ease';
+      captionEl.style.transition = 'opacity 0.2s ease';
       setTimeout(() => {
         captionEl.textContent = captions[currentSlide];
         captionEl.style.opacity = '1';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -474,7 +474,7 @@ function initHeroBackgroundSlider() {
     stopSlider();
     slideTimer = setInterval(() => {
       goToSlide(currentSlide + 1);
-    }, 4500); // 4.5 seconds per slide
+    }, 2500); // 2.5 seconds per slide for faster, dynamic movement
   }
 
   function stopSlider() {
