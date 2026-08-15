@@ -2732,3 +2732,207 @@ input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* --------------------------------------------------------------------------
+   19. Smooth Animations, Micro-Interactions & Scroll Reveal Suite
+   -------------------------------------------------------------------------- */
+
+/* Scroll Reveal Initial and Revealed States */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays for Grid Elements */
+.services-grid .service-card:nth-child(1) { transition-delay: 0.04s; }
+.services-grid .service-card:nth-child(2) { transition-delay: 0.08s; }
+.services-grid .service-card:nth-child(3) { transition-delay: 0.12s; }
+.services-grid .service-card:nth-child(4) { transition-delay: 0.16s; }
+.services-grid .service-card:nth-child(5) { transition-delay: 0.20s; }
+.services-grid .service-card:nth-child(6) { transition-delay: 0.24s; }
+.services-grid .service-card:nth-child(7) { transition-delay: 0.28s; }
+.services-grid .service-card:nth-child(8) { transition-delay: 0.32s; }
+
+.why-grid .why-card:nth-child(1) { transition-delay: 0.05s; }
+.why-grid .why-card:nth-child(2) { transition-delay: 0.12s; }
+.why-grid .why-card:nth-child(3) { transition-delay: 0.19s; }
+.why-grid .why-card:nth-child(4) { transition-delay: 0.26s; }
+
+.evidence-grid .evidence-card:nth-child(1) { transition-delay: 0.06s; }
+.evidence-grid .evidence-card:nth-child(2) { transition-delay: 0.14s; }
+.evidence-grid .evidence-card:nth-child(3) { transition-delay: 0.22s; }
+
+.reviews-grid .review-card:nth-child(1) { transition-delay: 0.05s; }
+.reviews-grid .review-card:nth-child(2) { transition-delay: 0.12s; }
+.reviews-grid .review-card:nth-child(3) { transition-delay: 0.19s; }
+.reviews-grid .review-card:nth-child(4) { transition-delay: 0.26s; }
+
+.values-grid .value-card:nth-child(1) { transition-delay: 0.04s; }
+.values-grid .value-card:nth-child(2) { transition-delay: 0.10s; }
+.values-grid .value-card:nth-child(3) { transition-delay: 0.16s; }
+.values-grid .value-card:nth-child(4) { transition-delay: 0.22s; }
+
+/* Hero Entrance Animations */
+.google-rating-badge {
+  animation: heroBadgeFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-heading {
+  animation: heroHeadingSlide 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.hero-lead {
+  animation: heroLeadFade 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero-mobile-photo-showcase {
+  animation: heroCardFloat 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.hero-highlights {
+  animation: heroHighlightsFade 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.hero-cta-group {
+  animation: heroCtaFade 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.hero-trust-bar {
+  animation: heroTrustFade 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes heroBadgeFade {
+  from { opacity: 0; transform: translateY(-10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heroHeadingSlide {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroLeadFade {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroCardFloat {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heroHighlightsFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroCtaFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroTrustFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle Shimmer Glow on Primary CTA */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: btnShimmer 5s infinite ease-in-out;
+}
+
+@keyframes btnShimmer {
+  0%, 75% { left: -120%; }
+  100% { left: 180%; }
+}
+
+/* Service Card Hover Micro-Interactions */
+.service-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px -4px rgba(13, 148, 136, 0.14), 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-light);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.08) rotate(3deg);
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.3);
+}
+
+.service-icon {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Why Card Hover Lift */
+.why-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(13, 148, 136, 0.12);
+  border-color: var(--primary-tint);
+}
+
+.why-card:hover .why-icon {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+.why-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Review Card Hover Elevation */
+.review-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border-color: var(--primary-tint);
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .google-rating-badge,
+  .hero-heading,
+  .hero-lead,
+  .hero-mobile-photo-showcase,
+  .hero-highlights,
+  .hero-cta-group,
+  .hero-trust-bar,
+  .btn-primary::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

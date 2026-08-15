@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initNavigation();
   initHeroBackgroundSlider();
+  initScrollReveal();
   initFaqAccordion();
   initAppointmentModal();
   initBookingForms();
@@ -501,4 +502,44 @@ function initHeroBackgroundSlider() {
   }
 
   startSlider();
+}
+
+/**
+ * 9. Scroll Reveal Animations (Smooth Staggered Glides)
+ */
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) return;
+
+  const revealTargets = document.querySelectorAll(`
+    .section-header,
+    .service-card,
+    .doctor-showcase-card,
+    .about-text-col,
+    .value-card,
+    .why-card,
+    .evidence-card,
+    .review-card,
+    .faq-item,
+    .contact-card,
+    .map-wrapper,
+    .quick-booking-panel
+  `);
+
+  revealTargets.forEach(el => {
+    el.classList.add('reveal-init');
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  revealTargets.forEach(el => observer.observe(el));
 }
