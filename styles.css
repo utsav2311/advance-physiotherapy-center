@@ -185,15 +185,18 @@ input, select, textarea {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
-  line-height: 1;
-  padding: 0.85rem 1.6rem;
+  line-height: 1.2;
+  padding: 0.85rem 1.4rem;
   min-height: 44px;
+  max-width: 100%;
+  box-sizing: border-box;
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
   position: relative;
+  text-align: center;
 }
 
 .btn-icon {
@@ -2073,8 +2076,8 @@ input, select, textarea {
   }
 }
 
-/* Navigation Drawer Trigger (<= 920px) */
-@media (max-width: 920px) {
+/* Navigation Drawer Trigger (<= 1140px) */
+@media (max-width: 1140px) {
   .nav-menu {
     display: none;
   }
@@ -2089,19 +2092,28 @@ input, select, textarea {
   }
 }
 
-/* Mobile Screens (<= 768px) */
-@media (max-width: 768px) {
+/* Mobile & Tablet Screens (<= 920px) */
+@media (max-width: 920px) {
   body {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));
   }
 
   .mobile-sticky-bottom-bar {
     display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    z-index: 999;
   }
 
   .btn-header-cta {
     display: none;
   }
+}
 
   .hero-section {
     padding-top: 1.75rem;
