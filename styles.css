@@ -13,13 +13,25 @@
   --navy-700: #1E4675;
   --navy-600: #2C5E96;
 
-  /* Clean Medical Teal Accent */
-  --teal-700: #0F766E;
-  --teal-600: #0D9488;
-  --teal-500: #14B8A6;
-  --teal-400: #2DD4BF;
-  --teal-100: #CCFBF1;
-  --teal-50:  #E6F4F1;
+  /* Official Clinic Logo Vibrant Royal & Sky Blue Palette */
+  --blue-900: #0c4a6e;
+  --blue-800: #075985;
+  --blue-700: #0369a1;
+  --blue-600: #0284c7;
+  --blue-500: #0ea5e9;
+  --blue-400: #38bdf8;
+  --blue-300: #7dd3fc;
+  --blue-200: #bae6fd;
+  --blue-100: #e0f2fe;
+  --blue-50:  #f0f9ff;
+
+  /* Backward Compatible Blue Mappings */
+  --teal-700: #0369a1;
+  --teal-600: #0284c7;
+  --teal-500: #0ea5e9;
+  --teal-400: #38bdf8;
+  --teal-100: #e0f2fe;
+  --teal-50:  #f0f9ff;
 
   /* Neutrals & Slate */
   --slate-900: #0F172A;
@@ -32,7 +44,7 @@
   --slate-200: #E2E8F0;
   --slate-100: #F1F5F9;
   --slate-50:  #F8FAFC;
-  --warm-white: #FAFAF9;
+  --warm-white: #FFFFFF;
   --white:     #FFFFFF;
 
   /* Status Colors */
@@ -149,12 +161,12 @@ input, select, textarea {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--teal-600);
-  background-color: var(--teal-50);
+  color: var(--blue-600);
+  background-color: var(--blue-50);
   padding: 0.32rem 0.85rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.65rem;
-  border: 1px solid rgba(13, 148, 136, 0.15);
+  border: 1px solid rgba(2, 132, 199, 0.15);
   max-width: 100%;
   word-break: break-word;
 }
@@ -203,17 +215,17 @@ input, select, textarea {
 }
 
 .btn-primary {
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   color: var(--white);
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
-  border: 1px solid var(--teal-600);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
+  border: 1px solid var(--blue-600);
 }
 
 .btn-primary:hover {
-  background-color: var(--teal-700);
-  border-color: var(--teal-700);
+  background-color: var(--blue-700);
+  border-color: var(--blue-700);
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(13, 148, 136, 0.4);
+  box-shadow: 0 6px 22px rgba(2, 132, 199, 0.4);
   color: var(--white);
 }
 
@@ -226,8 +238,8 @@ input, select, textarea {
 }
 
 @keyframes subtleGlow {
-  0% { box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28); }
-  100% { box-shadow: 0 6px 24px rgba(13, 148, 136, 0.5); }
+  0% { box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28); }
+  100% { box-shadow: 0 6px 24px rgba(2, 132, 199, 0.5); }
 }
 
 .btn-outline {
@@ -297,7 +309,7 @@ input, select, textarea {
   object-fit: contain;
   flex-shrink: 0;
   transition: transform var(--transition-fast);
-  filter: drop-shadow(0 2px 6px rgba(13, 148, 136, 0.25));
+  filter: drop-shadow(0 2px 6px rgba(2, 132, 199, 0.25));
 }
 
 .brand-logo:hover .brand-logo-img {
@@ -306,7 +318,7 @@ input, select, textarea {
 
 .footer-logo-img {
   height: clamp(42px, 5.2vw, 54px);
-  filter: drop-shadow(0 2px 10px rgba(13, 148, 136, 0.45));
+  filter: drop-shadow(0 2px 10px rgba(2, 132, 199, 0.45));
 }
 
 .brand-text {
@@ -355,7 +367,7 @@ input, select, textarea {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--teal-600);
+  color: var(--blue-600);
 }
 
 .nav-link.active::after {
@@ -365,7 +377,7 @@ input, select, textarea {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   border-radius: var(--radius-full);
 }
 
@@ -465,7 +477,7 @@ input, select, textarea {
 
 .drawer-link:hover,
 .drawer-link.active {
-  color: var(--teal-600);
+  color: var(--blue-600);
   padding-left: 0.75rem;
 }
 
@@ -505,7 +517,7 @@ input, select, textarea {
   padding: clamp(2rem, 5vw, 5rem) 0 clamp(2rem, 4.5vw, 4rem);
   background-color: var(--white);
   background-image: 
-    radial-gradient(circle at 8% 25%, rgba(13, 148, 136, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 8% 25%, rgba(2, 132, 199, 0.06) 0%, transparent 45%),
     radial-gradient(circle at 92% 75%, rgba(15, 39, 68, 0.05) 0%, transparent 45%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 250, 249, 0.88) 100%),
     url('images/bg-medical-mesh.webp');
@@ -548,17 +560,17 @@ input, select, textarea {
 .live-pulse-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--teal-500);
+  background-color: var(--blue-500);
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
   animation: pulseDot 2s infinite;
   flex-shrink: 0;
 }
 
 @keyframes pulseDot {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.6); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(20, 184, 166, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.6); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(14, 165, 233, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
 }
 
 .hero-title {
@@ -573,7 +585,7 @@ input, select, textarea {
 }
 
 .hero-title-accent {
-  color: var(--teal-600);
+  color: var(--blue-600);
   position: relative;
   display: inline-block;
 }
@@ -595,7 +607,7 @@ input, select, textarea {
 }
 
 .hero-cta-btn {
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
 }
 
 .hero-trust-proof {
@@ -701,8 +713,8 @@ input, select, textarea {
 .badge-icon-wrap {
   width: 32px;
   height: 32px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -782,8 +794,8 @@ input, select, textarea {
 .strip-icon {
   width: 26px;
   height: 26px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -804,7 +816,7 @@ input, select, textarea {
 .featured-services-section {
   background-color: var(--white);
   background-image: 
-    radial-gradient(circle at 90% 15%, rgba(13, 148, 136, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 15%, rgba(2, 132, 199, 0.04) 0%, transparent 40%),
     radial-gradient(circle at 10% 85%, rgba(15, 39, 68, 0.03) 0%, transparent 40%);
 }
 
@@ -827,7 +839,7 @@ input, select, textarea {
 .featured-block-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
-  border-color: var(--teal-400);
+  border-color: var(--blue-400);
 }
 
 .block-image-wrap {
@@ -906,7 +918,7 @@ input, select, textarea {
 }
 
 .block-points li span {
-  color: var(--teal-600);
+  color: var(--blue-600);
   font-weight: 700;
 }
 
@@ -914,7 +926,7 @@ input, select, textarea {
 .services-grid-section {
   background-color: var(--warm-white);
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(13, 148, 136, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 15% 20%, rgba(2, 132, 199, 0.04) 0%, transparent 40%),
     radial-gradient(circle at 85% 80%, rgba(15, 39, 68, 0.03) 0%, transparent 40%);
 }
 
@@ -937,7 +949,7 @@ input, select, textarea {
 
 .service-clean-card:hover {
   transform: translateY(-5px);
-  border-color: var(--teal-400);
+  border-color: var(--blue-400);
   box-shadow: var(--shadow-hover);
 }
 
@@ -970,8 +982,8 @@ input, select, textarea {
 .service-icon-box {
   width: 36px;
   height: 36px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -982,7 +994,7 @@ input, select, textarea {
 }
 
 .service-clean-card:hover .service-icon-box {
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   color: var(--white);
 }
 
@@ -1014,7 +1026,7 @@ input, select, textarea {
 .process-section {
   background-color: var(--white);
   background-image: 
-    radial-gradient(circle at 85% 20%, rgba(13, 148, 136, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(2, 132, 199, 0.06) 0%, transparent 45%),
     radial-gradient(circle at 15% 80%, rgba(15, 39, 68, 0.04) 0%, transparent 45%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 250, 249, 0.92) 100%),
     url('images/bg-medical-mesh.webp');
@@ -1044,7 +1056,7 @@ input, select, textarea {
 
 .process-step-card:hover {
   transform: translateY(-4px);
-  border-color: var(--teal-400);
+  border-color: var(--blue-400);
   box-shadow: var(--shadow-card);
 }
 
@@ -1062,8 +1074,8 @@ input, select, textarea {
 .step-icon-wrap {
   width: 44px;
   height: 44px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1073,7 +1085,7 @@ input, select, textarea {
 }
 
 .process-step-card:hover .step-icon-wrap {
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   color: var(--white);
 }
 
@@ -1101,7 +1113,7 @@ input, select, textarea {
 .about-section {
   background-color: var(--warm-white);
   background-image: 
-    radial-gradient(circle at 92% 35%, rgba(13, 148, 136, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 92% 35%, rgba(2, 132, 199, 0.06) 0%, transparent 50%),
     radial-gradient(circle at 8% 80%, rgba(15, 39, 68, 0.04) 0%, transparent 45%),
     linear-gradient(180deg, rgba(250, 250, 249, 0.93) 0%, rgba(255, 255, 255, 0.95) 100%),
     url('images/bg-spine-biomech.webp');
@@ -1160,7 +1172,7 @@ input, select, textarea {
 
 .doctor-badge-sub {
   font-size: clamp(0.75rem, 1.8vw, 0.82rem);
-  color: var(--teal-100);
+  color: var(--blue-100);
   font-weight: 600;
 }
 
@@ -1172,7 +1184,7 @@ input, select, textarea {
   font-family: var(--font-heading);
   font-size: clamp(0.92rem, 2vw, 1rem);
   font-weight: 700;
-  color: var(--teal-600);
+  color: var(--blue-600);
   margin-bottom: 1.15rem;
 }
 
@@ -1210,14 +1222,14 @@ input, select, textarea {
 
 .doc-highlight-card:hover {
   transform: translateX(4px);
-  border-color: var(--teal-400);
+  border-color: var(--blue-400);
 }
 
 .doc-highlight-icon {
   width: 32px;
   height: 32px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1249,7 +1261,7 @@ input, select, textarea {
 .why-section {
   background-color: var(--white);
   background-image: 
-    radial-gradient(circle at 10% 30%, rgba(13, 148, 136, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 10% 30%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
     radial-gradient(circle at 90% 70%, rgba(15, 39, 68, 0.03) 0%, transparent 45%);
 }
 
@@ -1272,14 +1284,14 @@ input, select, textarea {
 .why-clean-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
-  border-color: var(--teal-500);
+  border-color: var(--blue-500);
 }
 
 .why-icon-box {
   width: 44px;
   height: 44px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1331,14 +1343,14 @@ input, select, textarea {
 .standard-icon {
   width: 40px;
   height: 40px;
-  background-color: rgba(13, 148, 136, 0.2);
-  color: var(--teal-400);
+  background-color: rgba(2, 132, 199, 0.2);
+  color: var(--blue-400);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid rgba(13, 148, 136, 0.3);
+  border: 1px solid rgba(2, 132, 199, 0.3);
 }
 
 .standard-icon svg {
@@ -1432,7 +1444,7 @@ input, select, textarea {
 .reviews-section {
   background-color: var(--white);
   background-image: 
-    radial-gradient(circle at 88% 18%, rgba(13, 148, 136, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
     radial-gradient(circle at 12% 82%, rgba(15, 39, 68, 0.04) 0%, transparent 45%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 249, 0.94) 100%),
     url('images/bg-medical-mesh.webp');
@@ -1513,7 +1525,7 @@ input, select, textarea {
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--teal-600);
+  color: var(--blue-600);
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
@@ -1545,7 +1557,7 @@ input, select, textarea {
 .review-clean-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
-  border-color: var(--teal-400);
+  border-color: var(--blue-400);
 }
 
 .review-stars-line {
@@ -1615,7 +1627,7 @@ input, select, textarea {
 .faq-section {
   background-color: var(--warm-white);
   background-image: 
-    radial-gradient(circle at 50% 10%, rgba(13, 148, 136, 0.05) 0%, transparent 55%),
+    radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.05) 0%, transparent 55%),
     radial-gradient(circle at 90% 90%, rgba(15, 39, 68, 0.03) 0%, transparent 45%),
     linear-gradient(180deg, rgba(250, 250, 249, 0.94) 0%, rgba(255, 255, 255, 0.95) 100%),
     url('images/bg-spine-biomech.webp');
@@ -1643,7 +1655,7 @@ input, select, textarea {
 }
 
 .faq-item.active {
-  border-color: var(--teal-500);
+  border-color: var(--blue-500);
   box-shadow: var(--shadow-subtle);
 }
 
@@ -1666,7 +1678,7 @@ input, select, textarea {
 .faq-icon {
   width: 24px;
   height: 24px;
-  color: var(--teal-600);
+  color: var(--blue-600);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1702,7 +1714,7 @@ input, select, textarea {
 }
 
 .faq-answer a {
-  color: var(--teal-600);
+  color: var(--blue-600);
   text-decoration: underline;
 }
 
@@ -1710,7 +1722,7 @@ input, select, textarea {
 .contact-section {
   background-color: var(--white);
   background-image: 
-    radial-gradient(circle at 15% 25%, rgba(13, 148, 136, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 15% 25%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
     radial-gradient(circle at 85% 75%, rgba(15, 39, 68, 0.04) 0%, transparent 45%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 250, 249, 0.93) 100%),
     url('images/bg-medical-mesh.webp');
@@ -1746,8 +1758,8 @@ input, select, textarea {
 .contact-item-icon {
   width: 38px;
   height: 38px;
-  background-color: var(--teal-50);
-  color: var(--teal-600);
+  background-color: var(--blue-50);
+  color: var(--blue-600);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -1781,7 +1793,7 @@ input, select, textarea {
 }
 
 .phone-link:hover {
-  color: var(--teal-600);
+  color: var(--blue-600);
   text-decoration: underline;
 }
 
@@ -1862,7 +1874,7 @@ input, select, textarea {
 }
 
 .footer-links a:hover {
-  color: var(--teal-400);
+  color: var(--blue-400);
   padding-left: 4px;
 }
 
@@ -1876,7 +1888,7 @@ input, select, textarea {
 }
 
 .footer-phone a {
-  color: var(--teal-400);
+  color: var(--blue-400);
   font-weight: 600;
 }
 
@@ -1888,7 +1900,7 @@ input, select, textarea {
 }
 
 .footer-btn {
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   font-size: 0.9rem;
 }
 
@@ -1925,13 +1937,13 @@ input, select, textarea {
 }
 
 .footer-maker-mark strong {
-  color: var(--teal-400);
+  color: var(--blue-400);
   font-weight: 700;
 }
 
 .footer-maker-mark:hover {
-  border-color: var(--teal-400);
-  background-color: rgba(13, 148, 136, 0.15);
+  border-color: var(--blue-400);
+  background-color: rgba(2, 132, 199, 0.15);
   transform: translateY(-1px);
 }
 
@@ -1956,11 +1968,11 @@ input, select, textarea {
 }
 
 .mobile-sticky-cta {
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   padding: 0.85rem 1rem;
   font-size: 1rem;
   min-height: 46px;
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
 }
 
 /* --- 21. SILKY SCROLL REVEAL ANIMATIONS --- */
@@ -2283,7 +2295,7 @@ input, select, textarea {
 }
 
 .breadcrumb-list a {
-  color: var(--teal-600);
+  color: var(--blue-600);
   font-weight: 500;
 }
 
@@ -2304,7 +2316,7 @@ input, select, textarea {
 .page-hero-section {
   background-color: var(--warm-white);
   background-image: 
-    radial-gradient(circle at 20% 20%, rgba(13, 148, 136, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(15, 39, 68, 0.04) 0%, transparent 50%);
   padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
   border-bottom: 1px solid var(--slate-200);
@@ -2368,7 +2380,7 @@ input, select, textarea {
   color: var(--navy-900);
   margin-bottom: 1rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--teal-100);
+  border-bottom: 2px solid var(--blue-100);
   display: inline-block;
 }
 
@@ -2395,7 +2407,7 @@ input, select, textarea {
 }
 
 .treatment-list .list-bullet-icon {
-  color: var(--teal-600);
+  color: var(--blue-600);
   font-weight: 800;
 }
 
@@ -2485,14 +2497,14 @@ input, select, textarea {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--teal-600);
+  color: var(--blue-600);
   display: inline-block;
   margin-top: 0.65rem;
   transition: color var(--transition-fast);
 }
 
 .service-card-link:hover {
-  color: var(--teal-700);
+  color: var(--blue-700);
   text-decoration: underline;
 }
 
@@ -2552,9 +2564,9 @@ input, select, textarea {
 .phase-dot {
   width: 10px;
   height: 10px;
-  background-color: var(--teal-600);
+  background-color: var(--blue-600);
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
   flex-shrink: 0;
 }
 
