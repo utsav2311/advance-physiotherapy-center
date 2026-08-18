@@ -1,6 +1,6 @@
 /**
  * Advance Physiotherapy Center - Modern Main JavaScript
- * Doctor: Dr. Shahrukh Firoz (B.P.T.) • Location: Muzaffarpur, Bihar
+ * Doctor: Dr. Shahrukh Firoz (B.P.T., M.P.T.) • Location: Muzaffarpur, Bihar
  * WhatsApp Booking: +91 83402 76169 (08340 276169)
  */
 
