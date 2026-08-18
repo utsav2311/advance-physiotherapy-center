@@ -107,7 +107,7 @@ function initNavigation() {
     }
   });
 
-  // Active Link Spy on Scroll
+  // Active Link Spy on Scroll (for single-page anchor sections if present)
   const sections = document.querySelectorAll('main section[id]');
   if ('IntersectionObserver' in window && sections.length > 0) {
     const observer = new IntersectionObserver((entries) => {
@@ -115,16 +115,18 @@ function initNavigation() {
         if (entry.isIntersecting) {
           const currentId = entry.target.getAttribute('id');
           navLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${currentId}`) {
+            const href = link.getAttribute('href');
+            if (href === `#${currentId}` || href.endsWith(`#${currentId}`)) {
               link.classList.add('active');
-            } else {
+            } else if (href && href.startsWith('#')) {
               link.classList.remove('active');
             }
           });
           drawerLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${currentId}`) {
+            const href = link.getAttribute('href');
+            if (href === `#${currentId}` || href.endsWith(`#${currentId}`)) {
               link.classList.add('active');
-            } else {
+            } else if (href && href.startsWith('#')) {
               link.classList.remove('active');
             }
           });
