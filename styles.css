@@ -1904,9 +1904,40 @@ input, select, textarea {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: 0.8rem;
+  gap: 1rem;
+  font-size: 0.82rem;
   color: var(--slate-500);
+}
+
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-maker-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  color: var(--slate-300);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.footer-maker-mark strong {
+  color: var(--teal-400);
+  font-weight: 700;
+}
+
+.footer-maker-mark:hover {
+  border-color: var(--teal-400);
+  background-color: rgba(13, 148, 136, 0.15);
+  transform: translateY(-1px);
 }
 
 .footer-sub-text {
