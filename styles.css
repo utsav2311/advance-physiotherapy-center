@@ -56,8 +56,8 @@
   /* Shadows */
   --shadow-subtle: 0 2px 8px rgba(15, 39, 68, 0.04);
   --shadow-card:   0 4px 20px -2px rgba(15, 39, 68, 0.06);
-  --shadow-hover:  0 12px 32px -4px rgba(15, 39, 68, 0.12);
-  --shadow-float:  0 16px 36px -6px rgba(15, 39, 68, 0.18);
+  --shadow-hover:  0 14px 34px -4px rgba(15, 39, 68, 0.12);
+  --shadow-float:  0 18px 38px -6px rgba(15, 39, 68, 0.16);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -113,7 +113,6 @@ button {
   touch-action: manipulation;
 }
 
-/* Prevent auto-zoom on iOS inputs */
 input, select, textarea {
   font-size: 16px !important;
 }
@@ -188,12 +187,13 @@ input, select, textarea {
   font-size: 0.95rem;
   line-height: 1;
   padding: 0.85rem 1.6rem;
-  min-height: 44px; /* Touch target minimum */
+  min-height: 44px;
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
+  position: relative;
 }
 
 .btn-icon {
@@ -213,12 +213,21 @@ input, select, textarea {
   background-color: var(--teal-700);
   border-color: var(--teal-700);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.38);
+  box-shadow: 0 6px 22px rgba(13, 148, 136, 0.4);
   color: var(--white);
 }
 
 .btn-primary:active {
   transform: translateY(0);
+}
+
+.glow-cta-btn {
+  animation: subtleGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes subtleGlow {
+  0% { box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28); }
+  100% { box-shadow: 0 6px 24px rgba(13, 148, 136, 0.5); }
 }
 
 .btn-outline {
@@ -293,6 +302,11 @@ input, select, textarea {
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 10px rgba(13, 148, 136, 0.25);
   flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover .logo-mark {
+  transform: rotate(6deg) scale(1.05);
 }
 
 .logo-mark svg {
@@ -327,19 +341,19 @@ input, select, textarea {
   text-overflow: ellipsis;
 }
 
-/* Nav Menu (Desktop) */
+/* Nav Menu */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: clamp(0.6rem, 1.4vw, 1.5rem);
+  gap: clamp(0.55rem, 1.3vw, 1.35rem);
 }
 
 .nav-link {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--slate-600);
-  padding: 0.4rem 0.2rem;
+  padding: 0.35rem 0.2rem;
   position: relative;
   white-space: nowrap;
 }
@@ -491,7 +505,7 @@ input, select, textarea {
   pointer-events: auto;
 }
 
-/* --- 7. SPLIT HERO SECTION --- */
+/* --- 7. SPLIT HERO SECTION WITH ANIMATIONS --- */
 .hero-section {
   padding: clamp(2rem, 5vw, 5rem) 0 clamp(2rem, 4.5vw, 4rem);
   background: linear-gradient(180deg, var(--white) 0%, var(--warm-white) 100%);
@@ -579,7 +593,6 @@ input, select, textarea {
 
 .hero-cta-btn {
   background-color: var(--teal-600);
-  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.32);
 }
 
 .hero-trust-proof {
@@ -594,6 +607,15 @@ input, select, textarea {
   font-size: 1rem;
   letter-spacing: 1px;
   flex-shrink: 0;
+}
+
+.animate-stars {
+  animation: starPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4)); }
 }
 
 .trust-proof-text {
@@ -642,12 +664,25 @@ input, select, textarea {
   align-items: center;
   gap: 0.65rem;
   z-index: 10;
-  transition: transform var(--transition-fast);
   max-width: calc(100% - 20px);
 }
 
-.floating-trust-badge:hover {
-  transform: translateY(-2px);
+.anim-float-slow {
+  animation: floatSmooth 4.5s ease-in-out infinite alternate;
+}
+
+.anim-float-alt {
+  animation: floatAlt 4.2s ease-in-out infinite alternate 1s;
+}
+
+@keyframes floatSmooth {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes floatAlt {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(8px); }
 }
 
 .floating-doctor {
@@ -734,6 +769,11 @@ input, select, textarea {
   gap: 0.55rem;
   font-size: 0.88rem;
   color: var(--slate-700);
+  transition: transform var(--transition-fast);
+}
+
+.trust-strip-item:hover {
+  transform: translateY(-2px);
 }
 
 .strip-icon {
@@ -800,7 +840,7 @@ input, select, textarea {
 }
 
 .featured-block-card:hover .block-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .block-tag {
@@ -961,9 +1001,86 @@ input, select, textarea {
   padding-top: 0.5rem;
 }
 
-/* --- 11. ABOUT DOCTOR SECTION --- */
-.about-section {
+/* --- 11. STRUCTURED RECOVERY JOURNEY (4-STEP PROCESS) --- */
+.process-section {
   background-color: var(--white);
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.process-step-card {
+  background-color: var(--warm-white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.35rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.process-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal-400);
+  box-shadow: var(--shadow-card);
+}
+
+.step-number-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--slate-300);
+  line-height: 1;
+}
+
+.step-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background-color: var(--teal-50);
+  color: var(--teal-600);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  transition: all var(--transition-fast);
+}
+
+.process-step-card:hover .step-icon-wrap {
+  background-color: var(--teal-600);
+  color: var(--white);
+}
+
+.step-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+.process-step-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 0.45rem;
+  line-height: 1.3;
+}
+
+.process-step-card p {
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+/* --- 12. ABOUT DOCTOR SECTION --- */
+.about-section {
+  background-color: var(--warm-white);
 }
 
 .about-grid {
@@ -1057,9 +1174,15 @@ input, select, textarea {
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.75rem 0.95rem;
-  background-color: var(--warm-white);
+  background-color: var(--white);
   border-radius: var(--radius-md);
   border: 1px solid var(--slate-200);
+  transition: transform var(--transition-fast);
+}
+
+.doc-highlight-card:hover {
+  transform: translateX(4px);
+  border-color: var(--teal-400);
 }
 
 .doc-highlight-icon {
@@ -1094,9 +1217,9 @@ input, select, textarea {
   line-height: 1.4;
 }
 
-/* --- 12. WHY CHOOSE US --- */
+/* --- 13. WHY CHOOSE US --- */
 .why-section {
-  background-color: var(--warm-white);
+  background-color: var(--white);
 }
 
 .why-clean-grid {
@@ -1106,7 +1229,7 @@ input, select, textarea {
 }
 
 .why-clean-card {
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
   padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1rem, 2vw, 1.5rem);
@@ -1151,9 +1274,64 @@ input, select, textarea {
   line-height: 1.5;
 }
 
-/* --- 13. ASYMMETRIC CLINIC GALLERY --- */
+/* --- 14. CLINICAL STANDARDS & HYGIENE STRIP --- */
+.clinic-standards-section {
+  background-color: var(--navy-900);
+  color: var(--white);
+  padding: 1.75rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.standards-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.standard-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.standard-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(13, 148, 136, 0.2);
+  color: var(--teal-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(13, 148, 136, 0.3);
+}
+
+.standard-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.standard-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-text strong {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.standard-text span {
+  font-size: 0.8rem;
+  color: var(--slate-400);
+}
+
+/* --- 15. ASYMMETRIC CLINIC GALLERY --- */
 .gallery-section {
-  background-color: var(--white);
+  background-color: var(--warm-white);
 }
 
 .asymmetric-gallery-grid {
@@ -1198,7 +1376,6 @@ input, select, textarea {
   letter-spacing: 0.02em;
 }
 
-/* Asymmetric Desktop Positioning */
 .item-large {
   grid-column: span 7;
   grid-row: span 2;
@@ -1218,9 +1395,9 @@ input, select, textarea {
   grid-column: span 2;
 }
 
-/* --- 14. GOOGLE REVIEWS SECTION --- */
+/* --- 16. GOOGLE REVIEWS SECTION --- */
 .reviews-section {
-  background-color: var(--warm-white);
+  background-color: var(--white);
 }
 
 .reviews-header-block {
@@ -1237,9 +1414,9 @@ input, select, textarea {
 }
 
 .reviews-summary-card {
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border: 1px solid var(--slate-200);
-  padding: 1.1rem 1.5rem;
+  padding: 1.25rem 1.65rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   text-align: center;
@@ -1248,9 +1425,28 @@ input, select, textarea {
   align-items: center;
 }
 
+.google-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--white);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--slate-200);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--slate-700);
+  margin-bottom: 0.65rem;
+}
+
+.google-icon {
+  width: 14px;
+  height: 14px;
+}
+
 .summary-score {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--navy-900);
   line-height: 1;
@@ -1259,9 +1455,9 @@ input, select, textarea {
 
 .summary-stars {
   color: var(--star-gold);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .summary-count {
@@ -1272,7 +1468,7 @@ input, select, textarea {
 
 .google-view-all-link {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--teal-600);
   display: inline-flex;
@@ -1291,7 +1487,7 @@ input, select, textarea {
 }
 
 .review-clean-card {
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
   padding: clamp(1.25rem, 2.5vw, 1.65rem);
@@ -1327,7 +1523,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  border-top: 1px solid var(--slate-100);
+  border-top: 1px solid var(--slate-200);
   padding-top: 0.85rem;
 }
 
@@ -1370,7 +1566,92 @@ input, select, textarea {
   text-overflow: ellipsis;
 }
 
-/* --- 15. LOCATION & CONTACT SECTION --- */
+/* --- 17. FREQUENTLY ASKED QUESTIONS (ACCORDION) --- */
+.faq-section {
+  background-color: var(--warm-white);
+}
+
+.faq-accordion {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.faq-item {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.faq-item.active {
+  border-color: var(--teal-500);
+  box-shadow: var(--shadow-subtle);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  cursor: pointer;
+  background: transparent;
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--teal-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.faq-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  padding: 0 1.25rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 1.25rem 1.15rem;
+}
+
+.faq-answer p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+.faq-answer a {
+  color: var(--teal-600);
+  text-decoration: underline;
+}
+
+/* --- 18. LOCATION & CONTACT SECTION --- */
 .contact-section {
   background-color: var(--white);
 }
@@ -1461,7 +1742,7 @@ input, select, textarea {
   height: 100%;
 }
 
-/* --- 16. SITE FOOTER --- */
+/* --- 19. SITE FOOTER --- */
 .site-footer {
   background-color: var(--navy-950);
   color: var(--slate-300);
@@ -1564,7 +1845,7 @@ input, select, textarea {
   font-size: 0.78rem;
 }
 
-/* --- 17. MOBILE BOTTOM STICKY BAR --- */
+/* --- 20. MOBILE BOTTOM STICKY BAR --- */
 .mobile-sticky-bottom-bar {
   display: none;
   position: fixed;
@@ -1588,10 +1869,10 @@ input, select, textarea {
   box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
 }
 
-/* --- 18. SMOOTH SCROLL REVEAL SUITE --- */
+/* --- 21. SILKY SCROLL REVEAL ANIMATIONS --- */
 .reveal-init {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(22px);
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
@@ -1611,6 +1892,11 @@ input, select, textarea {
 .services-clean-grid .service-clean-card:nth-child(7) { transition-delay: 0.28s; }
 .services-clean-grid .service-clean-card:nth-child(8) { transition-delay: 0.32s; }
 
+.process-steps-grid .process-step-card:nth-child(1) { transition-delay: 0.05s; }
+.process-steps-grid .process-step-card:nth-child(2) { transition-delay: 0.12s; }
+.process-steps-grid .process-step-card:nth-child(3) { transition-delay: 0.19s; }
+.process-steps-grid .process-step-card:nth-child(4) { transition-delay: 0.26s; }
+
 .why-clean-grid .why-clean-card:nth-child(1) { transition-delay: 0.05s; }
 .why-clean-grid .why-clean-card:nth-child(2) { transition-delay: 0.12s; }
 .why-clean-grid .why-clean-card:nth-child(3) { transition-delay: 0.19s; }
@@ -1620,9 +1906,9 @@ input, select, textarea {
 .reviews-clean-grid .review-clean-card:nth-child(2) { transition-delay: 0.14s; }
 .reviews-clean-grid .review-clean-card:nth-child(3) { transition-delay: 0.22s; }
 
-/* --- 19. RESPONSIVE BREAKPOINTS (Mobile-First Polish) --- */
+/* --- 22. RESPONSIVE BREAKPOINTS --- */
 
-/* Large Tablets & Laptops (<= 1024px) */
+/* Tablets & Laptops (<= 1024px) */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1645,6 +1931,10 @@ input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2.25rem;
@@ -1652,6 +1942,11 @@ input, select, textarea {
 
   .why-clean-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .standards-bar {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .asymmetric-gallery-grid {
@@ -1684,7 +1979,7 @@ input, select, textarea {
   }
 }
 
-/* Tablets & Mobile Navigation (<= 920px) */
+/* Navigation Drawer Trigger (<= 920px) */
 @media (max-width: 920px) {
   .nav-menu {
     display: none;
@@ -1703,7 +1998,7 @@ input, select, textarea {
 /* Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
   body {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); /* Exact clearance for mobile sticky bar */
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 
   .mobile-sticky-bottom-bar {
@@ -1711,7 +2006,7 @@ input, select, textarea {
   }
 
   .btn-header-cta {
-    display: none; /* Keep header clean on mobile; sticky bar provides instant WhatsApp CTA */
+    display: none;
   }
 
   .hero-section {
@@ -1739,6 +2034,7 @@ input, select, textarea {
     width: 100%;
     margin-top: 0;
     max-width: 100%;
+    animation: none;
   }
 
   .featured-blocks-grid {
@@ -1750,6 +2046,10 @@ input, select, textarea {
   }
 
   .services-clean-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1822,7 +2122,7 @@ input, select, textarea {
   }
 }
 
-/* Small / Narrow Mobile Screens (<= 480px) */
+/* Small Screens (<= 480px) */
 @media (max-width: 480px) {
   .container {
     padding-left: 1rem;
@@ -1832,20 +2132,6 @@ input, select, textarea {
   .section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-  }
-
-  .brand-logo {
-    gap: 0.5rem;
-  }
-
-  .logo-mark {
-    width: 34px;
-    height: 34px;
-  }
-
-  .logo-mark svg {
-    width: 18px;
-    height: 18px;
   }
 
   .brand-name {
@@ -1858,12 +2144,6 @@ input, select, textarea {
 
   .hero-title {
     font-size: 1.95rem;
-    line-height: 1.15;
-  }
-
-  .hero-subtitle {
-    font-size: 0.94rem;
-    line-height: 1.5;
   }
 
   .hero-image-frame .hero-img {
@@ -1883,7 +2163,7 @@ input, select, textarea {
   }
 }
 
-/* Reduced Motion Support */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClinicStatus();
   initHeaderScroll();
   initNavigation();
+  initFaqAccordion();
   initScrollReveal();
 });
 
@@ -130,8 +131,8 @@ function initNavigation() {
         }
       });
     }, {
-      threshold: 0.3,
-      rootMargin: '-80px 0px -50% 0px'
+      threshold: 0.25,
+      rootMargin: '-80px 0px -40% 0px'
     });
 
     sections.forEach(sec => observer.observe(sec));
@@ -139,7 +140,42 @@ function initNavigation() {
 }
 
 /**
- * 4. Silky Scroll Reveal System
+ * 4. Interactive FAQ Accordion System
+ */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (faqItems.length === 0) return;
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    if (!questionBtn) return;
+
+    questionBtn.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close other items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          const btn = otherItem.querySelector('.faq-question');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current item
+      if (isActive) {
+        item.classList.remove('active');
+        questionBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        questionBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+/**
+ * 5. Silky Scroll Reveal System
  */
 function initScrollReveal() {
   if (!('IntersectionObserver' in window)) return;
@@ -148,12 +184,15 @@ function initScrollReveal() {
     .section-header,
     .featured-block-card,
     .service-clean-card,
+    .process-step-card,
     .about-visual,
     .about-content,
     .why-clean-card,
+    .standards-bar,
     .gallery-item,
     .reviews-header-block,
     .review-clean-card,
+    .faq-item,
     .contact-info-block,
     .contact-map-block
   `);
