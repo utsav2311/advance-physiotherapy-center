@@ -6,6 +6,7 @@ import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { GoogleIcon } from '../components/Icons';
 import { reviews, ratingSummary } from '../data/reviews';
+import { reviewsFaqs } from '../data/faqs';
 import { SITE } from '../data/site';
 
 export default function Reviews() {
@@ -64,6 +65,7 @@ export default function Reviews() {
       </section>
 
       <FaqSection
+        items={reviewsFaqs}
         title="Patient Care & Treatment FAQs"
         subtitle="Common questions about patient recovery outcomes, treatment duration, and therapy experience."
       />

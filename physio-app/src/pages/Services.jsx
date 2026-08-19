@@ -5,6 +5,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { services } from '../data/services';
+import { servicesFaqs } from '../data/faqs';
 import { SITE } from '../data/site';
 
 export default function Services() {
@@ -42,6 +43,7 @@ export default function Services() {
       </section>
 
       <FaqSection
+        items={servicesFaqs}
         title="Physiotherapy & Treatment FAQs"
         subtitle="Frequently asked questions about our specialized therapies, rehabilitation protocols, and recovery timelines."
       />

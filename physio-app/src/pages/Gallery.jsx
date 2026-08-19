@@ -7,6 +7,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { galleryItems } from '../data/gallery';
+import { galleryFaqs } from '../data/faqs';
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
@@ -99,6 +100,7 @@ export default function Gallery() {
       </section>
 
       <FaqSection
+        items={galleryFaqs}
         title="Clinic & Facility FAQs"
         subtitle="Questions regarding clinic cleanliness, parking, appointment timings, and rehabilitation equipment."
       />

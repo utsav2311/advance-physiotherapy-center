@@ -7,6 +7,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { SITE, hospitals, facilities } from '../data/site';
+import { aboutFaqs } from '../data/faqs';
 
 export default function About() {
   return (
@@ -190,6 +191,7 @@ export default function About() {
       </section>
 
       <FaqSection
+        items={aboutFaqs}
         title={`Doctor & Clinic FAQs`}
         subtitle={`Common questions about ${SITE.doctor}'s qualifications, hospital affiliations, consultation fees, and appointment booking.`}
       />

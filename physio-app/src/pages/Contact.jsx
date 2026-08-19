@@ -7,6 +7,7 @@ import Seo from '../components/Seo';
 import { useClinicStatus } from '../hooks/useClinicStatus';
 import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon } from '../components/Icons';
 import { SITE } from '../data/site';
+import { contactFaqs } from '../data/faqs';
 
 const visitTips = [
   {
@@ -138,6 +139,7 @@ export default function Contact() {
       </section>
 
       <FaqSection
+        items={contactFaqs}
         title="Location, Timings & Booking FAQs"
         subtitle="Common questions about finding the clinic, appointment booking, payments, and home visits."
       />

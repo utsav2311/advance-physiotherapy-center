@@ -8,6 +8,7 @@ import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
 import { WarnIcon, CheckIcon } from '../components/Icons';
 import { getServiceBySlug, getRelatedServices } from '../data/services';
+import { serviceDetailFaqs } from '../data/faqs';
 import { SITE } from '../data/site';
 
 export default function ServiceDetail() {
@@ -153,6 +154,7 @@ export default function ServiceDetail() {
       </section>
 
       <FaqSection
+        items={serviceDetailFaqs}
         title={`${service.shortTitle} & Treatment FAQs`}
         subtitle={`Key answers regarding ${service.title.toLowerCase()}, session protocols, and recovery expectations at Advance Physiotherapy Center.`}
       />
