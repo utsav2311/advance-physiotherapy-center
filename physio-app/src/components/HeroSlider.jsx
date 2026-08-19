@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 /**
  * Full-bleed background image carousel for the homepage hero.
- * Renders purely as a decorative background layer (z-index: 0) behind the
- * existing hero content/overlay — it does not affect layout, text, or
- * buttons in any way.
+ * Features responsive focal point positioning for mobile & desktop,
+ * preserving clean subject visibility (doctor, patient therapy, awards)
+ * without distortion or awkward cropping.
  */
 export default function HeroSlider({ images, intervalMs = 4500 }) {
   const [index, setIndex] = useState(0);
@@ -22,13 +22,22 @@ export default function HeroSlider({ images, intervalMs = 4500 }) {
 
   if (!images || images.length === 0) return null;
 
+  const currentSlide = images[index];
+  const imageUrl = typeof currentSlide === 'string' ? currentSlide : currentSlide.image;
+  const mobilePos = typeof currentSlide === 'object' ? currentSlide.mobilePosition : 'center 20%';
+  const desktopPos = typeof currentSlide === 'object' ? currentSlide.desktopPosition : 'center center';
+
   return (
     <div className="hero-slider" aria-hidden="true">
       <AnimatePresence initial={false}>
         <motion.div
-          key={images[index]}
+          key={imageUrl}
           className="hero-slider-slide"
-          style={{ backgroundImage: `url(${images[index]})` }}
+          style={{
+            backgroundImage: `url(${imageUrl})`,
+            '--slide-mobile-pos': mobilePos,
+            '--slide-desktop-pos': desktopPos,
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -39,4 +48,3 @@ export default function HeroSlider({ images, intervalMs = 4500 }) {
     </div>
   );
 }
-

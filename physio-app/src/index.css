@@ -665,9 +665,10 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: var(--slide-desktop-pos, center center);
   background-repeat: no-repeat;
   filter: brightness(0.94);
+  transform: translateZ(0);
 }
 
 .hero-slider-overlay {
@@ -683,6 +684,22 @@ input, select, textarea {
     rgba(5, 28, 48, 0.15) 100%
   );
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-slider-slide {
+    background-position: var(--slide-mobile-pos, center 20%);
+  }
+
+  .hero-slider-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 21, 38, 0.76) 0%,
+      rgba(4, 21, 38, 0.6) 35%,
+      rgba(4, 21, 38, 0.72) 70%,
+      rgba(4, 21, 38, 0.85) 100%
+    );
+  }
 }
 
 
@@ -2741,8 +2758,50 @@ input, select, textarea {
   .achievement-strip-body { padding: 1.5rem; }
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: clamp(520px, 86vh, 640px);
+    min-height: clamp(520px, 86dvh, 640px);
+    padding-top: calc(65px + clamp(1.25rem, 3.5vw, 2.25rem));
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-grid {
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    margin-bottom: 1rem;
+    font-size: 0.74rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 7vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-actions {
+    gap: 0.65rem;
+  }
+
+  .hero-trust {
+    margin-top: 1.25rem;
+  }
+
+  .hero-slider-dots {
+    bottom: 0.65rem;
+  }
+}
+
 @media (max-width: 640px) {
-  .hero-title { font-size: clamp(2rem, 8vw, 2.75rem); }
   .services-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .trust-strip-grid { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -2760,5 +2819,16 @@ input, select, textarea {
 }
 
 @media (max-width: 400px) {
+  .hero-section {
+    min-height: 520px;
+    padding-top: calc(58px + 1rem);
+    padding-bottom: 2rem;
+  }
+  .hero-title {
+    font-size: 1.7rem;
+  }
+  .hero-subtitle {
+    font-size: 0.86rem;
+  }
   .brand-sub { display: none; }
 }
