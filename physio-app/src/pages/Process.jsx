@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero';
 import Skiper104 from '../components/Skiper104';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { processSteps } from '../data/process';
 import { SITE } from '../data/site';
@@ -47,6 +48,11 @@ export default function Process() {
           </Reveal>
         </div>
       </section>
+
+      <FaqSection
+        title="Process & Consultation FAQs"
+        subtitle="Common questions on initial assessment, session frequency, treatment techniques, and recovery timelines."
+      />
     </>
   );
 }

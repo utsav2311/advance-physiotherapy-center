@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import ServiceCard from '../components/ServiceCard';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { services } from '../data/services';
 import { SITE } from '../data/site';
@@ -39,6 +40,11 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Physiotherapy & Treatment FAQs"
+        subtitle="Frequently asked questions about our specialized therapies, rehabilitation protocols, and recovery timelines."
+      />
     </>
   );
 }

@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { GoogleIcon } from '../components/Icons';
 import { reviews, ratingSummary } from '../data/reviews';
@@ -61,6 +62,11 @@ export default function Reviews() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Patient Care & Treatment FAQs"
+        subtitle="Common questions about patient recovery outcomes, treatment duration, and therapy experience."
+      />
     </>
   );
 }

@@ -4,6 +4,7 @@ import Reveal from '../components/Reveal';
 import HospitalChip from '../components/HospitalChip';
 import FacilityCard from '../components/FacilityCard';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { SITE, hospitals, facilities } from '../data/site';
 
@@ -187,6 +188,11 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title={`Doctor & Clinic FAQs`}
+        subtitle={`Common questions about ${SITE.doctor}'s qualifications, hospital affiliations, consultation fees, and appointment booking.`}
+      />
     </>
   );
 }

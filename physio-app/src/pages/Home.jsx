@@ -6,7 +6,7 @@ import StatCounter from '../components/StatCounter';
 import Reveal from '../components/Reveal';
 import ProcessStep from '../components/ProcessStep';
 import Skiper104 from '../components/Skiper104';
-import FaqItem from '../components/FaqItem';
+import FaqSection from '../components/FaqSection';
 import HeroSlider from '../components/HeroSlider';
 import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
@@ -40,9 +40,7 @@ const fadeUp = {
 
 export default function Home() {
   const featured = services.filter((s) => featuredSlugs.includes(s.slug));
-  const [openFaq, setOpenFaq] = useState(0);
   const [homeLightboxIndex, setHomeLightboxIndex] = useState(null);
-  const homeFaqs = faqs.slice(0, 4);
 
   return (
     <>
@@ -405,35 +403,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ PREVIEW */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-label">Patient Inquiries</span>
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle">Clear answers to help you prepare for your consultation.</p>
-          </div>
-
-          <div className="faq-list">
-            {homeFaqs.map((item, i) => (
-              <FaqItem
-                key={item.q}
-                item={item}
-                index={i}
-                isOpen={openFaq === i}
-                onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
-              />
-            ))}
-          </div>
-
-          <div className="text-center" style={{ marginTop: '2.5rem' }}>
-            <Link to="/faq" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>Full FAQ →</Link>
-            <WhatsAppButton className="btn btn-primary" message="Hello Dr. Shahrukh, I have a question.">
-              Ask on WhatsApp
-            </WhatsAppButton>
-          </div>
-        </div>
-      </section>
+      {/* ALL FAQS SECTION */}
+      <FaqSection items={faqs} />
 
       {/* CONTACT PREVIEW */}
       <section className="section" style={{ background: 'var(--gray-50)' }}>

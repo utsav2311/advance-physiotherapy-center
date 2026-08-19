@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
-import FaqItem from '../components/FaqItem';
-import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { faqs } from '../data/faqs';
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState(0);
-
   return (
     <>
       <Seo
@@ -26,27 +22,7 @@ export default function Faq() {
         bgImage="/images/bg-medical-mesh.webp"
       />
 
-      <section className="section">
-        <div className="container">
-          <div className="faq-list">
-            {faqs.map((item, i) => (
-              <FaqItem
-                key={item.q}
-                item={item}
-                index={i}
-                isOpen={openIndex === i}
-                onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
-              />
-            ))}
-          </div>
-
-          <div className="text-center" style={{ marginTop: '3rem' }}>
-            <WhatsAppButton className="btn btn-primary btn-lg" message="Hello Dr. Shahrukh, I have a question.">
-              Ask a Question on WhatsApp
-            </WhatsAppButton>
-          </div>
-        </div>
-      </section>
+      <FaqSection items={faqs} />
     </>
   );
 }

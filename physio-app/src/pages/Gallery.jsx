@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import Lightbox from '../components/Lightbox';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { galleryItems } from '../data/gallery';
 
@@ -96,6 +97,11 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Clinic & Facility FAQs"
+        subtitle="Questions regarding clinic cleanliness, parking, appointment timings, and rehabilitation equipment."
+      />
 
       {/* Full View Lightbox Modal */}
       <Lightbox

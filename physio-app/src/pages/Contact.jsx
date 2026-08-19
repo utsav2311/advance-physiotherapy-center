@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { useClinicStatus } from '../hooks/useClinicStatus';
 import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon } from '../components/Icons';
@@ -135,6 +136,11 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title="Location, Timings & Booking FAQs"
+        subtitle="Common questions about finding the clinic, appointment booking, payments, and home visits."
+      />
     </>
   );
 }

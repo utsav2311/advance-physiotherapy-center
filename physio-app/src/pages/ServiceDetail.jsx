@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
 import { WarnIcon, CheckIcon } from '../components/Icons';
@@ -150,6 +151,11 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        title={`${service.shortTitle} & Treatment FAQs`}
+        subtitle={`Key answers regarding ${service.title.toLowerCase()}, session protocols, and recovery expectations at Advance Physiotherapy Center.`}
+      />
     </>
   );
 }
