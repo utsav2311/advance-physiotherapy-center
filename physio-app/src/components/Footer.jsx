@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import WhatsAppButton from './WhatsAppButton';
+import { InstagramIcon } from './Icons';
 import { SITE } from '../data/site';
 
 export default function Footer() {
@@ -18,6 +19,18 @@ export default function Footer() {
             <p className="footer-brand-text">
               Personalized physiotherapy and rehabilitation care in {SITE.city}. Helping you restore natural mobility and live pain-free.
             </p>
+            <div className="footer-social-wrap" style={{ marginTop: '1.25rem' }}>
+              <a
+                href={SITE.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-btn"
+                aria-label="Follow Advance Physiotherapy Center on Instagram"
+              >
+                <InstagramIcon className="footer-social-icon" />
+                <span>Follow on Instagram</span>
+              </a>
+            </div>
           </div>
 
           <div>
@@ -44,6 +57,11 @@ export default function Footer() {
                 <a href={`tel:${SITE.phoneSecondary}`}>{SITE.phoneSecondaryDisplay}</a>
               </p>
               <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+              <p>
+                <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="footer-instagram-link">
+                  <InstagramIcon className="footer-mini-icon" /> {SITE.instagramHandle}
+                </a>
+              </p>
               <p>{SITE.hours} • Home Visit Available</p>
             </div>
           </div>

@@ -2323,6 +2323,49 @@ input, select, textarea {
   margin-top: 1rem;
 }
 
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.footer-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.5);
+  color: var(--white);
+}
+
+.footer-social-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #f472b6 !important;
+  font-weight: 600;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-instagram-link:hover {
+  color: #fb7185 !important;
+}
+
+.footer-mini-icon {
+  width: 15px;
+  height: 15px;
+}
+
 .footer-col-title {
   font-family: var(--font-display);
   font-size: 0.9rem;

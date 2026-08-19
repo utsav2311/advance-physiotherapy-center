@@ -16,6 +16,8 @@ export const SITE = {
   phoneSecondary: '+919155486434',
   phoneSecondaryDisplay: '+91 91554 86434',
   email: 'shahrukhfiroz308@gmail.com',
+  instagramUrl: 'https://www.instagram.com/advancephysiotherapycenter1/',
+  instagramHandle: '@advancephysiotherapycenter1',
   hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   hoursSunday: 'Sunday: Prior Appointment Only',
   mapsShareUrl: 'https://maps.app.goo.gl/3Yd35TDforCQFABZA',
