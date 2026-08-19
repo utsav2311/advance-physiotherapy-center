@@ -2348,26 +2348,42 @@ input, select, textarea {
 .footer-social-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
   color: var(--white);
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
   transition: all var(--duration-fast) var(--ease-out);
 }
 
 .footer-social-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.5);
   color: var(--white);
 }
 
+.footer-instagram-btn {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
+}
+
+.footer-instagram-btn:hover {
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.55);
+}
+
+.footer-facebook-btn {
+  background: #1877f2;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35);
+}
+
+.footer-facebook-btn:hover {
+  background: #166fe5;
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.55);
+}
+
 .footer-social-icon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
 }
 
 .footer-instagram-link {
@@ -2383,9 +2399,22 @@ input, select, textarea {
   color: #fb7185 !important;
 }
 
+.footer-facebook-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #60a5fa !important;
+  font-weight: 600;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-facebook-link:hover {
+  color: #93c5fd !important;
+}
+
 .footer-mini-icon {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
 }
 
 .footer-col-title {

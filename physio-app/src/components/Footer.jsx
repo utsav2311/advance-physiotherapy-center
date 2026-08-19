@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import WhatsAppButton from './WhatsAppButton';
-import { InstagramIcon } from './Icons';
+import { InstagramIcon, FacebookIcon } from './Icons';
 import { SITE } from '../data/site';
 
 export default function Footer() {
@@ -19,16 +19,26 @@ export default function Footer() {
             <p className="footer-brand-text">
               Personalized physiotherapy and rehabilitation care in {SITE.city}. Helping you restore natural mobility and live pain-free.
             </p>
-            <div className="footer-social-wrap" style={{ marginTop: '1.25rem' }}>
+            <div className="footer-social-wrap" style={{ marginTop: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
               <a
                 href={SITE.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-social-btn"
+                className="footer-social-btn footer-instagram-btn"
                 aria-label="Follow Advance Physiotherapy Center on Instagram"
               >
                 <InstagramIcon className="footer-social-icon" />
-                <span>Follow on Instagram</span>
+                <span>Instagram</span>
+              </a>
+              <a
+                href={SITE.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-btn footer-facebook-btn"
+                aria-label="Follow Advance Physiotherapy Center on Facebook"
+              >
+                <FacebookIcon className="footer-social-icon" />
+                <span>Facebook</span>
               </a>
             </div>
           </div>
@@ -60,6 +70,11 @@ export default function Footer() {
               <p>
                 <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="footer-instagram-link">
                   <InstagramIcon className="footer-mini-icon" /> {SITE.instagramHandle}
+                </a>
+              </p>
+              <p>
+                <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className="footer-facebook-link">
+                  <FacebookIcon className="footer-mini-icon" /> Advance Physiotherapy Center
                 </a>
               </p>
               <p>{SITE.hours} • Home Visit Available</p>

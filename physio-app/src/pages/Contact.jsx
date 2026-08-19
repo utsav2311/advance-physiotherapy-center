@@ -5,7 +5,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import { useClinicStatus } from '../hooks/useClinicStatus';
-import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon, InstagramIcon } from '../components/Icons';
+import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon, InstagramIcon, FacebookIcon } from '../components/Icons';
 import { SITE } from '../data/site';
 import { contactFaqs } from '../data/faqs';
 
@@ -92,6 +92,17 @@ export default function Contact() {
                     <p>
                       <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer">
                         {SITE.instagramHandle}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <div className="contact-item-icon"><FacebookIcon /></div>
+                  <div>
+                    <h5>Facebook</h5>
+                    <p>
+                      <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer">
+                        {SITE.facebookHandle}
                       </a>
                     </p>
                   </div>
