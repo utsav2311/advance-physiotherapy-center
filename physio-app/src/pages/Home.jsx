@@ -5,6 +5,7 @@ import ServiceCard, { FeaturedServiceCard } from '../components/ServiceCard';
 import StatCounter from '../components/StatCounter';
 import Reveal from '../components/Reveal';
 import ProcessStep from '../components/ProcessStep';
+import Skiper104 from '../components/Skiper104';
 import FaqItem from '../components/FaqItem';
 import HeroSlider from '../components/HeroSlider';
 import Lightbox from '../components/Lightbox';
@@ -298,8 +299,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS PREVIEW */}
-      <section className="section">
+      {/* PROCESS PREVIEW (Skiper104 Scroll Reveal Grid Cards) */}
+      <section className="section" id="process-pathway">
         <div className="container">
           <div className="section-header text-center">
             <span className="section-label">How We Help You Heal</span>
@@ -308,13 +309,11 @@ export default function Home() {
               A systematic clinical approach from acute pain to complete functional independence.
             </p>
           </div>
-          <div className="process-grid">
-            {processSteps.map((step, i) => (
-              <ProcessStep key={step.number} step={step} index={i} expandable={false} />
-            ))}
-          </div>
+
+          <Skiper104 steps={processSteps} expandable={true} />
+
           <div className="text-center" style={{ marginTop: '2.5rem' }}>
-            <Link to="/process" className="btn btn-secondary">Explore Full Process →</Link>
+            <Link to="/process" className="btn btn-secondary">Explore Full Process & First Visit Guide →</Link>
           </div>
         </div>
       </section>

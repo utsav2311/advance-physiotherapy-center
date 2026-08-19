@@ -1086,6 +1086,238 @@ input, select, textarea {
   line-height: 1.5;
 }
 
+/* ==========================================================================
+   SKIPER104 - SCROLL REVEAL GRID CARDS (4-Step Recovery Pathway)
+   ========================================================================== */
+.skiper104-container {
+  width: 100%;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.skiper104-track {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.skiper104-track-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #06b6d4, #10b981);
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skiper104-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.skiper104-card {
+  position: relative;
+  background: var(--white);
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  padding: 1.85rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.skiper104-card:hover {
+  border-color: var(--primary-300);
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.12);
+}
+
+.skiper104-card.is-active {
+  border-color: var(--primary-600);
+  box-shadow: 0 16px 40px rgba(2, 132, 199, 0.16);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.skiper104-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skiper104-card:hover .skiper104-card-glow,
+.skiper104-card.is-active .skiper104-card-glow {
+  opacity: 1;
+}
+
+.skiper104-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.skiper104-step-pill {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary-700);
+  background: var(--primary-50);
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--primary-100);
+}
+
+.skiper104-step-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gray-200);
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.skiper104-card:hover .skiper104-step-num,
+.skiper104-card.is-active .skiper104-step-num {
+  color: var(--primary-500);
+}
+
+.skiper104-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary-50) 0%, #e0f2fe 100%);
+  color: var(--primary-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+}
+
+.skiper104-card:hover .skiper104-icon-wrap,
+.skiper104-card.is-active .skiper104-icon-wrap {
+  background: linear-gradient(135deg, var(--primary-700) 0%, #0369a1 100%);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.skiper104-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+.skiper104-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.skiper104-card-summary {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.skiper104-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-100);
+  margin: 0.85rem 0;
+}
+
+.skiper104-details-header {
+  margin-bottom: 0.5rem;
+}
+
+.skiper104-details-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-800);
+}
+
+.skiper104-details-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.skiper104-details-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.skiper104-check-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 0.68rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.skiper104-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skiper104-step-status {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-700);
+}
+
+@media (max-width: 1100px) {
+  .skiper104-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .skiper104-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .skiper104-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
 /* --- ABOUT SECTION --- */
 .about-grid {
   display: grid;

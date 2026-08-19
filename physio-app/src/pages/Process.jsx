@@ -1,6 +1,6 @@
 import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
-import ProcessStep from '../components/ProcessStep';
+import Skiper104 from '../components/Skiper104';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Seo from '../components/Seo';
@@ -27,11 +27,7 @@ export default function Process() {
 
       <section className="section">
         <div className="container">
-          <div className="process-grid">
-            {processSteps.map((step, i) => (
-              <ProcessStep key={step.number} step={step} index={i} />
-            ))}
-          </div>
+          <Skiper104 steps={processSteps} expandable={true} />
 
           <Reveal className="detail-cta-card" style={{ marginTop: '3rem' }} index={4}>
             <h3>What to Expect at Your First Visit</h3>
