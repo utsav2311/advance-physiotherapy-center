@@ -25,7 +25,7 @@ export const allFaqs = [
   {
     id: 'booking',
     q: 'How can I book an appointment?',
-    a: 'Click any "Book Appointment" button to message on WhatsApp at +91 83402 76169 / 91554 86434, or call 08340 276169. We confirm your slot the same day in most cases.',
+    a: 'Click any "Book Appointment" button to message on WhatsApp at +91 83402 76169 / +91 91554 86434, or call +91 83402 76169. We confirm your slot the same day in most cases.',
   },
   {
     id: 'pain',
