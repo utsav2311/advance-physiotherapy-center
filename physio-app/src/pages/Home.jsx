@@ -164,33 +164,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="trust-strip" aria-label="Credentials">
-        <div className="container">
-          <div className="trust-strip-grid">
-            <div className="trust-strip-item">
-              <span className="strip-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
-                </svg>
-              </span>
-              <span><strong>B.P.T., M.P.T. (Ortho)</strong> Qualified</span>
+      {/* TRUST STRIP ANIMATED MARQUEE BANNER */}
+      <section className="trust-strip-marquee" aria-label="Credentials and Quality Assurance">
+        <div className="marquee-wrapper">
+          <div className="marquee-track">
+            {/* Primary Track */}
+            <div className="marquee-group">
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
+                  </svg>
+                </span>
+                <span><strong>B.P.T., M.P.T. (Ortho)</strong> Qualified</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon"><HospitalIcon className="" /></span>
+                <span><strong>7+ Hospitals</strong> Experience</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon"><HomeVisitIcon className="" /></span>
+                <span><strong>Home Visit</strong> Available</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                </span>
+                <span><strong>5.0★</strong> Google Rating</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+                <span><strong>Advanced Manual Therapy</strong> & Modalities</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </span>
+                <span><strong>Personalized 1-on-1</strong> Rehabilitation</span>
+                <span className="marquee-separator">•</span>
+              </div>
             </div>
-            <div className="trust-strip-item">
-              <span className="strip-icon"><HospitalIcon className="" /></span>
-              <span><strong>7+ Hospitals</strong> Experience</span>
-            </div>
-            <div className="trust-strip-item">
-              <span className="strip-icon"><HomeVisitIcon className="" /></span>
-              <span><strong>Home Visit</strong> Available</span>
-            </div>
-            <div className="trust-strip-item">
-              <span className="strip-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              </span>
-              <span><strong>5.0★</strong> Google Rating</span>
+
+            {/* Duplicate Track (for seamless infinite loop) */}
+            <div className="marquee-group" aria-hidden="true">
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
+                  </svg>
+                </span>
+                <span><strong>B.P.T., M.P.T. (Ortho)</strong> Qualified</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon"><HospitalIcon className="" /></span>
+                <span><strong>7+ Hospitals</strong> Experience</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon"><HomeVisitIcon className="" /></span>
+                <span><strong>Home Visit</strong> Available</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                </span>
+                <span><strong>5.0★</strong> Google Rating</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+                <span><strong>Advanced Manual Therapy</strong> & Modalities</span>
+                <span className="marquee-separator">•</span>
+              </div>
+              <div className="trust-strip-item">
+                <span className="strip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </span>
+                <span><strong>Personalized 1-on-1</strong> Rehabilitation</span>
+                <span className="marquee-separator">•</span>
+              </div>
             </div>
           </div>
         </div>

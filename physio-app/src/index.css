@@ -873,47 +873,101 @@ input, select, textarea {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* --- TRUST STRIP --- */
-.trust-strip {
-  padding: 1.25rem 0;
+/* --- TRUST STRIP MARQUEE BANNER --- */
+.trust-strip-marquee {
   background: var(--white);
   border-bottom: 1px solid var(--gray-100);
+  padding: 0.95rem 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.trust-strip-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeContinuous 30s linear infinite;
+}
+
+.trust-strip-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .trust-strip-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  font-size: 0.85rem;
-  color: var(--gray-600);
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  padding: 0 1.25rem;
+  white-space: nowrap;
 }
 
 .trust-strip-item strong {
   color: var(--gray-900);
+  font-weight: 700;
 }
 
 .strip-icon {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   background: var(--primary-50);
   color: var(--primary-700);
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
 .strip-icon svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
+}
+
+.marquee-separator {
+  color: var(--gray-300);
+  font-size: 1.1rem;
+  margin-left: 1.25rem;
+  user-select: none;
+}
+
+@keyframes marqueeContinuous {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 /* --- SERVICE CARDS --- */
@@ -2887,7 +2941,6 @@ input, select, textarea {
   .reviews-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  .trust-strip-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .visit-tips-grid { grid-template-columns: 1fr; }
 
   .gallery-grid {
@@ -2955,6 +3008,29 @@ input, select, textarea {
     max-height: 200px;
     aspect-ratio: 16 / 10;
   }
+
+  .trust-strip-marquee {
+    padding: 0.75rem 0;
+  }
+  .marquee-track {
+    animation-duration: 22s;
+  }
+  .trust-strip-item {
+    font-size: 0.82rem;
+    gap: 0.5rem;
+    padding: 0 0.85rem;
+  }
+  .strip-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .strip-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+  .marquee-separator {
+    margin-left: 0.85rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2969,7 +3045,6 @@ input, select, textarea {
   }
   .services-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
-  .trust-strip-grid { grid-template-columns: 1fr; gap: 0.75rem; }
   .footer-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: clamp(200px, 56vw, 260px); }
   .gallery-item.item-large { grid-column: span 1; }
