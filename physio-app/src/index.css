@@ -563,11 +563,11 @@ input, select, textarea {
 
 /* --- HERO SECTION (Homepage) --- */
 .hero-section {
-  min-height: 88vh;
-  min-height: 88dvh;
+  min-height: 90vh;
+  min-height: 90dvh;
   display: flex;
   align-items: center;
-  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: clamp(4rem, 8vw, 7rem) 0;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -592,7 +592,7 @@ input, select, textarea {
   z-index: 2;
 }
 
-/* --- HERO BACKGROUND SLIDER (Full Uncropped Image Viewer) --- */
+/* --- HERO BACKGROUND SLIDER (decorative full-bleed image carousel) --- */
 .hero-slider {
   position: absolute;
   inset: 0;
@@ -600,7 +600,6 @@ input, select, textarea {
   height: 100%;
   z-index: 0;
   overflow: hidden;
-  background: #05192e;
 }
 
 .hero-slider-slide {
@@ -608,37 +607,10 @@ input, select, textarea {
   inset: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  overflow: hidden;
-}
-
-.hero-slide-backdrop {
-  position: absolute;
-  inset: -15%;
-  width: 130%;
-  height: 130%;
   background-size: cover;
   background-position: center center;
-  filter: blur(36px) brightness(0.45);
-  transform: scale(1.1);
-  z-index: 0;
-}
-
-.hero-slide-main-img {
-  position: relative;
-  z-index: 1;
-  max-width: 58%;
-  max-height: 82vh;
-  width: auto;
-  height: auto;
-  object-fit: contain !important;
-  display: block;
-  margin-right: clamp(1rem, 5vw, 4rem);
-  border-radius: var(--radius-2xl);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.15);
-  transition: all var(--duration-base) var(--ease-out);
+  background-repeat: no-repeat;
+  filter: brightness(0.94);
 }
 
 .hero-slider-overlay {
@@ -647,32 +619,14 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    90deg,
-    rgba(5, 24, 44, 0.95) 0%,
-    rgba(5, 24, 44, 0.82) 38%,
-    rgba(5, 24, 44, 0.35) 70%,
-    rgba(5, 24, 44, 0.18) 100%
+    100deg,
+    rgba(5, 28, 48, 0.78) 0%,
+    rgba(5, 28, 48, 0.55) 45%,
+    rgba(5, 28, 48, 0.28) 75%,
+    rgba(5, 28, 48, 0.15) 100%
   );
   z-index: 1;
-  pointer-events: none;
 }
-
-@media (max-width: 992px) {
-  .hero-slider-slide {
-    justify-content: center;
-  }
-  .hero-slide-main-img {
-    max-width: 90%;
-    max-height: 45vh;
-    margin-right: 0;
-    margin-top: 1.5rem;
-    opacity: 0.55;
-  }
-  .hero-slider-overlay {
-    background: rgba(5, 24, 44, 0.88);
-  }
-}
-
 
 
 .hero-slider-arrow {
@@ -913,24 +867,19 @@ input, select, textarea {
 
 .service-card-image {
   position: relative;
-  height: 190px;
-  background: #06192e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 180px;
   overflow: hidden;
 }
 
 .service-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
-  padding: 0.5rem;
+  object-fit: cover;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
 .service-card:hover .service-card-image img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .service-card-body {
@@ -1018,10 +967,6 @@ input, select, textarea {
 
 .featured-card-image {
   height: 220px;
-  background: #06192e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   position: relative;
 }
@@ -1029,13 +974,12 @@ input, select, textarea {
 .featured-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
-  padding: 0.5rem;
+  object-fit: cover;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
 .featured-card:hover .featured-card-image img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .featured-card-body {
@@ -1159,18 +1103,13 @@ input, select, textarea {
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   position: relative;
-  background: linear-gradient(135deg, #072340 0%, #0369a1 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .about-image-frame img {
   width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain !important;
-  display: block;
+  height: clamp(360px, 50vw, 550px);
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .about-image-overlay {
@@ -1499,19 +1438,6 @@ input, select, textarea {
   transition: all var(--duration-base) var(--ease-out);
 }
 
-.gallery-item {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  position: relative;
-  box-shadow: var(--shadow-sm);
-  background: #06192d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--duration-base) var(--ease-out);
-  cursor: pointer;
-}
-
 .gallery-item:hover {
   box-shadow: var(--shadow-xl);
   transform: scale(1.02);
@@ -1520,20 +1446,21 @@ input, select, textarea {
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
-  background: #071f38;
-  padding: 0.25rem;
+  object-fit: cover;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .gallery-item.item-large { grid-column: span 7; grid-row: span 2; }
 .gallery-item.item-medium { grid-column: span 5; }
 .gallery-item.item-small { grid-column: span 4; }
 
+.gallery-item {
+  cursor: pointer;
+}
 
 .gallery-item::after {
   content: '';
@@ -2084,19 +2011,14 @@ input, select, textarea {
 }
 
 .sidebar-image {
-  height: 220px;
-  background: #06192d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 200px;
   overflow: hidden;
 }
 
 .sidebar-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
-  padding: 0.5rem;
+  object-fit: cover;
 }
 
 .sidebar-body {
@@ -2301,10 +2223,6 @@ input, select, textarea {
 .achievement-strip-image {
   height: 100%;
   min-height: 280px;
-  background: #06192d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   position: relative;
 }
@@ -2312,13 +2230,12 @@ input, select, textarea {
 .achievement-strip-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
-  padding: 0.5rem;
+  object-fit: cover;
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
 .achievement-strip:hover .achievement-strip-image img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .achievement-strip-body {
