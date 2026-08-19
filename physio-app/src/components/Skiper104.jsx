@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent, useSpring } from 'framer-motion';
 import { ClipboardIcon, SpineIcon, ClockIcon, ShieldIcon } from './Icons';
 
 const STEP_ICONS = [ClipboardIcon, SpineIcon, ClockIcon, ShieldIcon];
@@ -12,35 +12,52 @@ const STEP_PHASES = [
 ];
 
 /**
- * Skiper104: Scroll Reveal Grid Cards for Process Pathway.
- * Inspired by @skiper-ui/skiper104 component pattern.
- * Features scroll-triggered reveal, glowing gradient borders,
- * interactive step selection, expandable clinical details, and smooth Framer Motion springs.
+ * Skiper104: Scroll-Driven Auto-Focus Grid Cards.
+ * As the user scrolls down the section, active focus automatically transitions
+ * from Phase 1 -> Phase 2 -> Phase 3 -> Phase 4 with glowing aura,
+ * animated track fill, and expanded clinical details.
  */
 export default function Skiper104({ steps, expandable = true }) {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef(null);
 
+  // Track scroll progress through this specific section
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start end', 'end start'],
+    offset: ['start 80%', 'end 30%'],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.96, 1, 0.98]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.7]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 280,
+    damping: 32,
+    restDelta: 0.001,
+  });
+
+  // Automatically update activeStep as the user scrolls
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    const stepCount = steps.length;
+    if (stepCount === 0) return;
+
+    // Split scroll interval into step segments
+    const stepIndex = Math.min(
+      stepCount - 1,
+      Math.max(0, Math.floor(latest * stepCount))
+    );
+
+    setActiveStep(stepIndex);
+  });
 
   return (
-    <motion.div
-      ref={containerRef}
-      style={{ scale, opacity }}
-      className="skiper104-container"
-    >
-      {/* Progress Connector Track */}
+    <div ref={containerRef} className="skiper104-container">
+      {/* Dynamic Animated Progress Track */}
       <div className="skiper104-track" aria-hidden="true">
         <div className="skiper104-track-line" />
-        <div
+        <motion.div
           className="skiper104-track-fill"
-          style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+          style={{
+            scaleX: smoothProgress,
+            transformOrigin: 'left',
+          }}
         />
       </div>
 
@@ -54,15 +71,18 @@ export default function Skiper104({ steps, expandable = true }) {
             <motion.div
               key={step.number}
               className={`skiper104-card${isSelected ? ' is-active' : ''}`}
-              initial={{ opacity: 0, y: 32 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: '-40px' }}
               transition={{
-                duration: 0.5,
-                delay: idx * 0.12,
+                duration: 0.45,
+                delay: idx * 0.08,
                 ease: [0.21, 0.47, 0.32, 0.98],
               }}
-              whileHover={{ y: -6 }}
+              animate={{
+                scale: isSelected ? 1.025 : 1,
+                y: isSelected ? -4 : 0,
+              }}
               onClick={() => setActiveStep(idx)}
               role="button"
               tabIndex={0}
@@ -70,8 +90,17 @@ export default function Skiper104({ steps, expandable = true }) {
                 if (e.key === 'Enter' || e.key === ' ') setActiveStep(idx);
               }}
             >
-              {/* Card Ambient Glow */}
+              {/* Card Ambient Glow Top Bar */}
               <div className="skiper104-card-glow" />
+
+              {/* Active Step Pulsing Ring */}
+              {isSelected && (
+                <motion.div
+                  className="skiper104-active-border"
+                  layoutId="skiper104-active-border"
+                  transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                />
+              )}
 
               {/* Card Top Header */}
               <div className="skiper104-card-top">
@@ -97,15 +126,10 @@ export default function Skiper104({ steps, expandable = true }) {
                   </div>
                   <ul className="skiper104-details-list">
                     {step.details.slice(0, 3).map((detail, dIdx) => (
-                      <motion.li
-                        key={dIdx}
-                        initial={{ opacity: 0, x: -6 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: dIdx * 0.05 }}
-                      >
+                      <li key={dIdx}>
                         <span className="skiper104-check-dot">✓</span>
                         <span>{detail}</span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
 
@@ -117,7 +141,7 @@ export default function Skiper104({ steps, expandable = true }) {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
+                          transition={{ duration: 0.28 }}
                         >
                           {step.details.slice(3).map((detail, dIdx) => (
                             <li key={dIdx}>
@@ -135,13 +159,20 @@ export default function Skiper104({ steps, expandable = true }) {
               {/* Card Footer Indicator */}
               <div className="skiper104-card-footer">
                 <span className="skiper104-step-status">
-                  {isSelected ? '● Active Step View' : 'Click to Focus →'}
+                  {isSelected ? (
+                    <span className="status-badge-active">
+                      <span className="status-live-dot" />
+                      In Focus • Step {idx + 1} of 4
+                    </span>
+                  ) : (
+                    'Scroll / Click to View →'
+                  )}
                 </span>
               </div>
             </motion.div>
           );
         })}
       </div>
-    </motion.div>
+    </div>
   );
 }

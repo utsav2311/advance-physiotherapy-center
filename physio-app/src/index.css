@@ -1138,10 +1138,42 @@ input, select, textarea {
 }
 
 .skiper104-card.is-active {
-  border-color: var(--primary-600);
-  box-shadow: 0 16px 40px rgba(2, 132, 199, 0.16);
+  border-color: var(--primary-500);
+  box-shadow: 0 20px 48px rgba(2, 132, 199, 0.22), 0 0 0 1px rgba(2, 132, 199, 0.4);
   background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+  z-index: 2;
 }
+
+.skiper104-active-border {
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-2xl);
+  border: 2px solid var(--primary-600);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.status-badge-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--primary-700);
+  color: var(--white);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.status-live-dot {
+  width: 6px;
+  height: 6px;
+  background: #34d399;
+  border-radius: 50%;
+  animation: pulseDot 1.6s infinite ease-in-out;
+}
+
 
 .skiper104-card-glow {
   position: absolute;
