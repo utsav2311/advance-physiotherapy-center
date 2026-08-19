@@ -1,5 +1,5 @@
 // Comprehensive master FAQ list covering clinical, consultation, booking,
-// insurance, home visit, and treatment queries.
+// home visit, and treatment queries.
 
 export const allFaqs = [
   {
@@ -36,11 +36,6 @@ export const allFaqs = [
     id: 'massage-difference',
     q: 'How is physiotherapy different from a massage?',
     a: "Massage focuses on relaxing muscles temporarily. Physiotherapy starts with a clinical diagnosis, then uses targeted manual therapy, electrotherapy, and corrective exercise to treat the actual cause of pain — restoring long-term function, not just short-term relief.",
-  },
-  {
-    id: 'insurance',
-    q: 'Do you accept health insurance or provide billing receipts?',
-    a: "We provide detailed session receipts on request that you can submit to your insurer for reimbursement, depending on your policy's terms. Please confirm coverage details with your insurance provider beforehand, as we are not empanelled with any specific insurance network.",
   },
   {
     id: 'age-groups',
@@ -85,7 +80,7 @@ export const serviceDetailFaqs = [
 export const aboutFaqs = [
   allFaqs.find((f) => f.id === 'referral'),
   allFaqs.find((f) => f.id === 'age-groups'),
-  allFaqs.find((f) => f.id === 'insurance'),
+  allFaqs.find((f) => f.id === 'conditions-treated'),
   allFaqs.find((f) => f.id === 'home-visit'),
 ].filter(Boolean);
 
@@ -105,7 +100,7 @@ export const galleryFaqs = [
 export const reviewsFaqs = [
   allFaqs.find((f) => f.id === 'sessions-count'),
   allFaqs.find((f) => f.id === 'pain'),
-  allFaqs.find((f) => f.id === 'insurance'),
+  allFaqs.find((f) => f.id === 'conditions-treated'),
   allFaqs.find((f) => f.id === 'age-groups'),
 ].filter(Boolean);
 
