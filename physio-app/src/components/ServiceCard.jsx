@@ -7,9 +7,16 @@ import Reveal from './Reveal';
  */
 export default function ServiceCard({ service, index = 0 }) {
   return (
-    <Reveal index={index} delayStep={0.05} className="service-card">
+    <Reveal index={index} delayStep={0.04} className="service-card">
       <div className="service-card-image">
-        <img src={service.image} alt={service.shortTitle} width="400" height="260" loading="lazy" />
+        <img
+          src={service.image}
+          alt={service.shortTitle}
+          width="400"
+          height="260"
+          loading={index < 4 ? 'eager' : 'lazy'}
+          decoding="async"
+        />
       </div>
       <div className="service-card-body">
         <div className="service-card-icon">
@@ -28,9 +35,16 @@ export default function ServiceCard({ service, index = 0 }) {
  */
 export function FeaturedServiceCard({ service, index = 0 }) {
   return (
-    <Reveal index={index} delayStep={0.12} className="featured-card">
+    <Reveal index={index} delayStep={0.06} className="featured-card">
       <div className="featured-card-image">
-        <img src={service.image} alt={service.shortTitle} width="680" height="420" loading="lazy" />
+        <img
+          src={service.image}
+          alt={service.shortTitle}
+          width="680"
+          height="420"
+          loading="eager"
+          decoding="async"
+        />
       </div>
       <div className="featured-card-body">
         <h3>{service.title}</h3>

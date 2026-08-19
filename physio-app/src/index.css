@@ -928,9 +928,14 @@ input, select, textarea {
   border: 1px solid var(--gray-100);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: all var(--duration-base) var(--ease-out);
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
   display: flex;
   flex-direction: column;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  isolation: isolate;
 }
 
 .service-card:hover {
@@ -945,6 +950,10 @@ input, select, textarea {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background-color: var(--gray-100);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .service-card-image img {
@@ -953,6 +962,9 @@ input, select, textarea {
   object-fit: cover;
   object-position: center 15%;
   transition: transform var(--duration-slow) var(--ease-out);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .service-card:hover .service-card-image img {
@@ -1040,7 +1052,12 @@ input, select, textarea {
   overflow: hidden;
   border: 1px solid var(--gray-100);
   box-shadow: var(--shadow-md);
-  transition: all var(--duration-base) var(--ease-out);
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  isolation: isolate;
 }
 
 .featured-card:hover {
@@ -1055,6 +1072,10 @@ input, select, textarea {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background-color: var(--gray-100);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .featured-card-image img {
@@ -1063,6 +1084,9 @@ input, select, textarea {
   object-fit: cover;
   object-position: center 15%;
   transition: transform var(--duration-slow) var(--ease-out);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .featured-card:hover .featured-card-image img {
