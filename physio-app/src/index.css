@@ -2303,17 +2303,39 @@ input, select, textarea {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: 2.5rem;
+  grid-template-columns: minmax(280px, 1.8fr) minmax(130px, 0.9fr) minmax(220px, 1.3fr) minmax(180px, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
   padding-bottom: 3rem;
+  align-items: start;
+}
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-brand .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+}
+
+.footer-brand .brand-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .footer-brand .brand-name {
   color: var(--white);
+  white-space: normal;
+  line-height: 1.25;
+  font-size: 1.05rem;
 }
 
 .footer-brand .brand-sub {
   color: var(--gray-400);
+  white-space: normal;
+  margin-top: 0.2rem;
 }
 
 .footer-brand-text {
