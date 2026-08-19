@@ -1087,100 +1087,133 @@ input, select, textarea {
 }
 
 /* ==========================================================================
-   SKIPER104 - SCROLL REVEAL GRID CARDS (4-Step Recovery Pathway)
+   SKIPER104 - PINNED ON-SCROLL GRID CARDS (4-Step Recovery Pathway)
    ========================================================================== */
-.skiper104-container {
-  width: 100%;
+.skiper104-scroll-wrapper {
   position: relative;
-  margin: 1rem 0;
+  width: 100%;
+  min-height: 200vh;
 }
 
-.skiper104-track {
-  position: relative;
+.skiper104-sticky-box {
+  position: sticky;
+  top: clamp(65px, 10vh, 90px);
+  width: 100%;
+  padding: 0.5rem 0 1rem;
+  z-index: 10;
+}
+
+.skiper104-track-container {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.skiper104-track-bar {
   width: 100%;
   height: 4px;
   background: var(--gray-200);
   border-radius: var(--radius-full);
-  margin-bottom: 2rem;
   overflow: hidden;
+  position: relative;
 }
 
 .skiper104-track-fill {
   height: 100%;
   background: linear-gradient(90deg, #0284c7, #06b6d4, #10b981);
   border-radius: var(--radius-full);
-  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skiper104-phase-indicators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.skiper104-phase-dot-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  text-align: left;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.skiper104-phase-dot-btn .dot-num {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--gray-400);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.skiper104-phase-dot-btn .dot-label {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.skiper104-phase-dot-btn.is-active .dot-num {
+  background: var(--primary-700);
+  color: var(--white);
+}
+
+.skiper104-phase-dot-btn.is-active .dot-label {
+  color: var(--primary-800);
+  font-weight: 800;
 }
 
 .skiper104-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.15rem;
 }
 
 .skiper104-card {
   position: relative;
   background: var(--white);
   border: 1.5px solid var(--gray-100);
-  border-radius: var(--radius-2xl);
-  padding: 1.85rem 1.45rem;
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.1rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   overflow: hidden;
+  min-height: 330px;
 }
 
 .skiper104-card:hover {
   border-color: var(--primary-300);
-  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.12);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.12);
 }
 
 .skiper104-card.is-active {
   border-color: var(--primary-500);
-  box-shadow: 0 20px 48px rgba(2, 132, 199, 0.22), 0 0 0 1px rgba(2, 132, 199, 0.4);
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.2), 0 0 0 1.5px rgba(2, 132, 199, 0.45);
   background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
   z-index: 2;
 }
-
-.skiper104-active-border {
-  position: absolute;
-  inset: -1px;
-  border-radius: var(--radius-2xl);
-  border: 2px solid var(--primary-600);
-  pointer-events: none;
-  z-index: 3;
-}
-
-.status-badge-active {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: var(--primary-700);
-  color: var(--white);
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-full);
-  font-size: 0.76rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-}
-
-.status-live-dot {
-  width: 6px;
-  height: 6px;
-  background: #34d399;
-  border-radius: 50%;
-  animation: pulseDot 1.6s infinite ease-in-out;
-}
-
 
 .skiper104-card-glow {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3.5px;
   background: linear-gradient(90deg, #0284c7, #38bdf8);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -1195,25 +1228,25 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .skiper104-step-pill {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--primary-700);
   background: var(--primary-50);
-  padding: 0.28rem 0.65rem;
+  padding: 0.22rem 0.55rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--primary-100);
 }
 
 .skiper104-step-num {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: var(--gray-200);
   line-height: 1;
@@ -1226,91 +1259,71 @@ input, select, textarea {
 }
 
 .skiper104-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-lg);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
   background: linear-gradient(135deg, var(--primary-50) 0%, #e0f2fe 100%);
   color: var(--primary-700);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.85rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
 }
 
 .skiper104-card:hover .skiper104-icon-wrap,
 .skiper104-card.is-active .skiper104-icon-wrap {
   background: linear-gradient(135deg, var(--primary-700) 0%, #0369a1 100%);
   color: var(--white);
-  transform: scale(1.05);
 }
 
 .skiper104-icon-wrap svg {
-  width: 22px;
-  height: 22px;
+  width: 19px;
+  height: 19px;
 }
 
 .skiper104-card-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--gray-900);
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
+  margin-bottom: 0.45rem;
+  line-height: 1.25;
 }
 
 .skiper104-card-summary {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--gray-600);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.skiper104-divider {
-  width: 100%;
-  height: 1px;
-  background: var(--gray-100);
-  margin: 0.85rem 0;
-}
-
-.skiper104-details-header {
-  margin-bottom: 0.5rem;
-}
-
-.skiper104-details-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--primary-800);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
 }
 
 .skiper104-details-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0;
+  gap: 0.4rem;
+  padding: 0.65rem 0 0;
   margin: 0;
+  border-top: 1px solid var(--gray-100);
 }
 
 .skiper104-details-list li {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  font-size: 0.82rem;
+  gap: 0.4rem;
+  font-size: 0.78rem;
   color: var(--gray-600);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .skiper104-check-dot {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #dcfce7;
   color: #16a34a;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1321,21 +1334,50 @@ input, select, textarea {
 
 .skiper104-card-footer {
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 0.85rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.skiper104-step-status {
-  font-family: var(--font-display);
-  font-size: 0.78rem;
+.status-badge-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--primary-700);
+  color: var(--white);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--primary-700);
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
 }
 
-@media (max-width: 1100px) {
+.status-badge-idle {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--gray-400);
+}
+
+.status-live-dot {
+  width: 5px;
+  height: 5px;
+  background: #34d399;
+  border-radius: 50%;
+  animation: pulseDot 1.6s infinite ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .skiper104-scroll-wrapper {
+    min-height: auto;
+  }
+  .skiper104-sticky-box {
+    position: static;
+  }
   .skiper104-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skiper104-phase-indicators {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1343,12 +1385,17 @@ input, select, textarea {
 @media (max-width: 640px) {
   .skiper104-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
   }
   .skiper104-card {
-    padding: 1.5rem 1.25rem;
+    min-height: auto;
+    padding: 1.15rem 1rem;
+  }
+  .skiper104-phase-indicators {
+    display: none;
   }
 }
+
 
 /* --- ABOUT SECTION --- */
 .about-grid {
