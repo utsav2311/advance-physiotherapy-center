@@ -2,17 +2,35 @@ import { useState } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
+import Lightbox from '../components/Lightbox';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Seo from '../components/Seo';
 import { galleryItems } from '../data/gallery';
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const categories = ['All', 'Consultation', 'Treatment', 'Awards', 'Clinic'];
 
   const filteredItems = filter === 'All'
     ? galleryItems
     : galleryItems.filter((item) => item.category === filter || (filter === 'Awards' && item.category === 'Conferences'));
+
+  const handleOpenLightbox = (index) => {
+    setLightboxIndex(index);
+  };
+
+  const handleCloseLightbox = () => {
+    setLightboxIndex(null);
+  };
+
+  const handlePrev = () => {
+    setLightboxIndex((prev) => (prev === null ? null : (prev - 1 + filteredItems.length) % filteredItems.length));
+  };
+
+  const handleNext = () => {
+    setLightboxIndex((prev) => (prev === null ? null : (prev + 1) % filteredItems.length));
+  };
 
   return (
     <>
@@ -27,7 +45,7 @@ export default function Gallery() {
       <PageHero
         label="Inside Our Clinic"
         title="Clinic Gallery"
-        subtitle="Real photographs of our consultation chamber, treatment sessions, equipment, and professional awards."
+        subtitle="Click any photograph below to view in full resolution."
         bgImage="/images/bg-medical-mesh.webp"
       />
 
@@ -39,7 +57,10 @@ export default function Gallery() {
                 key={cat}
                 type="button"
                 className={`btn btn-sm ${filter === cat ? 'btn-primary' : 'btn-secondary'}`}
-                onClick={() => setFilter(cat)}
+                onClick={() => {
+                  setFilter(cat);
+                  setLightboxIndex(null);
+                }}
               >
                 {cat === 'All' ? `All Photos (${galleryItems.length})` : cat}
               </button>
@@ -53,6 +74,16 @@ export default function Gallery() {
                 index={i}
                 delayStep={0.06}
                 className={`gallery-item item-${item.size}`}
+                onClick={() => handleOpenLightbox(i)}
+                tabIndex={0}
+                role="button"
+                aria-label={`Open full view: ${item.caption || item.alt}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleOpenLightbox(i);
+                  }
+                }}
               >
                 <img src={item.image} alt={item.alt} loading={i < 2 ? 'eager' : 'lazy'} />
                 <div className="gallery-caption"><span>{item.caption}</span></div>
@@ -65,7 +96,17 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+
+      {/* Full View Lightbox Modal */}
+      <Lightbox
+        images={filteredItems}
+        currentIndex={lightboxIndex}
+        onClose={handleCloseLightbox}
+        onPrev={handlePrev}
+        onNext={handleNext}
+      />
     </>
   );
 }
+
 

@@ -7,6 +7,7 @@ import Reveal from '../components/Reveal';
 import ProcessStep from '../components/ProcessStep';
 import FaqItem from '../components/FaqItem';
 import HeroSlider from '../components/HeroSlider';
+import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
 import { services, featuredSlugs } from '../data/services';
@@ -39,6 +40,7 @@ const fadeUp = {
 export default function Home() {
   const featured = services.filter((s) => featuredSlugs.includes(s.slug));
   const [openFaq, setOpenFaq] = useState(0);
+  const [homeLightboxIndex, setHomeLightboxIndex] = useState(null);
   const homeFaqs = faqs.slice(0, 4);
 
   return (
@@ -378,6 +380,16 @@ export default function Home() {
                 index={i}
                 delayStep={0.08}
                 className={`gallery-item item-${item.size}`}
+                onClick={() => setHomeLightboxIndex(i)}
+                tabIndex={0}
+                role="button"
+                aria-label={`Open full view: ${item.caption || item.alt}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setHomeLightboxIndex(i);
+                  }
+                }}
               >
                 <img src={item.image} alt={item.alt} loading="lazy" />
                 <div className="gallery-caption"><span>{item.caption}</span></div>
@@ -492,6 +504,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Full View Lightbox Modal for Homepage Preview */}
+      <Lightbox
+        images={galleryItems}
+        currentIndex={homeLightboxIndex}
+        onClose={() => setHomeLightboxIndex(null)}
+        onPrev={() => setHomeLightboxIndex((prev) => (prev === null ? null : (prev - 1 + galleryItems.length) % galleryItems.length))}
+        onNext={() => setHomeLightboxIndex((prev) => (prev === null ? null : (prev + 1) % galleryItems.length))}
+      />
     </>
   );
 }
+
