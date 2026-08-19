@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initFaqAccordion();
   initScrollReveal();
+  initAmbientParallax();
 });
 
 /**
@@ -216,4 +217,36 @@ function initScrollReveal() {
   });
 
   revealTargets.forEach(el => observer.observe(el));
+}
+
+/**
+ * 6. Dynamic Ambient Parallax & Floating Movement System
+ */
+function initAmbientParallax() {
+  const orbs = document.querySelectorAll('.ambient-orb');
+  const stream = document.querySelector('.ambient-spine-stream');
+  if (!orbs.length) return;
+
+  let ticking = false;
+  let mouseX = 0;
+  let mouseY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 35;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 35;
+
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        orbs.forEach((orb, i) => {
+          const factor = (i + 1) * 0.35;
+          orb.style.transform = `translate3d(${mouseX * factor}px, ${mouseY * factor}px, 0)`;
+        });
+        if (stream) {
+          stream.style.transform = `translate3d(${mouseX * 0.15}px, ${mouseY * 0.15}px, 0)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
