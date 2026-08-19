@@ -136,8 +136,8 @@ export default function Home() {
                 custom={2}
               >
                 Personalized physiotherapy and rehabilitation designed to restore mobility, manage pain, and
-                help you return to an active lifestyle. Guided by {SITE.doctor} — trusted across leading
-                hospitals in {SITE.city}.
+                help you return to an active lifestyle. Guided by {SITE.doctor} — bringing extensive clinical
+                experience across 7+ leading hospitals to his full-time practice at Advance Physiotherapy Center.
               </motion.p>
 
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
@@ -178,7 +178,7 @@ export default function Home() {
             </div>
             <div className="trust-strip-item">
               <span className="strip-icon"><HospitalIcon className="" /></span>
-              <span><strong>7+ Hospitals</strong> Affiliated</span>
+              <span><strong>7+ Hospitals</strong> Experience</span>
             </div>
             <div className="trust-strip-item">
               <span className="strip-icon"><HomeVisitIcon className="" /></span>
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="container">
           <div className="stats-grid">
             <StatCounter target={25} suffix="+" label="Conditions Treated" />
-            <StatCounter target={7} suffix="+" label="Hospital Affiliations" />
+            <StatCounter target={7} suffix="+" label="Hospitals Experience" />
             <StatCounter target={1000} suffix="+" label="Patients Treated" />
             <StatCounter target={5} suffix=".0★" label="Google Rating" />
           </div>

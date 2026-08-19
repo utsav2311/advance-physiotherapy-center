@@ -58,11 +58,12 @@ export default function About() {
               <div className="about-text">
                 <p>
                   {SITE.doctor} is an advanced qualified physiotherapist dedicated to restoring
-                  pain-free movement for patients across {SITE.city}. As the founder of{' '}
+                  pain-free movement for patients across {SITE.city}. As the founder and lead physiotherapist of{' '}
                   <strong>Advance Physiotherapy Center</strong>, he combines certified manual
                   therapy techniques — including cupping, dry needling, chiropractic, and
-                  osteopathy — with modern electrotherapy modalities, and also consults across
-                  several leading hospitals in the city.
+                  osteopathy — with modern electrotherapy modalities. Having previously served as
+                  consultant physiotherapist across several leading hospitals in the city, he now
+                  dedicates 100% of his clinical practice full-time to Advance Physiotherapy Center.
                 </p>
                 <p>
                   His treatment philosophy centers on identifying the underlying biomechanical
@@ -141,24 +142,23 @@ export default function About() {
                 science and manual therapy techniques so patients benefit from up-to-date, evidence-based care.
               </p>
               <p>
-                This same commitment extends to the hospitals he consults at across {SITE.city}, where
-                he collaborates with orthopedic and general physicians on post-surgical and critical-care
-                rehabilitation cases.
+                Having served across premier hospitals in {SITE.city}, he collaborates closely with orthopedic
+                surgeons and physicians on complex post-surgical and rehabilitation cases.
               </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* HOSPITAL AFFILIATIONS */}
+      {/* HOSPITAL EXPERIENCE */}
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-label">Trusted Across the City</span>
-            <h2 className="section-title">Hospital Affiliations</h2>
+            <span className="section-label">Clinical Background</span>
+            <h2 className="section-title">Hospital Experience & Background</h2>
             <p className="section-subtitle">
-              {SITE.doctor} provides physiotherapy consultation at these leading hospitals in {SITE.city},
-              in addition to regular clinic hours at Advance Physiotherapy Center.
+              {SITE.doctor} previously provided clinical physiotherapy across these 7+ premier hospitals in {SITE.city},
+              and now brings this extensive hospital experience full-time to Advance Physiotherapy Center.
             </p>
           </div>
           <div className="hospital-grid">
@@ -193,7 +193,7 @@ export default function About() {
       <FaqSection
         items={aboutFaqs}
         title={`Doctor & Clinic FAQs`}
-        subtitle={`Common questions about ${SITE.doctor}'s qualifications, hospital affiliations, consultation fees, and appointment booking.`}
+        subtitle={`Common questions about ${SITE.doctor}'s qualifications, hospital experience, consultation fees, and appointment booking.`}
       />
     </>
   );

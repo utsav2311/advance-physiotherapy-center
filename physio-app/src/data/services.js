@@ -160,10 +160,10 @@ export const services = [
       'Neuro-Developmental Therapy (NDT) & PNF facilitation',
       'Parallel bar gait training and weight-shifting practice',
       'Electrical muscle stimulation for weakened muscles',
-      'Bedside ICU/IPD physiotherapy & home visit care',
+      'Bedside rehabilitation & home visit care',
     ],
     duration: '40 – 50 mins per session',
-    careMode: 'Clinic, hospital bedside, or home visit',
+    careMode: 'In-clinic or home visit',
   },
   {
     slug: 'posture-ergonomics',
@@ -219,10 +219,10 @@ export const services = [
     icon: 'heart-hand',
     image: '/images/medical-conference.webp',
     cardDescription: 'Pediatric development care, ICU/IPD bedside therapy, and burn rehabilitation.',
-    lead: 'Dr. Shahrukh Firoz provides specialized bedside physiotherapy for patients in intensive care and pediatric developmental care, along with structured rehabilitation for burn injuries and post-fracture cases. Sessions can be arranged in-clinic, at partner hospitals, or as a home visit for patients unable to travel.',
+    lead: 'Dr. Shahrukh Firoz brings deep experience in hospital-grade intensive care and pediatric developmental physiotherapy to his clinic, providing specialized rehabilitation for developmental motor delays, burn recovery, and post-fracture mobility. Sessions are conducted in-clinic or arranged as dedicated home visits for patients unable to travel.',
     symptoms: [
       'All Pediatric developmental and mobility cases',
-      'ICU & IPD bedside chest physiotherapy and mobilization',
+      'Bedside chest physiotherapy and mobilization protocols',
       'All burn case rehabilitation and scar mobility care',
       'Post-fracture management and immobilization recovery',
     ],
@@ -232,7 +232,7 @@ export const services = [
       'Pediatric motor development exercises',
       'Post-fracture strengthening & taping support',
     ],
-    careMode: 'Hospital bedside, clinic, or home visit',
+    careMode: 'In-clinic or dedicated home visit',
   },
 ];
 
