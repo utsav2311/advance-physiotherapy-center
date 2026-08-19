@@ -11,8 +11,8 @@ export default function Footer() {
             <Link to="/" className="brand-logo">
               <img src="/images/clinic-logo.webp" alt="Advance Physiotherapy Center" className="brand-logo-img" width="130" height="65" />
               <span className="brand-text">
-                <span className="brand-name">Advance Physiotherapy</span>
-                <span className="brand-sub">Center • {SITE.city}</span>
+                <span className="brand-name">Advance Physiotherapy Center</span>
+                <span className="brand-sub">Juran Chapra, {SITE.city}</span>
               </span>
             </Link>
             <p className="footer-brand-text">

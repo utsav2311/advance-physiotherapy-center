@@ -35,8 +35,8 @@ export default function Header() {
               height="60"
             />
             <span className="brand-text">
-              <span className="brand-name">Advance Physiotherapy</span>
-              <span className="brand-sub">Center • Muzaffarpur</span>
+              <span className="brand-name">Advance Physiotherapy Center</span>
+              <span className="brand-sub">Juran Chapra, Muzaffarpur</span>
             </span>
           </NavLink>
 
