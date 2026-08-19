@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 /**
- * Full-bleed background image carousel for the homepage hero.
- * Renders purely as a decorative background layer (z-index: 0) behind the
- * existing hero content/overlay — it does not affect layout, text, or
- * buttons in any way.
+ * Full-image Hero Slider.
+ * Displays the complete uncropped photograph (object-fit: contain)
+ * with a matching ambient backdrop to ensure zero image cutting on all screen sizes.
  */
 export default function HeroSlider({ images, intervalMs = 4500 }) {
   const [index, setIndex] = useState(0);
@@ -28,15 +27,26 @@ export default function HeroSlider({ images, intervalMs = 4500 }) {
         <motion.div
           key={images[index]}
           className="hero-slider-slide"
-          style={{ backgroundImage: `url(${images[index]})` }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.1, ease: 'easeInOut' }}
-        />
+          transition={{ duration: 0.9, ease: 'easeInOut' }}
+        >
+          {/* Ambient blurred backdrop so screen edges blend seamlessly */}
+          <div
+            className="hero-slide-backdrop"
+            style={{ backgroundImage: `url(${images[index]})` }}
+          />
+
+          {/* Complete uncropped foreground photo */}
+          <img
+            src={images[index]}
+            alt=""
+            className="hero-slide-main-img"
+          />
+        </motion.div>
       </AnimatePresence>
       <div className="hero-slider-overlay" />
     </div>
   );
 }
-
