@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd physio-app && npm install && npm run build",
+  "outputDirectory": "physio-app/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,4 +1,6 @@
+node_modules/
+physio-app/node_modules/
+physio-app/dist/
 .DS_Store
 .vercel
-node_modules
 *.log
