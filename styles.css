@@ -98,7 +98,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--slate-700);
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   overflow-x: hidden;
   position: relative;
   width: 100%;
@@ -855,7 +855,7 @@ input, select, textarea {
 }
 
 .featured-block-card {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   border-radius: var(--radius-lg);
   border: 1px solid var(--slate-200);
   overflow: hidden;
@@ -952,7 +952,7 @@ input, select, textarea {
 
 /* --- 10. COMPREHENSIVE SERVICES GRID --- */
 .services-grid-section {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   background-image: 
     radial-gradient(circle at 15% 20%, rgba(2, 132, 199, 0.04) 0%, transparent 40%),
     radial-gradient(circle at 85% 80%, rgba(15, 39, 68, 0.03) 0%, transparent 40%);
@@ -1139,7 +1139,7 @@ input, select, textarea {
 
 /* --- 12. ABOUT DOCTOR SECTION --- */
 .about-section {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   background-image: 
     radial-gradient(circle at 92% 35%, rgba(2, 132, 199, 0.06) 0%, transparent 50%),
     radial-gradient(circle at 8% 80%, rgba(15, 39, 68, 0.04) 0%, transparent 45%),
@@ -1404,7 +1404,7 @@ input, select, textarea {
 
 /* --- 15. ASYMMETRIC CLINIC GALLERY --- */
 .gallery-section {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
 }
 
 .asymmetric-gallery-grid {
@@ -1653,7 +1653,7 @@ input, select, textarea {
 
 /* --- 17. FREQUENTLY ASKED QUESTIONS (ACCORDION) --- */
 .faq-section {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   background-image: 
     radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.05) 0%, transparent 55%),
     radial-gradient(circle at 90% 90%, rgba(15, 39, 68, 0.03) 0%, transparent 45%),
@@ -2342,7 +2342,7 @@ input, select, textarea {
 }
 
 .page-hero-section {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   background-image: 
     radial-gradient(circle at 20% 20%, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(15, 39, 68, 0.04) 0%, transparent 50%);
@@ -2537,7 +2537,7 @@ input, select, textarea {
 }
 
 .related-services-section {
-  background-color: var(--warm-white);
+  background-color: #f8fafc;
   border-top: 1px solid var(--slate-200);
 }
 
@@ -3424,4 +3424,220 @@ img, iframe, svg, video {
   0% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.3; }
   50% { transform: translateY(-35px) translateX(25px) scale(1.2); opacity: 0.8; }
   100% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.3; }
+}
+
+
+/* Ensure all main sections let the dynamic background shine through */
+body {
+  background-color: #f8fafc;
+  background-image: radial-gradient(rgba(2, 132, 199, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.section,
+.hero-section,
+.about-section,
+.why-section,
+.services-section,
+.standards-section,
+.gallery-section,
+.reviews-section,
+.faq-section,
+.contact-section,
+.process-section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Glassmorphic content cards that let ambient glow shine through */
+.featured-block-card,
+.service-clean-card,
+.process-step-card,
+.why-clean-card,
+.review-clean-card,
+.faq-item,
+.reviews-summary-card,
+.contact-info-block,
+.doctor-profile-card,
+.service-detail-card,
+.service-detail-sidebar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* ==========================================================================
+   ENHANCED VIVID MOVING AMBIENT BACKGROUND SYSTEM
+   ========================================================================== */
+.ambient-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(65px);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.ambient-orb.orb-1 {
+  width: 650px;
+  height: 650px;
+  top: -100px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.38) 0%, rgba(2, 132, 199, 0.18) 45%, transparent 70%);
+  animation: floatAmbientOrb1 20s ease-in-out infinite alternate;
+}
+
+.ambient-orb.orb-2 {
+  width: 720px;
+  height: 720px;
+  bottom: -120px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.34) 0%, rgba(3, 105, 161, 0.16) 45%, transparent 70%);
+  animation: floatAmbientOrb2 25s ease-in-out infinite alternate;
+}
+
+.ambient-orb.orb-3 {
+  width: 520px;
+  height: 520px;
+  top: 35%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(14, 165, 233, 0.12) 45%, transparent 70%);
+  animation: floatAmbientOrb3 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb.orb-4 {
+  width: 580px;
+  height: 580px;
+  top: 55%;
+  right: 8%;
+  background: radial-gradient(circle, rgba(3, 105, 161, 0.28) 0%, rgba(2, 132, 199, 0.12) 45%, transparent 70%);
+  animation: floatAmbientOrb4 22s ease-in-out infinite alternate;
+}
+
+.ambient-spine-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.ambient-wave {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: drawStreamWave 18s linear infinite alternate;
+}
+
+.ambient-wave.wave-2 {
+  animation: drawStreamWave 24s linear infinite alternate-reverse;
+}
+
+.ambient-floating-rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ambient-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(2, 132, 199, 0.22);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.ambient-ring.r1 {
+  width: 240px;
+  height: 240px;
+  top: 15%;
+  right: 12%;
+  animation: rotateRing 30s linear infinite, floatSlow 8s ease-in-out infinite alternate;
+}
+
+.ambient-ring.r2 {
+  width: 320px;
+  height: 320px;
+  bottom: 20%;
+  left: 8%;
+  animation: rotateRingRev 40s linear infinite, floatAlt 9s ease-in-out infinite alternate;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateRingRev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.ambient-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 1) 0%, rgba(2, 132, 199, 0.4) 60%, transparent 100%);
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.8), 0 0 4px rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.particle.p1 { width: 8px; height: 8px; top: 18%; left: 8%; animation: floatParticle 14s infinite ease-in-out; }
+.particle.p2 { width: 10px; height: 10px; top: 55%; left: 22%; animation: floatParticle 18s infinite ease-in-out 2s; }
+.particle.p3 { width: 7px; height: 7px; top: 35%; right: 15%; animation: floatParticle 16s infinite ease-in-out 4s; }
+.particle.p4 { width: 9px; height: 9px; top: 75%; right: 25%; animation: floatParticle 20s infinite ease-in-out 1s; }
+.particle.p5 { width: 8px; height: 8px; top: 12%; right: 10%; animation: floatParticle 15s infinite ease-in-out 3s; }
+.particle.p6 { width: 11px; height: 11px; top: 65%; left: 6%; animation: floatParticle 22s infinite ease-in-out 5s; }
+
+@keyframes floatAmbientOrb1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(22vw, 24vh, 0) scale(1.22); }
+  100% { transform: translate3d(38vw, 10vh, 0) scale(0.9); }
+}
+
+@keyframes floatAmbientOrb2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-24vw, -26vh, 0) scale(1.18); }
+  100% { transform: translate3d(-40vw, -12vh, 0) scale(0.88); }
+}
+
+@keyframes floatAmbientOrb3 {
+  0% { transform: translate3d(0, 0, 0) scale(0.92); }
+  50% { transform: translate3d(22vw, -18vh, 0) scale(1.25); }
+  100% { transform: translate3d(-10vw, 26vh, 0) scale(1); }
+}
+
+@keyframes floatAmbientOrb4 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-26vw, 18vh, 0) scale(1.15); }
+  100% { transform: translate3d(15vw, -22vh, 0) scale(0.92); }
+}
+
+@keyframes drawStreamWave {
+  0% { stroke-dashoffset: 2000; transform: translateY(0px); }
+  50% { stroke-dashoffset: 1000; transform: translateY(-16px); }
+  100% { stroke-dashoffset: 0; transform: translateY(16px); }
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.4; }
+  50% { transform: translateY(-45px) translateX(30px) scale(1.3); opacity: 1; }
+  100% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.4; }
 }
