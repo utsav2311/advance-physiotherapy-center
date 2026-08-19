@@ -220,9 +220,12 @@ function initScrollReveal() {
 }
 
 /**
- * 6. Dynamic Ambient Parallax & Floating Movement System
+ * 6. Dynamic Ambient Parallax & Floating Movement System (Desktop Only)
  */
 function initAmbientParallax() {
+  // Only enable mouse parallax on devices with fine pointer controls (desktops)
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
   const orbs = document.querySelectorAll('.ambient-orb');
   const stream = document.querySelector('.ambient-spine-stream');
   if (!orbs.length) return;
@@ -232,17 +235,17 @@ function initAmbientParallax() {
   let mouseY = 0;
 
   window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 35;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 35;
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 30;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 30;
 
     if (!ticking) {
       requestAnimationFrame(() => {
         orbs.forEach((orb, i) => {
-          const factor = (i + 1) * 0.35;
+          const factor = (i + 1) * 0.3;
           orb.style.transform = `translate3d(${mouseX * factor}px, ${mouseY * factor}px, 0)`;
         });
         if (stream) {
-          stream.style.transform = `translate3d(${mouseX * 0.15}px, ${mouseY * 0.15}px, 0)`;
+          stream.style.transform = `translate3d(${mouseX * 0.12}px, ${mouseY * 0.12}px, 0)`;
         }
         ticking = false;
       });

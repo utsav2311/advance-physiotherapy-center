@@ -3287,153 +3287,27 @@ img, iframe, svg, video {
   }
 }
 
+
+
 /* ==========================================================================
-   DYNAMIC MOVING AMBIENT BACKGROUND SYSTEM (LIVING MEDICAL AESTHETIC)
+   LOW-OPACITY ELEGANT AMBIENT BACKGROUND (HARDWARE ACCELERATED & FIXED)
    ========================================================================== */
-.ambient-scene {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-  contain: strict;
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
-.ambient-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.65;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  pointer-events: none;
-}
-
-.ambient-orb.orb-1 {
-  width: 580px;
-  height: 580px;
-  top: -120px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.24) 0%, rgba(2, 132, 199, 0.1) 50%, transparent 70%);
-  animation: floatAmbientOrb1 26s ease-in-out infinite alternate;
-}
-
-.ambient-orb.orb-2 {
-  width: 650px;
-  height: 650px;
-  bottom: -150px;
-  right: -120px;
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.2) 0%, rgba(3, 105, 161, 0.08) 50%, transparent 70%);
-  animation: floatAmbientOrb2 32s ease-in-out infinite alternate;
-}
-
-.ambient-orb.orb-3 {
-  width: 480px;
-  height: 480px;
-  top: 40%;
-  left: 15%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 70%);
-  animation: floatAmbientOrb3 22s ease-in-out infinite alternate;
-}
-
-.ambient-orb.orb-4 {
-  width: 520px;
-  height: 520px;
-  top: 60%;
-  right: 15%;
-  background: radial-gradient(circle, rgba(3, 105, 161, 0.14) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 70%);
-  animation: floatAmbientOrb4 28s ease-in-out infinite alternate;
-}
-
-.ambient-spine-stream {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.ambient-wave {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation: drawStreamWave 22s linear infinite alternate;
-}
-
-.ambient-wave.wave-2 {
-  animation: drawStreamWave 28s linear infinite alternate-reverse;
-}
-
-.ambient-particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.ambient-particles .particle {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.8) 0%, rgba(2, 132, 199, 0) 70%);
-  box-shadow: 0 0 10px rgba(14, 165, 233, 0.6);
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.particle.p1 { width: 6px; height: 6px; top: 20%; left: 10%; animation: floatParticle 18s infinite ease-in-out; }
-.particle.p2 { width: 8px; height: 8px; top: 60%; left: 25%; animation: floatParticle 24s infinite ease-in-out 3s; }
-.particle.p3 { width: 5px; height: 5px; top: 40%; right: 18%; animation: floatParticle 20s infinite ease-in-out 6s; }
-.particle.p4 { width: 7px; height: 7px; top: 80%; right: 30%; animation: floatParticle 22s infinite ease-in-out 2s; }
-.particle.p5 { width: 6px; height: 6px; top: 15%; right: 12%; animation: floatParticle 19s infinite ease-in-out 5s; }
-.particle.p6 { width: 9px; height: 9px; top: 70%; left: 8%; animation: floatParticle 25s infinite ease-in-out 4s; }
-
-@keyframes floatAmbientOrb1 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(18vw, 20vh, 0) scale(1.18); }
-  100% { transform: translate3d(32vw, 8vh, 0) scale(0.92); }
-}
-
-@keyframes floatAmbientOrb2 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-20vw, -22vh, 0) scale(1.15); }
-  100% { transform: translate3d(-35vw, -10vh, 0) scale(0.9); }
-}
-
-@keyframes floatAmbientOrb3 {
-  0% { transform: translate3d(0, 0, 0) scale(0.95); }
-  50% { transform: translate3d(18vw, -15vh, 0) scale(1.2); }
-  100% { transform: translate3d(-8vw, 22vh, 0) scale(1); }
-}
-
-@keyframes floatAmbientOrb4 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-22vw, 15vh, 0) scale(1.12); }
-  100% { transform: translate3d(12vw, -18vh, 0) scale(0.95); }
-}
-
-@keyframes drawStreamWave {
-  0% { stroke-dashoffset: 2000; transform: translateY(0px); }
-  50% { stroke-dashoffset: 1000; transform: translateY(-12px); }
-  100% { stroke-dashoffset: 0; transform: translateY(12px); }
-}
-
-@keyframes floatParticle {
-  0% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.3; }
-  50% { transform: translateY(-35px) translateX(25px) scale(1.2); opacity: 0.8; }
-  100% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.3; }
-}
-
-
-/* Ensure all main sections let the dynamic background shine through */
 body {
   background-color: #f8fafc;
-  background-image: radial-gradient(rgba(2, 132, 199, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(2, 132, 199, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
+/* Base Sections allow ambient living glow to subtly show behind glassmorphic surfaces */
 .section,
 .hero-section,
 .about-section,
@@ -3449,7 +3323,7 @@ body {
   background-image: none !important;
 }
 
-/* Glassmorphic content cards that let ambient glow shine through */
+/* Clean glassmorphic cards with crisp contrast */
 .featured-block-card,
 .service-clean-card,
 .process-step-card,
@@ -3461,117 +3335,125 @@ body {
 .doctor-profile-card,
 .service-detail-card,
 .service-detail-sidebar {
-  background: rgba(255, 255, 255, 0.92) !important;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
 }
 
-/* ==========================================================================
-   ENHANCED VIVID MOVING AMBIENT BACKGROUND SYSTEM
-   ========================================================================== */
+/* Ambient Scene strictly fixed to viewport for buttery-smooth mobile and desktop scrolling */
 .ambient-scene {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
   z-index: -1;
   overflow: hidden;
+  contain: strict;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
+/* Soft Low-Opacity Diffused Gradient Orbs */
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(65px);
+  filter: blur(95px);
+  opacity: 0.28;
   will-change: transform;
   pointer-events: none;
 }
 
 .ambient-orb.orb-1 {
-  width: 650px;
-  height: 650px;
-  top: -100px;
-  left: -80px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.38) 0%, rgba(2, 132, 199, 0.18) 45%, transparent 70%);
-  animation: floatAmbientOrb1 20s ease-in-out infinite alternate;
+  width: 600px;
+  height: 600px;
+  top: -120px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, rgba(2, 132, 199, 0.12) 50%, transparent 70%);
+  animation: floatAmbientOrb1 26s ease-in-out infinite alternate;
 }
 
 .ambient-orb.orb-2 {
-  width: 720px;
-  height: 720px;
-  bottom: -120px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.34) 0%, rgba(3, 105, 161, 0.16) 45%, transparent 70%);
-  animation: floatAmbientOrb2 25s ease-in-out infinite alternate;
+  width: 680px;
+  height: 680px;
+  bottom: -150px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.26) 0%, rgba(3, 105, 161, 0.1) 50%, transparent 70%);
+  animation: floatAmbientOrb2 32s ease-in-out infinite alternate;
 }
 
 .ambient-orb.orb-3 {
-  width: 520px;
-  height: 520px;
-  top: 35%;
-  left: 10%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(14, 165, 233, 0.12) 45%, transparent 70%);
-  animation: floatAmbientOrb3 18s ease-in-out infinite alternate;
+  width: 480px;
+  height: 480px;
+  top: 40%;
+  left: 12%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(14, 165, 233, 0.08) 50%, transparent 70%);
+  animation: floatAmbientOrb3 22s ease-in-out infinite alternate;
 }
 
 .ambient-orb.orb-4 {
-  width: 580px;
-  height: 580px;
-  top: 55%;
-  right: 8%;
-  background: radial-gradient(circle, rgba(3, 105, 161, 0.28) 0%, rgba(2, 132, 199, 0.12) 45%, transparent 70%);
-  animation: floatAmbientOrb4 22s ease-in-out infinite alternate;
+  width: 540px;
+  height: 540px;
+  top: 60%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(3, 105, 161, 0.2) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 70%);
+  animation: floatAmbientOrb4 28s ease-in-out infinite alternate;
 }
 
+/* Subtle Low-Opacity Spinal Wave Streams */
 .ambient-spine-stream {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.85;
+  opacity: 0.24;
   pointer-events: none;
 }
 
 .ambient-wave {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  animation: drawStreamWave 18s linear infinite alternate;
+  animation: drawStreamWave 22s linear infinite alternate;
 }
 
 .ambient-wave.wave-2 {
-  animation: drawStreamWave 24s linear infinite alternate-reverse;
+  animation: drawStreamWave 28s linear infinite alternate-reverse;
 }
 
+/* Soft Floating Subtle Rings */
 .ambient-floating-rings {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  opacity: 0.16;
 }
 
 .ambient-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px dashed rgba(2, 132, 199, 0.22);
+  border: 1px dashed rgba(2, 132, 199, 0.35);
   pointer-events: none;
   will-change: transform;
 }
 
 .ambient-ring.r1 {
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   top: 15%;
   right: 12%;
-  animation: rotateRing 30s linear infinite, floatSlow 8s ease-in-out infinite alternate;
+  animation: rotateRing 35s linear infinite, floatSlow 8s ease-in-out infinite alternate;
 }
 
 .ambient-ring.r2 {
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   bottom: 20%;
   left: 8%;
-  animation: rotateRingRev 40s linear infinite, floatAlt 9s ease-in-out infinite alternate;
+  animation: rotateRingRev 45s linear infinite, floatAlt 9s ease-in-out infinite alternate;
 }
 
 @keyframes rotateRing {
@@ -3584,60 +3466,62 @@ body {
   to { transform: rotate(0deg); }
 }
 
+/* Gentle Soft Energy Particles */
 .ambient-particles {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  opacity: 0.32;
 }
 
 .ambient-particles .particle {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 1) 0%, rgba(2, 132, 199, 0.4) 60%, transparent 100%);
-  box-shadow: 0 0 14px rgba(14, 165, 233, 0.8), 0 0 4px rgba(255, 255, 255, 0.9);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.9) 0%, rgba(2, 132, 199, 0.2) 60%, transparent 100%);
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
   pointer-events: none;
 }
 
-.particle.p1 { width: 8px; height: 8px; top: 18%; left: 8%; animation: floatParticle 14s infinite ease-in-out; }
-.particle.p2 { width: 10px; height: 10px; top: 55%; left: 22%; animation: floatParticle 18s infinite ease-in-out 2s; }
-.particle.p3 { width: 7px; height: 7px; top: 35%; right: 15%; animation: floatParticle 16s infinite ease-in-out 4s; }
-.particle.p4 { width: 9px; height: 9px; top: 75%; right: 25%; animation: floatParticle 20s infinite ease-in-out 1s; }
-.particle.p5 { width: 8px; height: 8px; top: 12%; right: 10%; animation: floatParticle 15s infinite ease-in-out 3s; }
-.particle.p6 { width: 11px; height: 11px; top: 65%; left: 6%; animation: floatParticle 22s infinite ease-in-out 5s; }
+.particle.p1 { width: 6px; height: 6px; top: 18%; left: 8%; animation: floatParticle 16s infinite ease-in-out; }
+.particle.p2 { width: 8px; height: 8px; top: 55%; left: 22%; animation: floatParticle 20s infinite ease-in-out 2s; }
+.particle.p3 { width: 5px; height: 5px; top: 35%; right: 15%; animation: floatParticle 18s infinite ease-in-out 4s; }
+.particle.p4 { width: 7px; height: 7px; top: 75%; right: 25%; animation: floatParticle 22s infinite ease-in-out 1s; }
+.particle.p5 { width: 6px; height: 6px; top: 12%; right: 10%; animation: floatParticle 17s infinite ease-in-out 3s; }
+.particle.p6 { width: 8px; height: 8px; top: 65%; left: 6%; animation: floatParticle 24s infinite ease-in-out 5s; }
 
 @keyframes floatAmbientOrb1 {
   0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(22vw, 24vh, 0) scale(1.22); }
-  100% { transform: translate3d(38vw, 10vh, 0) scale(0.9); }
+  50% { transform: translate3d(18vw, 20vh, 0) scale(1.15); }
+  100% { transform: translate3d(32vw, 8vh, 0) scale(0.92); }
 }
 
 @keyframes floatAmbientOrb2 {
   0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-24vw, -26vh, 0) scale(1.18); }
-  100% { transform: translate3d(-40vw, -12vh, 0) scale(0.88); }
+  50% { transform: translate3d(-20vw, -22vh, 0) scale(1.12); }
+  100% { transform: translate3d(-35vw, -10vh, 0) scale(0.9); }
 }
 
 @keyframes floatAmbientOrb3 {
-  0% { transform: translate3d(0, 0, 0) scale(0.92); }
-  50% { transform: translate3d(22vw, -18vh, 0) scale(1.25); }
-  100% { transform: translate3d(-10vw, 26vh, 0) scale(1); }
+  0% { transform: translate3d(0, 0, 0) scale(0.95); }
+  50% { transform: translate3d(18vw, -15vh, 0) scale(1.18); }
+  100% { transform: translate3d(-8vw, 22vh, 0) scale(1); }
 }
 
 @keyframes floatAmbientOrb4 {
   0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-26vw, 18vh, 0) scale(1.15); }
-  100% { transform: translate3d(15vw, -22vh, 0) scale(0.92); }
+  50% { transform: translate3d(-22vw, 15vh, 0) scale(1.1); }
+  100% { transform: translate3d(12vw, -18vh, 0) scale(0.95); }
 }
 
 @keyframes drawStreamWave {
   0% { stroke-dashoffset: 2000; transform: translateY(0px); }
-  50% { stroke-dashoffset: 1000; transform: translateY(-16px); }
-  100% { stroke-dashoffset: 0; transform: translateY(16px); }
+  50% { stroke-dashoffset: 1000; transform: translateY(-12px); }
+  100% { stroke-dashoffset: 0; transform: translateY(12px); }
 }
 
 @keyframes floatParticle {
-  0% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.4; }
-  50% { transform: translateY(-45px) translateX(30px) scale(1.3); opacity: 1; }
-  100% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.4; }
+  0% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.25; }
+  50% { transform: translateY(-35px) translateX(25px) scale(1.2); opacity: 0.7; }
+  100% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.25; }
 }
