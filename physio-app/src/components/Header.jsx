@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useScrolled } from '../hooks/useScrollPosition';
 import WhatsAppButton from './WhatsAppButton';
 import MobileDrawer from './MobileDrawer';
@@ -17,13 +17,23 @@ const NAV_LINKS = [
 export default function Header() {
   const scrolled = useScrolled(20);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
+  const headerClass = `site-header${scrolled ? ' scrolled' : ''}${isHome ? ' is-home' : ''}${isHome && !scrolled ? ' is-transparent-overlay' : ''}`;
 
   return (
     <>
-      <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
+      <header className={headerClass}>
         <div className="header-inner">
           <NavLink to="/" className="brand-logo" aria-label="Advance Physiotherapy Center Home">
-            <img src="/images/clinic-logo.webp" alt="Advance Physiotherapy Center Logo" className="brand-logo-img" width="120" height="60" />
+            <img
+              src="/images/clinic-logo.webp"
+              alt="Advance Physiotherapy Center Logo"
+              className="brand-logo-img"
+              width="120"
+              height="60"
+            />
             <span className="brand-text">
               <span className="brand-name">Advance Physiotherapy</span>
               <span className="brand-sub">Center • Muzaffarpur</span>

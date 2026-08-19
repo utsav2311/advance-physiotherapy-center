@@ -281,13 +281,67 @@ input, select, textarea {
   background: var(--white);
   border-bottom: 1px solid var(--gray-100);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: all var(--duration-base) var(--ease-out);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.site-header.is-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) {
+  background: linear-gradient(180deg, rgba(4, 21, 38, 0.6) 0%, rgba(4, 21, 38, 0.25) 60%, transparent 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .brand-name {
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .brand-sub {
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .nav-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .nav-link.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .mobile-nav-toggle {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.site-header.is-home.is-transparent-overlay:not(.scrolled) .hamburger-bar {
+  background: var(--white);
 }
 
 .site-header.scrolled {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom-color: var(--gray-200);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
 .header-inner {
@@ -328,6 +382,7 @@ input, select, textarea {
   color: var(--gray-900);
   line-height: 1.2;
   white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 .brand-sub {
@@ -337,6 +392,7 @@ input, select, textarea {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: color 0.3s ease;
 }
 
 /* Navigation */
@@ -389,6 +445,7 @@ input, select, textarea {
   border-radius: var(--radius-sm);
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
+  transition: all var(--duration-fast) var(--ease-out);
 }
 
 .hamburger-bar {
@@ -562,11 +619,12 @@ input, select, textarea {
 
 /* --- HERO SECTION (Homepage) --- */
 .hero-section {
-  min-height: 90vh;
-  min-height: 90dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding-top: calc(65px + clamp(2.5rem, 5vw, 4.5rem));
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
   position: relative;
   overflow: hidden;
   isolation: isolate;
