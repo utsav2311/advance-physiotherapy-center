@@ -258,7 +258,7 @@ input, select, textarea {
 }
 
 .glow-cta-btn {
-  animation: luxuryGlow 3.5s infinite alternate ease-in-out;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.32);
 }
 
 @keyframes luxuryGlow {
@@ -3524,4 +3524,92 @@ body {
   0% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.25; }
   50% { transform: translateY(-35px) translateX(25px) scale(1.2); opacity: 0.7; }
   100% { transform: translateY(0px) translateX(0px) scale(0.8); opacity: 0.25; }
+}
+
+
+/* ==========================================================================
+   MOBILE SMOOTH SCROLLING & ZERO-FLICKER HARDWARE OPTIMIZATION
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+body {
+  touch-action: pan-y;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Eliminate button flicker / blinking on mobile devices */
+.btn,
+.hero-actions .btn,
+.mobile-sticky-bottom-bar,
+.site-header {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Disable heavy continuous GPU animations on mobile for native 60fps/120fps scrolling */
+  .btn::before {
+    display: none !important;
+  }
+  
+  .glow-cta-btn {
+    animation: none !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+  }
+
+  .ambient-orb {
+    filter: blur(40px) !important;
+    opacity: 0.18 !important;
+    animation-duration: 45s !important;
+  }
+
+  .ambient-spine-stream,
+  .ambient-floating-rings,
+  .ambient-particles {
+    display: none !important;
+  }
+
+  /* Solid crisp backgrounds on mobile cards to avoid heavy backdrop-filter compositing lag */
+  .featured-block-card,
+  .service-clean-card,
+  .process-step-card,
+  .why-clean-card,
+  .review-clean-card,
+  .faq-item,
+  .reviews-summary-card,
+  .contact-info-block,
+  .doctor-profile-card,
+  .service-detail-card,
+  .service-detail-sidebar {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .mobile-sticky-bottom-bar {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 -2px 12px rgba(15, 39, 68, 0.08) !important;
+  }
+
+  /* Ensure hero buttons are stable without layout shifts */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

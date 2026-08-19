@@ -44,17 +44,24 @@ function initClinicStatus() {
 }
 
 /**
- * 2. Sticky Header Styling on Scroll
+ * 2. Sticky Header Styling on Scroll (Throttled for Zero Layout Shift)
  */
 function initHeaderScroll() {
   const header = document.getElementById('site-header');
   if (!header) return;
 
+  let ticking = false;
   const handleScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 30) {
+          header.classList.add('scrolled');
+        } else if (window.scrollY < 10) {
+          header.classList.remove('scrolled');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   };
 
