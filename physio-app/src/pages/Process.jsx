@@ -3,12 +3,19 @@ import PageHero from '../components/PageHero';
 import ProcessStep from '../components/ProcessStep';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { processSteps } from '../data/process';
 import { SITE } from '../data/site';
 
 export default function Process() {
   return (
     <>
+      <Seo
+        title="Our Treatment Process"
+        description={`A systematic, evidence-based 4-step recovery pathway used by ${SITE.doctor} at Advance Physiotherapy Center, Muzaffarpur — from assessment to complete functional independence.`}
+        path="/process"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'Our Process' }]} />
 
       <PageHero

@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { GoogleIcon } from '../components/Icons';
 import { reviews, ratingSummary } from '../data/reviews';
 import { SITE } from '../data/site';
@@ -9,6 +10,12 @@ import { SITE } from '../data/site';
 export default function Reviews() {
   return (
     <>
+      <Seo
+        title="Patient Reviews"
+        description={`Rated ${ratingSummary.score}/5 on Google — real patient reviews and experiences from Advance Physiotherapy Center, Muzaffarpur.`}
+        path="/reviews"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'Reviews' }]} />
 
       <PageHero

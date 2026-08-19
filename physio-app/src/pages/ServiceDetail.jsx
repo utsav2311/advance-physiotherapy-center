@@ -3,6 +3,8 @@ import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
 import { WarnIcon, CheckIcon } from '../components/Icons';
 import { getServiceBySlug, getRelatedServices } from '../data/services';
 import { SITE } from '../data/site';
@@ -20,6 +22,38 @@ export default function ServiceDetail() {
 
   return (
     <>
+      <Seo
+        title={service.title}
+        description={service.cardDescription}
+        path={`/services/${service.slug}`}
+        image={service.image}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'MedicalTherapy',
+          name: service.title,
+          description: service.cardDescription,
+          url: `${SITE.url}/services/${service.slug}`,
+          provider: {
+            '@type': 'MedicalBusiness',
+            name: SITE.name,
+            url: SITE.url,
+          },
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+            { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE.url}/services` },
+            { '@type': 'ListItem', position: 3, name: service.shortTitle, item: `${SITE.url}/services/${service.slug}` },
+          ],
+        }}
+      />
+
       <Breadcrumb
         trail={[
           { label: 'Home', to: '/' },

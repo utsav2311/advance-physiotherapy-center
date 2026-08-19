@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { useClinicStatus } from '../hooks/useClinicStatus';
 import { LocationIcon, PhoneIcon, EmailIcon, ClockIcon } from '../components/Icons';
 import { SITE } from '../data/site';
@@ -26,6 +27,12 @@ export default function Contact() {
 
   return (
     <>
+      <Seo
+        title="Contact & Location"
+        description={`Visit Advance Physiotherapy Center at ${SITE.addressLine1}, ${SITE.addressLine2}. Call ${SITE.phonePrimaryDisplay} or book on WhatsApp. Home visits available.`}
+        path="/contact"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'Contact' }]} />
 
       <PageHero

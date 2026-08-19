@@ -7,7 +7,8 @@ import Reveal from '../components/Reveal';
 import ProcessStep from '../components/ProcessStep';
 import FaqItem from '../components/FaqItem';
 import HeroSlider from '../components/HeroSlider';
-import { useClinicStatus } from '../hooks/useClinicStatus';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
 import { services, featuredSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
@@ -35,13 +36,65 @@ const fadeUp = {
 };
 
 export default function Home() {
-  const status = useClinicStatus();
   const featured = services.filter((s) => featuredSlugs.includes(s.slug));
   const [openFaq, setOpenFaq] = useState(0);
   const homeFaqs = faqs.slice(0, 4);
 
   return (
     <>
+      <Seo
+        title="Best Physiotherapy Clinic in Muzaffarpur"
+        description="Advance Physiotherapy Center in Juran Chapra, Muzaffarpur, led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
+        path="/"
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'MedicalBusiness',
+          '@id': `${SITE.url}/#business`,
+          name: SITE.name,
+          image: `${SITE.url}/images/clinic-signboard.webp`,
+          url: SITE.url,
+          telephone: `+${SITE.phoneSecondary}`,
+          email: SITE.email,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: SITE.addressLine1,
+            addressLocality: SITE.city,
+            addressRegion: 'Bihar',
+            postalCode: '842001',
+            addressCountry: 'IN',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 26.1271542,
+            longitude: 85.3757161,
+          },
+          openingHoursSpecification: [
+            {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+              opens: '09:00',
+              closes: '18:00',
+            },
+          ],
+          medicalSpecialty: 'Physiotherapy',
+          founder: {
+            '@type': 'Person',
+            name: SITE.doctor,
+            jobTitle: 'Physiotherapist',
+            description: SITE.credentials,
+          },
+          hasMap: SITE.mapsShareUrl,
+          priceRange: '$$',
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: ratingSummary.score,
+            reviewCount: reviews.length,
+          },
+        }}
+      />
+
       {/* HERO */}
       <section className="hero-section" id="home">
         <HeroSlider images={heroSlides} />
@@ -105,51 +158,6 @@ export default function Home() {
                 <span className="hero-trust-text"><strong>5.0 Google Rating</strong> • Verified Reviews</span>
               </motion.div>
             </div>
-
-            <motion.div
-              className="hero-visual"
-              initial={{ opacity: 0, scale: 0.94 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="hero-image-frame">
-                <img
-                  src="/images/dr-shahrukh-clinic.webp"
-                  alt="Dr. Shahrukh Firoz in consultation"
-                  className="hero-img"
-                  width="1020"
-                  height="860"
-                  loading="eager"
-                />
-                <motion.div
-                  className="hero-float-card card-top"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <div className="float-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg>
-                  </div>
-                  <div className="float-card-text">
-                    <span className="float-card-title">{SITE.doctor}</span>
-                    <span className="float-card-desc">B.P.T., M.P.T. • Lead Physiotherapist</span>
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="hero-float-card card-bottom"
-                  animate={{ y: [0, 8, 0] }}
-                  transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
-                >
-                  <span className="status-dot" />
-                  <div className="float-card-text">
-                    <span className="float-card-title">{status}</span>
-                    <span className="float-card-desc">Juran Chapra, {SITE.city}</span>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>

@@ -4,11 +4,19 @@ import Reveal from '../components/Reveal';
 import HospitalChip from '../components/HospitalChip';
 import FacilityCard from '../components/FacilityCard';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { SITE, hospitals, facilities } from '../data/site';
 
 export default function About() {
   return (
     <>
+      <Seo
+        title={`About ${SITE.doctor}`}
+        description={`Meet ${SITE.doctor} (${SITE.credentials}), Reg. No. ${SITE.regNo} — lead physiotherapist at Advance Physiotherapy Center, Muzaffarpur. Hospital affiliations, facilities, and clinical credentials.`}
+        path="/about"
+        image="/images/dr-shahrukh-portrait.webp"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'About Doctor' }]} />
 
       <PageHero

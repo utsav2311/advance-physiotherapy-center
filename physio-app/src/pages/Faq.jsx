@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import FaqItem from '../components/FaqItem';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { faqs } from '../data/faqs';
 
 export default function Faq() {
@@ -10,6 +11,12 @@ export default function Faq() {
 
   return (
     <>
+      <Seo
+        title="Frequently Asked Questions"
+        description="Answers to common questions about physiotherapy sessions, home visits, treatment duration, and what to expect at Advance Physiotherapy Center, Muzaffarpur."
+        path="/faq"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'FAQ' }]} />
 
       <PageHero

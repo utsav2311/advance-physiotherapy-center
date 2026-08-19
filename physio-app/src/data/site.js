@@ -1,6 +1,10 @@
 // Central site constants — single source of truth for contact/clinic facts
 export const SITE = {
   name: 'Advance Physiotherapy Center',
+  // TODO: replace with the final production domain once a custom domain is
+  // connected in Vercel. Used for canonical URLs, Open Graph tags, and
+  // structured data / sitemap.xml — update in this one place when it changes.
+  url: 'https://advance-physiotherapy-center.vercel.app',
   doctor: 'Dr. Shahrukh Firoz',
   credentials: 'B.P.T., M.P.T., Ortho (Jaipur), M.G.A.P.T., M.R.A.P.T.',
   regNo: 'G00525',

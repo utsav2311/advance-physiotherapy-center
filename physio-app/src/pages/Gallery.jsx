@@ -2,11 +2,18 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { galleryItems } from '../data/gallery';
 
 export default function Gallery() {
   return (
     <>
+      <Seo
+        title="Clinic Gallery"
+        description="Photographs of the Advance Physiotherapy Center consultation chamber, therapy equipment, and professional honors in Muzaffarpur."
+        path="/gallery"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'Gallery' }]} />
 
       <PageHero

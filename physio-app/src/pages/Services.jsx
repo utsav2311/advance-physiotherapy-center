@@ -2,12 +2,19 @@ import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import ServiceCard from '../components/ServiceCard';
 import WhatsAppButton from '../components/WhatsAppButton';
+import Seo from '../components/Seo';
 import { services } from '../data/services';
 import { SITE } from '../data/site';
 
 export default function Services() {
   return (
     <>
+      <Seo
+        title="Physiotherapy Services"
+        description={`Explore all physiotherapy services at Advance Physiotherapy Center, Muzaffarpur — spine, cervical, knee, shoulder, sports, neuro, and more, supervised by ${SITE.doctor}.`}
+        path="/services"
+      />
+
       <Breadcrumb trail={[{ label: 'Home', to: '/' }, { label: 'Services' }]} />
 
       <PageHero

@@ -47,20 +47,22 @@ export default function HeroSlider({ images, intervalMs = 4500 }) {
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="hero-slider" aria-hidden="true">
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={images[index]}
-          className="hero-slider-slide"
-          style={{ backgroundImage: `url(${images[index]})` }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.1, ease: 'easeInOut' }}
-        />
-      </AnimatePresence>
+    <div className="hero-slider">
+      <div aria-hidden="true">
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={images[index]}
+            className="hero-slider-slide"
+            style={{ backgroundImage: `url(${images[index]})` }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.1, ease: 'easeInOut' }}
+          />
+        </AnimatePresence>
 
-      <div className="hero-slider-overlay" />
+        <div className="hero-slider-overlay" />
+      </div>
 
       {images.length > 1 && (
         <>
