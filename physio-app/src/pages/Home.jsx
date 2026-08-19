@@ -13,6 +13,7 @@ import { services, featuredSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
 import { faqs } from '../data/faqs';
+import { galleryItems } from '../data/gallery';
 import { heroSlides } from '../data/heroSlides';
 import { SITE } from '../data/site';
 import {
@@ -355,6 +356,40 @@ export default function Home() {
 
           <div className="text-center" style={{ marginTop: '2.5rem' }}>
             <Link to="/reviews" className="btn btn-secondary">Read More Reviews →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CLINIC GALLERY PREVIEW */}
+      <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="section-label">Inside Our Center</span>
+            <h2 className="section-title">Clinic & Treatment Facilities</h2>
+            <p className="section-subtitle">
+              Take a look inside our consultation chamber, electrotherapy bay, and treatment facility in Muzaffarpur.
+            </p>
+          </div>
+
+          <div className="gallery-grid">
+            {galleryItems.slice(0, 4).map((item, i) => (
+              <Reveal
+                key={item.caption}
+                index={i}
+                delayStep={0.08}
+                className={`gallery-item item-${item.size}`}
+              >
+                <img src={item.image} alt={item.alt} loading="lazy" />
+                <div className="gallery-caption"><span>{item.caption}</span></div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="text-center" style={{ marginTop: '2.5rem' }}>
+            <Link to="/gallery" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>
+              View All Photos ({galleryItems.length}) →
+            </Link>
+            <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
           </div>
         </div>
       </section>
