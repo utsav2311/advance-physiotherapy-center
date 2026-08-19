@@ -6,11 +6,13 @@ import StatCounter from '../components/StatCounter';
 import Reveal from '../components/Reveal';
 import ProcessStep from '../components/ProcessStep';
 import FaqItem from '../components/FaqItem';
+import HeroSlider from '../components/HeroSlider';
 import { useClinicStatus } from '../hooks/useClinicStatus';
 import { services, featuredSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
 import { faqs } from '../data/faqs';
+import { heroSlides } from '../data/heroSlides';
 import { SITE } from '../data/site';
 import {
   PhoneIcon,
@@ -42,6 +44,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero-section" id="home">
+        <HeroSlider images={heroSlides} />
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
