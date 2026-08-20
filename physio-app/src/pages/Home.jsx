@@ -490,7 +490,11 @@ export default function Home() {
                   <div className="contact-item-icon"><LocationIcon /></div>
                   <div>
                     <h5>Location</h5>
-                    <p>{SITE.addressLine1}, {SITE.addressLine2}</p>
+                    <p>
+                      <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                        {SITE.addressLine1}, {SITE.addressLine2}
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -523,7 +527,7 @@ export default function Home() {
               <div className="contact-actions">
                 <WhatsAppButton className="btn btn-primary btn-lg">Book on WhatsApp</WhatsAppButton>
                 <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
-                  Get Directions
+                  Open in Maps ↗
                 </a>
               </div>
             </Reveal>

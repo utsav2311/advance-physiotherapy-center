@@ -21,7 +21,7 @@ export const SITE = {
   hoursSunday: 'Sunday: Prior Appointment Only',
   mapsShareUrl: 'https://maps.app.goo.gl/Tt3rzuXcUSXWoy7g6',
   mapsEmbedUrl:
-    'https://maps.google.com/maps?q=Advance+physiotherapy+Centre,+Juran+Chapra,+Muzaffarpur,+Bihar&ll=26.1271542,85.3757161&z=17&output=embed',
+    'https://maps.google.com/maps?q=Advance+physiotherapy+Center,+Zila+parishad+market,+Juran+Chapra,+Brahmapura,+Muzaffarpur,+Bihar+842001&t=&z=17&ie=UTF8&iwloc=&output=embed',
 };
 
 export function waLink(message = DEFAULT_WA_MESSAGE) {
