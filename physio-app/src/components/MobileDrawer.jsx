@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import WhatsAppButton from './WhatsAppButton';
-import { InstagramIcon, FacebookIcon } from './Icons';
 import { SITE } from '../data/site';
 
 export default function MobileDrawer({ open, onClose, navLinks }) {
@@ -74,18 +73,6 @@ export default function MobileDrawer({ open, onClose, navLinks }) {
               <WhatsAppButton className="btn btn-primary btn-block" />
               <div className="drawer-contact-info">
                 <p><strong>Call:</strong> <a href={`tel:${SITE.phonePrimary}`}>{SITE.phonePrimaryDisplay}</a></p>
-                <p>
-                  <strong>Instagram:</strong>{' '}
-                  <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#e1306c' }}>
-                    <InstagramIcon style={{ width: 14, height: 14 }} /> {SITE.instagramHandle}
-                  </a>
-                </p>
-                <p>
-                  <strong>Facebook:</strong>{' '}
-                  <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#1877f2' }}>
-                    <FacebookIcon style={{ width: 14, height: 14 }} /> Advance Physiotherapy
-                  </a>
-                </p>
                 <p><strong>Location:</strong> Juran Chapra, {SITE.city}</p>
               </div>
             </div>
