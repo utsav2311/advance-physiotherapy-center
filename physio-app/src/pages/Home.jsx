@@ -39,27 +39,24 @@ const fadeUp = {
   }),
 };
 
-const trustPills = [
+const trustStrapItems = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
         <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
       </svg>
     ),
-    title: 'B.P.T., M.P.T. (Ortho)',
-    sub: 'Certified Specialist',
+    text: <><strong>B.P.T., M.P.T. (Ortho)</strong> Qualified</>,
     bg: '#0284c7',
   },
   {
     icon: <HospitalIcon />,
-    title: '7+ Hospitals Experience',
-    sub: 'Clinical Excellence',
+    text: <><strong>7+ Hospitals</strong> Experience</>,
     bg: '#059669',
   },
   {
     icon: <HomeVisitIcon />,
-    title: 'Home Visits Available',
-    sub: 'Bedside Care in Muzaffarpur',
+    text: <><strong>Home Visits</strong> Available</>,
     bg: '#4f46e5',
   },
   {
@@ -68,38 +65,34 @@ const trustPills = [
         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
       </svg>
     ),
-    title: '5.0★ Google Rating',
-    sub: '29+ Verified Reviews',
+    text: <><strong>5.0★ Google Rating</strong> (29+ Reviews)</>,
     bg: '#d97706',
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
         <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: 'Advanced Manual Therapy',
-    sub: 'Electro & Laser Modalities',
+    text: <><strong>Advanced Manual Therapy</strong> &amp; Modalities</>,
     bg: '#0d9488',
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
         <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
     ),
-    title: '1-on-1 Personalized Care',
-    sub: 'Direct Doctor Attention',
+    text: <><strong>Personalized 1-on-1</strong> Rehabilitation</>,
     bg: '#7c3aed',
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
         <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: 'Cupping & Spine Traction',
-    sub: 'Non-Surgical Pain Relief',
+    text: <><strong>Dry Cupping</strong> &amp; Spine Traction</>,
     bg: '#ea580c',
   },
 ];
@@ -235,22 +228,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP ANIMATED MARQUEE BANNER */}
+      {/* TRUST STRIP ANIMATED SINGLE STRAP LINEAR MARQUEE */}
       <section className="trust-strip-marquee" aria-label="Credentials and Quality Assurance">
         <div className="trust-marquee-wrapper">
-          <InfiniteSlider gap={18} reverse duration={32} durationOnHover={75}>
-            {trustPills.map((pill, i) => (
-              <div key={i} className="trust-strip-card">
-                <span className="trust-strip-card-icon" style={{ background: `${pill.bg}15`, color: pill.bg }}>
-                  {pill.icon}
-                </span>
-                <div className="trust-strip-card-text">
-                  <span className="trust-strip-card-title">{pill.title}</span>
-                  <span className="trust-strip-card-sub">{pill.sub}</span>
+          <div className="marquee-track-linear">
+            {/* Primary Track */}
+            <div className="trust-strap-group">
+              {trustStrapItems.map((item, i) => (
+                <div key={i} className="trust-strap-item">
+                  <span className="trust-strap-icon" style={{ background: `${item.bg}15`, color: item.bg }}>
+                    {item.icon}
+                  </span>
+                  <span>{item.text}</span>
+                  <span className="trust-strap-dot">•</span>
                 </div>
-              </div>
-            ))}
-          </InfiniteSlider>
+              ))}
+            </div>
+
+            {/* Duplicate Track (for seamless infinite loop) */}
+            <div className="trust-strap-group" aria-hidden="true">
+              {trustStrapItems.map((item, i) => (
+                <div key={`dup-${i}`} className="trust-strap-item">
+                  <span className="trust-strap-icon" style={{ background: `${item.bg}15`, color: item.bg }}>
+                    {item.icon}
+                  </span>
+                  <span>{item.text}</span>
+                  <span className="trust-strap-dot">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

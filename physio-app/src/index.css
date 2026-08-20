@@ -1034,16 +1034,16 @@ input, select, textarea {
   flex-shrink: 0;
 }
 
-/* --- TRUST STRIP MARQUEE BANNER --- */
+/* --- TRUST STRIP SINGLE STRAP LINEAR MARQUEE --- */
 .trust-strip-marquee {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: var(--white);
   border-top: 1px solid var(--gray-100);
   border-bottom: 1px solid var(--gray-100);
-  padding: 0.85rem 0;
+  padding: 0.65rem 0;
   overflow: hidden;
   position: relative;
   width: 100%;
-  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .trust-marquee-wrapper {
@@ -1055,42 +1055,65 @@ input, select, textarea {
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 6%,
-    black 94%,
+    black 4%,
+    black 96%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 6%,
-    black 94%,
+    black 4%,
+    black 96%,
     transparent 100%
   );
 }
 
-.trust-strip-card {
+.marquee-track-linear {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0;
+  will-change: transform;
+  animation: marqueeLinear 18s linear infinite;
+}
+
+.trust-strip-marquee:hover .marquee-track-linear {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeLinear {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.trust-strap-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.trust-strap-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 1.15rem;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-full);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all var(--duration-fast) var(--ease-out);
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  padding: 0 1.25rem;
   white-space: nowrap;
 }
 
-.trust-strip-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.12);
-  border-color: var(--primary-300);
+.trust-strap-item strong {
+  color: var(--gray-900);
+  font-weight: 700;
 }
 
-.trust-strip-card-icon {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
+.trust-strap-icon {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -1098,28 +1121,16 @@ input, select, textarea {
   flex-shrink: 0;
 }
 
-.trust-strip-card-icon svg {
-  width: 16px;
-  height: 16px;
+.trust-strap-icon svg {
+  width: 14px;
+  height: 14px;
 }
 
-.trust-strip-card-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.trust-strip-card-title {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--gray-900);
-}
-
-.trust-strip-card-sub {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--gray-500);
+.trust-strap-dot {
+  color: var(--gray-300);
+  font-size: 1rem;
+  margin-left: 1.25rem;
+  user-select: none;
 }
 
 /* --- SERVICE CARDS --- */
