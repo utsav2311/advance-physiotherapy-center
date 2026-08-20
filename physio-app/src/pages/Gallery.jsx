@@ -12,11 +12,15 @@ import { galleryFaqs } from '../data/faqs';
 export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
-  const categories = ['All', 'Consultation', 'Treatment', 'Awards', 'Clinic'];
+  const categories = ['All', 'Videos', 'Treatment', 'Consultation', 'Awards', 'Clinic'];
 
   const filteredItems = filter === 'All'
     ? galleryItems
-    : galleryItems.filter((item) => item.category === filter || (filter === 'Awards' && item.category === 'Conferences'));
+    : filter === 'Videos'
+    ? galleryItems.filter((item) => item.type === 'video')
+    : galleryItems.filter((item) => item.category === filter);
+
+  const videoCount = galleryItems.filter((item) => item.type === 'video').length;
 
   const handleOpenLightbox = (index) => {
     setLightboxIndex(index);
@@ -38,7 +42,7 @@ export default function Gallery() {
     <>
       <Seo
         title="Clinic Gallery"
-        description="Authentic photographs of Advance Physiotherapy Center consultation chamber, therapy equipment, and professional honors in Muzaffarpur."
+        description="Authentic photographs and HD treatment video clips of Advance Physiotherapy Center consultation chamber, therapy equipment, and patient recovery in Muzaffarpur."
         path="/gallery"
       />
 
@@ -46,8 +50,8 @@ export default function Gallery() {
 
       <PageHero
         label="Inside Our Clinic"
-        title="Clinic Gallery"
-        subtitle="Click any photograph below to view in full resolution."
+        title="Clinic Gallery &amp; Video Tour"
+        subtitle="Watch authentic therapy clips and browse high-resolution photographs of our clinical facilities."
         bgImage="/images/bg-medical-mesh.webp"
       />
 
@@ -64,7 +68,11 @@ export default function Gallery() {
                   setLightboxIndex(null);
                 }}
               >
-                {cat === 'All' ? `All Photos (${galleryItems.length})` : cat}
+                {cat === 'All'
+                  ? `All Media (${galleryItems.length})`
+                  : cat === 'Videos'
+                  ? `🎥 Videos (${videoCount})`
+                  : cat}
               </button>
             ))}
           </div>
@@ -72,10 +80,10 @@ export default function Gallery() {
           <div className="gallery-grid">
             {filteredItems.map((item, i) => (
               <Reveal
-                key={item.image}
+                key={item.video || item.image}
                 index={i}
-                delayStep={0.06}
-                className={`gallery-item item-${item.size}`}
+                delayStep={0.04}
+                className={`gallery-item item-${item.size || 'medium'} ${item.type === 'video' ? 'item-video' : ''}`}
                 onClick={() => handleOpenLightbox(i)}
                 tabIndex={0}
                 role="button"
@@ -87,7 +95,28 @@ export default function Gallery() {
                   }
                 }}
               >
-                <img src={item.image} alt={item.alt} loading={i < 2 ? 'eager' : 'lazy'} />
+                {item.type === 'video' ? (
+                  <div className="gallery-video-container">
+                    <video
+                      src={item.video}
+                      poster={item.image}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="gallery-video"
+                    />
+                    <div className="gallery-video-badge">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                      <span>HD Video</span>
+                    </div>
+                  </div>
+                ) : (
+                  <img src={item.image} alt={item.alt} loading={i < 4 ? 'eager' : 'lazy'} />
+                )}
                 <div className="gallery-caption"><span>{item.caption}</span></div>
               </Reveal>
             ))}

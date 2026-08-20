@@ -96,21 +96,33 @@ export default function Lightbox({
             </>
           )}
 
-          {/* Center Image Container */}
+          {/* Center Content Container */}
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <motion.div
-              key={currentItem.image}
+              key={currentItem.video || currentItem.image}
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
               className="lightbox-image-wrapper"
             >
-              <img
-                src={currentItem.image}
-                alt={currentItem.alt || currentItem.caption || 'Clinic photo'}
-                className="lightbox-img"
-              />
+              {currentItem.type === 'video' ? (
+                <video
+                  src={currentItem.video}
+                  poster={currentItem.image}
+                  controls
+                  autoPlay
+                  playsInline
+                  loop
+                  className="lightbox-video"
+                />
+              ) : (
+                <img
+                  src={currentItem.image}
+                  alt={currentItem.alt || currentItem.caption || 'Clinic photo'}
+                  className="lightbox-img"
+                />
+              )}
               {currentItem.caption && (
                 <div className="lightbox-caption-box">
                   <p className="lightbox-caption-text">{currentItem.caption}</p>

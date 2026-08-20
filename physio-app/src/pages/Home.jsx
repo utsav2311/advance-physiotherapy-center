@@ -456,10 +456,10 @@ export default function Home() {
           <div className="gallery-grid">
             {galleryItems.slice(0, 4).map((item, i) => (
               <Reveal
-                key={item.caption}
+                key={item.video || item.image}
                 index={i}
                 delayStep={0.08}
-                className={`gallery-item item-${item.size}`}
+                className={`gallery-item item-${item.size || 'medium'} ${item.type === 'video' ? 'item-video' : ''}`}
                 onClick={() => setHomeLightboxIndex(i)}
                 tabIndex={0}
                 role="button"
@@ -471,7 +471,28 @@ export default function Home() {
                   }
                 }}
               >
-                <img src={item.image} alt={item.alt} loading="lazy" />
+                {item.type === 'video' ? (
+                  <div className="gallery-video-container">
+                    <video
+                      src={item.video}
+                      poster={item.image}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="gallery-video"
+                    />
+                    <div className="gallery-video-badge">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                      <span>HD Video</span>
+                    </div>
+                  </div>
+                ) : (
+                  <img src={item.image} alt={item.alt} loading="lazy" />
+                )}
                 <div className="gallery-caption"><span>{item.caption}</span></div>
               </Reveal>
             ))}
@@ -479,7 +500,7 @@ export default function Home() {
 
           <div className="text-center" style={{ marginTop: '2.5rem' }}>
             <Link to="/gallery" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>
-              View All Photos ({galleryItems.length}) →
+              View All Photos &amp; Videos ({galleryItems.length}) →
             </Link>
             <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
           </div>
