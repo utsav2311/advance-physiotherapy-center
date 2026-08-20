@@ -12,7 +12,7 @@ import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
 import { InfiniteSlider } from '@/components/ui/logo-marquee';
-import { services, featuredSlugs } from '../data/services';
+import { services, homeImportantSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
 import { faqs } from '../data/faqs';
@@ -98,7 +98,7 @@ const trustStrapItems = [
 ];
 
 export default function Home() {
-  const featured = services.filter((s) => featuredSlugs.includes(s.slug));
+  const importantServices = services.filter((s) => homeImportantSlugs.includes(s.slug));
   const [homeLightboxIndex, setHomeLightboxIndex] = useState(null);
 
   return (
@@ -273,44 +273,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED SERVICES */}
+      {/* KEY PHYSIOTHERAPY SERVICES */}
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-label">Clinical Focus Areas</span>
-            <h2 className="section-title">Specialized Rehabilitation & Care</h2>
+            <span className="section-label">Primary Clinical Focus</span>
+            <h2 className="section-title">Key Physiotherapy Services</h2>
             <p className="section-subtitle">
-              Evidence-based protocols designed to address root causes of musculoskeletal pain.
-            </p>
-          </div>
-          <div className="featured-grid">
-            {featured.map((service, i) => (
-              <FeaturedServiceCard key={service.slug} service={service} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FULL SERVICES GRID */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-label">Comprehensive Treatments</span>
-            <h2 className="section-title">Physiotherapy Services</h2>
-            <p className="section-subtitle">
-              All treatments are individually tailored following a thorough assessment by {SITE.doctor}.
+              Evidence-based treatments for common spinal, joint, neurological, and sports conditions, personally assessed and treated by {SITE.doctor}.
             </p>
           </div>
           <div className="services-grid">
-            {services.map((service, i) => (
+            {importantServices.map((service, i) => (
               <ServiceCard key={service.slug} service={service} index={i} />
             ))}
           </div>
-          <div className="text-center" style={{ marginTop: '2.5rem' }}>
+          <div className="text-center" style={{ marginTop: '2.75rem' }}>
             <Link to="/services" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>
-              View All Services →
+              Explore All 10+ Specialized Services →
             </Link>
-            <WhatsAppButton className="btn btn-primary" />
+            <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
           </div>
         </div>
       </section>

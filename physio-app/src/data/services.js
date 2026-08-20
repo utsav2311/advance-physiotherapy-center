@@ -246,3 +246,12 @@ export function getRelatedServices(slug, count = 3) {
 }
 
 export const featuredSlugs = ['spine-back-pain', 'sports-rehabilitation', 'knee-joint-arthritis'];
+
+export const homeImportantSlugs = [
+  'spine-back-pain',
+  'cervical-neck-care',
+  'knee-joint-arthritis',
+  'frozen-shoulder',
+  'sports-rehabilitation',
+  'neurological-rehabilitation',
+];
