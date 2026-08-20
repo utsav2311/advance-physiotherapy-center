@@ -92,7 +92,18 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Advance Physiotherapy Centre. All Rights Reserved.</p>
-          <p className="footer-maker">Website crafted by <strong>Utsav</strong></p>
+          <p className="footer-maker">
+            Website crafted by{' '}
+            <a
+              href="https://www.instagram.com/ut.savk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-maker-link"
+              title="Utsav on Instagram (@ut.savk)"
+            >
+              <strong>Utsav</strong> ↗
+            </a>
+          </p>
         </div>
       </div>
     </footer>
