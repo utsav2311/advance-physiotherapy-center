@@ -6,6 +6,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import FaqSection from '../components/FaqSection';
 import Seo from '../components/Seo';
 import ReviewCard from '../components/ReviewCard';
+import MarqueeCard from '@/components/ui/marquee-card';
 import { GoogleIcon } from '../components/Icons';
 import { reviews, ratingSummary } from '../data/reviews';
 import { reviewsFaqs } from '../data/faqs';
@@ -22,8 +23,8 @@ export default function Reviews() {
   return (
     <>
       <Seo
-        title="Patient Reviews & Testimonials"
-        description={`Rated ${ratingSummary.score}/5 on Google — authentic patient reviews, recovery outcomes, and experiences from Advance Physiotherapy Centre, Muzaffarpur.`}
+        title={`Patient Reviews & Testimonials (${ratingSummary.reviewCountDisplay})`}
+        description={`Rated ${ratingSummary.score}/5 on Google based on ${ratingSummary.reviewCountDisplay} — authentic patient reviews, recovery outcomes, and experiences from Advance Physiotherapy Centre, Muzaffarpur.`}
         path="/reviews"
       />
 
@@ -32,7 +33,7 @@ export default function Reviews() {
       <PageHero
         label="Verified Patient Feedback"
         title="Patient Reviews &amp; Success Stories"
-        subtitle={`Real recovery experiences from patients treated at Advance Physiotherapy Centre across back pain, neck stiffness, joint mobility, and rehabilitation.`}
+        subtitle={`Real recovery experiences from 30+ patients treated at Advance Physiotherapy Centre across back pain, neck stiffness, joint mobility, and rehabilitation.`}
         bgImage="/images/bg-spine-biomech.webp"
       />
 
@@ -55,14 +56,14 @@ export default function Reviews() {
                     </svg>
                   ))}
                 </div>
-                <div className="count">100% 5.0 Star Rating on Google Reviews</div>
+                <div className="count">100% 5.0 Star Rating ({ratingSummary.reviewCountDisplay})</div>
               </div>
             </div>
 
             <div className="reviews-trust-pills">
-              <span className="reviews-trust-pill">✓ 100% Genuine Patient Feedback</span>
+              <span className="reviews-trust-pill">✓ {ratingSummary.reviewCountDisplay}</span>
               <span className="reviews-trust-pill">✓ Direct Treatment by {SITE.doctor}</span>
-              <span className="reviews-trust-pill">✓ Evidence-Based Recovery</span>
+              <span className="reviews-trust-pill">✓ 100% Evidence-Based Recovery</span>
             </div>
 
             <div className="reviews-summary-actions">
@@ -84,6 +85,14 @@ export default function Reviews() {
             </div>
           </Reveal>
 
+          {/* RECOVERY HIGHLIGHTS MARQUEE REEL */}
+          <div style={{ marginBottom: '3.5rem' }}>
+            <div className="text-center" style={{ marginBottom: '1rem' }}>
+              <span className="section-label" style={{ fontSize: '0.75rem' }}>Live Patient Recovery Stream</span>
+            </div>
+            <MarqueeCard speed="normal" pauseOnHover={true} />
+          </div>
+
           {/* FILTER PILLS */}
           <div className="filter-pills" style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
             {categories.map((cat) => (
@@ -93,7 +102,7 @@ export default function Reviews() {
                 className={`btn btn-sm ${filter === cat ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setFilter(cat)}
               >
-                {cat === 'All' ? `All Reviews (${reviews.length})` : cat}
+                {cat === 'All' ? `All Reviews (${reviews.length})` : `${cat} (${reviews.filter(r => r.category === cat).length})`}
               </button>
             ))}
           </div>

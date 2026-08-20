@@ -12,6 +12,7 @@ import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
 import ReviewCard from '../components/ReviewCard';
+import MarqueeCard from '@/components/ui/marquee-card';
 import { services, featuredSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
@@ -450,15 +451,14 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="reviews-grid">
-            {reviews.slice(0, 3).map((r, i) => (
-              <ReviewCard key={r.name} review={r} index={i} />
-            ))}
+          {/* INFINITE MARQUEE PATIENT TESTIMONIALS */}
+          <div style={{ marginBottom: '2.5rem' }}>
+            <MarqueeCard speed="normal" pauseOnHover={true} />
           </div>
 
-          <div className="text-center" style={{ marginTop: '2.75rem' }}>
+          <div className="text-center" style={{ marginTop: '1.5rem' }}>
             <Link to="/reviews" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>
-              Read All {reviews.length}+ Patient Reviews →
+              Explore All {reviews.length}+ Patient Reviews &amp; FAQs →
             </Link>
             <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
           </div>

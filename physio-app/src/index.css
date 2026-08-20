@@ -2137,6 +2137,74 @@ input, select, textarea {
   }
 }
 
+/* --- MARQUEE & LIQUID GLASS REVIEWS --- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 16px)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap, 16px)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 45s) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 45s) linear infinite;
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap, 16px);
+  position: relative;
+  width: 100%;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-around;
+  gap: var(--gap, 16px);
+  min-width: 100%;
+}
+
+.liquid-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0, 0, 0, 0.08);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.liquid-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.18);
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+.marquee-reviews-wrapper {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
 /* --- FAQ --- */
 .faq-grid-layout {
   display: grid;
