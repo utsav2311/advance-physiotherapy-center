@@ -11,6 +11,7 @@ import HeroSlider from '../components/HeroSlider';
 import Lightbox from '../components/Lightbox';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
+import { InfiniteSlider } from '@/components/ui/logo-marquee';
 import { services, featuredSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
@@ -37,6 +38,71 @@ const fadeUp = {
     transition: { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] },
   }),
 };
+
+const trustPills = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
+      </svg>
+    ),
+    title: 'B.P.T., M.P.T. (Ortho)',
+    sub: 'Certified Specialist',
+    bg: '#0284c7',
+  },
+  {
+    icon: <HospitalIcon />,
+    title: '7+ Hospitals Experience',
+    sub: 'Clinical Excellence',
+    bg: '#059669',
+  },
+  {
+    icon: <HomeVisitIcon />,
+    title: 'Home Visits Available',
+    sub: 'Bedside Care in Muzaffarpur',
+    bg: '#4f46e5',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="#f59e0b">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+      </svg>
+    ),
+    title: '5.0★ Google Rating',
+    sub: '29+ Verified Reviews',
+    bg: '#d97706',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: 'Advanced Manual Therapy',
+    sub: 'Electro & Laser Modalities',
+    bg: '#0d9488',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    ),
+    title: '1-on-1 Personalized Care',
+    sub: 'Direct Doctor Attention',
+    bg: '#7c3aed',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    title: 'Cupping & Spine Traction',
+    sub: 'Non-Surgical Pain Relief',
+    bg: '#ea580c',
+  },
+];
 
 export default function Home() {
   const featured = services.filter((s) => featuredSlugs.includes(s.slug));
@@ -171,108 +237,20 @@ export default function Home() {
 
       {/* TRUST STRIP ANIMATED MARQUEE BANNER */}
       <section className="trust-strip-marquee" aria-label="Credentials and Quality Assurance">
-        <div className="marquee-wrapper">
-          <div className="marquee-track">
-            {/* Primary Track */}
-            <div className="marquee-group">
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
-                  </svg>
+        <div className="trust-marquee-wrapper">
+          <InfiniteSlider gap={18} reverse duration={32} durationOnHover={75}>
+            {trustPills.map((pill, i) => (
+              <div key={i} className="trust-strip-card">
+                <span className="trust-strip-card-icon" style={{ background: `${pill.bg}15`, color: pill.bg }}>
+                  {pill.icon}
                 </span>
-                <span><strong>B.P.T., M.P.T. (Ortho)</strong> Qualified</span>
-                <span className="marquee-separator">•</span>
+                <div className="trust-strip-card-text">
+                  <span className="trust-strip-card-title">{pill.title}</span>
+                  <span className="trust-strip-card-sub">{pill.sub}</span>
+                </div>
               </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon"><HospitalIcon className="" /></span>
-                <span><strong>7+ Hospitals</strong> Experience</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon"><HomeVisitIcon className="" /></span>
-                <span><strong>Home Visit</strong> Available</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
-                </span>
-                <span><strong>5.0★</strong> Google Rating</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </span>
-                <span><strong>Advanced Manual Therapy</strong> & Modalities</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </span>
-                <span><strong>Personalized 1-on-1</strong> Rehabilitation</span>
-                <span className="marquee-separator">•</span>
-              </div>
-            </div>
-
-            {/* Duplicate Track (for seamless infinite loop) */}
-            <div className="marquee-group" aria-hidden="true">
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z" />
-                  </svg>
-                </span>
-                <span><strong>B.P.T., M.P.T. (Ortho)</strong> Qualified</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon"><HospitalIcon className="" /></span>
-                <span><strong>7+ Hospitals</strong> Experience</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon"><HomeVisitIcon className="" /></span>
-                <span><strong>Home Visit</strong> Available</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
-                </span>
-                <span><strong>5.0★</strong> Google Rating</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </span>
-                <span><strong>Advanced Manual Therapy</strong> & Modalities</span>
-                <span className="marquee-separator">•</span>
-              </div>
-              <div className="trust-strip-item">
-                <span className="strip-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </span>
-                <span><strong>Personalized 1-on-1</strong> Rehabilitation</span>
-                <span className="marquee-separator">•</span>
-              </div>
-            </div>
-          </div>
+            ))}
+          </InfiniteSlider>
         </div>
       </section>
 
