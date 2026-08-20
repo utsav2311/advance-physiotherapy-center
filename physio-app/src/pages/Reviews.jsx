@@ -14,7 +14,7 @@ export default function Reviews() {
     <>
       <Seo
         title="Patient Reviews"
-        description={`Rated ${ratingSummary.score}/5 on Google — real patient reviews and experiences from Advance Physiotherapy Center, Muzaffarpur.`}
+        description={`Rated ${ratingSummary.score}/5 on Google — real patient reviews and experiences from Advance Physiotherapy Centre, Muzaffarpur.`}
         path="/reviews"
       />
 
@@ -23,7 +23,7 @@ export default function Reviews() {
       <PageHero
         label="Verified Feedback"
         title="Patient Reviews"
-        subtitle={`Real experiences from patients treated at Advance Physiotherapy Center across our full range of services.`}
+        subtitle={`Real experiences from patients treated at Advance Physiotherapy Centre across our full range of services.`}
         bgImage="/images/bg-spine-biomech.webp"
       />
 

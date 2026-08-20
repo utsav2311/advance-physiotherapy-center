@@ -52,7 +52,7 @@ export default function FaqSection({
               Message Dr. Shahrukh Firoz directly for quick clinical guidance.
             </p>
             <div className="faq-help-actions">
-              <WhatsAppButton className="btn btn-primary btn-block" message="Hello Dr. Shahrukh, I have a question about physiotherapy treatment at Advance Physiotherapy Center." />
+              <WhatsAppButton className="btn btn-primary btn-block" message="Hello Dr. Shahrukh, I have a question about physiotherapy treatment at Advance Physiotherapy Centre." />
               <a href={`tel:${SITE.phonePrimary}`} className="btn btn-secondary btn-block">
                 Call {SITE.phonePrimaryDisplay}
               </a>

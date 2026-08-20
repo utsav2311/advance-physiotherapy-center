@@ -26,16 +26,16 @@ export default function Header() {
     <>
       <header className={headerClass}>
         <div className="header-inner">
-          <NavLink to="/" className="brand-logo" aria-label="Advance Physiotherapy Center Home">
+          <NavLink to="/" className="brand-logo" aria-label="Advance Physiotherapy Centre Home">
             <img
               src="/images/clinic-logo.webp"
-              alt="Advance Physiotherapy Center Logo"
+              alt="Advance Physiotherapy Centre Logo"
               className="brand-logo-img"
               width="120"
               height="60"
             />
             <span className="brand-text">
-              <span className="brand-name">Advance Physiotherapy Center</span>
+              <span className="brand-name">Advance Physiotherapy Centre</span>
               <span className="brand-sub">Juran Chapra, Muzaffarpur</span>
             </span>
           </NavLink>

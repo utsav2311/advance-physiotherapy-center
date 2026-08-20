@@ -156,7 +156,7 @@ export default function ServiceDetail() {
       <FaqSection
         items={serviceDetailFaqs}
         title={`${service.shortTitle} & Treatment FAQs`}
-        subtitle={`Key answers regarding ${service.title.toLowerCase()}, session protocols, and recovery expectations at Advance Physiotherapy Center.`}
+        subtitle={`Key answers regarding ${service.title.toLowerCase()}, session protocols, and recovery expectations at Advance Physiotherapy Centre.`}
       />
     </>
   );

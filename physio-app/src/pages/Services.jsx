@@ -13,7 +13,7 @@ export default function Services() {
     <>
       <Seo
         title="Physiotherapy Services"
-        description={`Explore all physiotherapy services at Advance Physiotherapy Center, Muzaffarpur — spine, cervical, knee, shoulder, sports, neuro, and more, supervised by ${SITE.doctor}.`}
+        description={`Explore all physiotherapy services at Advance Physiotherapy Centre, Muzaffarpur — spine, cervical, knee, shoulder, sports, neuro, and more, supervised by ${SITE.doctor}.`}
         path="/services"
       />
 

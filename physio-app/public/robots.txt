@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://advance-physiotherapy-center.vercel.app/sitemap.xml
+Sitemap: https://www.advancephysiotherapycentre.in/sitemap.xml

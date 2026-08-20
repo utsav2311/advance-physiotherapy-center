@@ -47,7 +47,7 @@ export default function MobileDrawer({ open, onClose, navLinks }) {
               <NavLink to="/" className="brand-logo" onClick={onClose}>
                 <img src="/images/clinic-logo.webp" alt="Logo" className="brand-logo-img" width="100" height="50" />
                 <span className="brand-text">
-                  <span className="brand-name">Advance Physiotherapy Center</span>
+                  <span className="brand-name">Advance Physiotherapy Centre</span>
                   <span className="brand-sub">Juran Chapra, Muzaffarpur</span>
                 </span>
               </NavLink>

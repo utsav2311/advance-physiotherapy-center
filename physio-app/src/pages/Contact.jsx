@@ -12,7 +12,7 @@ import { contactFaqs } from '../data/faqs';
 const visitTips = [
   {
     title: 'Finding Us',
-    text: `The clinic is inside Zila Parishad Market, right next to Apollo Dental Hospital on Juran Chapra Road — look for the Advance Physiotherapy Center signboard. Ground-level parking is available near the market entrance.`,
+    text: `The clinic is inside Zila Parishad Market, right next to Apollo Dental Hospital on Juran Chapra Road — look for the Advance Physiotherapy Centre signboard. Ground-level parking is available near the market entrance.`,
   },
   {
     title: 'What to Bring',
@@ -31,7 +31,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact & Location"
-        description={`Visit Advance Physiotherapy Center at ${SITE.addressLine1}, ${SITE.addressLine2}. Call ${SITE.phonePrimaryDisplay} or book on WhatsApp. Home visits available.`}
+        description={`Visit Advance Physiotherapy Centre at ${SITE.addressLine1}, ${SITE.addressLine2}. Call ${SITE.phonePrimaryDisplay} or book on WhatsApp. Home visits available.`}
         path="/contact"
       />
 
@@ -39,8 +39,8 @@ export default function Contact() {
 
       <PageHero
         label="Get In Touch"
-        title="Visit Advance Physiotherapy Center"
-        subtitle={`Located in the medical center of Juran Chapra, ${SITE.city}. Direct appointments and easy directions.`}
+        title="Visit Advance Physiotherapy Centre"
+        subtitle={`Located in the medical centre of Juran Chapra, ${SITE.city}. Direct appointments and easy directions.`}
         bgImage="/images/bg-spine-biomech.webp"
       />
 

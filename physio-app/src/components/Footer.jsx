@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="brand-logo">
-              <img src="/images/clinic-logo.webp" alt="Advance Physiotherapy Center" className="brand-logo-img" width="130" height="65" />
+              <img src="/images/clinic-logo.webp" alt="Advance Physiotherapy Centre" className="brand-logo-img" width="130" height="65" />
               <span className="brand-text">
-                <span className="brand-name">Advance Physiotherapy Center</span>
+                <span className="brand-name">Advance Physiotherapy Centre</span>
                 <span className="brand-sub">Juran Chapra, {SITE.city}</span>
               </span>
             </Link>
@@ -25,7 +25,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn footer-instagram-btn"
-                aria-label="Follow Advance Physiotherapy Center on Instagram"
+                aria-label="Follow Advance Physiotherapy Centre on Instagram"
               >
                 <InstagramIcon className="footer-social-icon" />
                 <span>Instagram</span>
@@ -35,7 +35,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn footer-facebook-btn"
-                aria-label="Follow Advance Physiotherapy Center on Facebook"
+                aria-label="Follow Advance Physiotherapy Centre on Facebook"
               >
                 <FacebookIcon className="footer-social-icon" />
                 <span>Facebook</span>
@@ -74,7 +74,7 @@ export default function Footer() {
               </p>
               <p>
                 <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className="footer-facebook-link">
-                  <FacebookIcon className="footer-mini-icon" /> Advance Physiotherapy Center
+                  <FacebookIcon className="footer-mini-icon" /> Advance Physiotherapy Centre
                 </a>
               </p>
               <p>{SITE.hours} • Home Visit Available</p>
@@ -91,7 +91,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Advance Physiotherapy Center. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Advance Physiotherapy Centre. All Rights Reserved.</p>
           <p className="footer-maker">Website crafted by <strong>Utsav</strong></p>
         </div>
       </div>

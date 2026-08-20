@@ -42,7 +42,7 @@ export default function Gallery() {
     <>
       <Seo
         title="Clinic Gallery"
-        description="Authentic photographs and HD treatment video clips of Advance Physiotherapy Center consultation chamber, therapy equipment, and patient recovery in Muzaffarpur."
+        description="Authentic photographs and HD treatment video clips of Advance Physiotherapy Centre consultation chamber, therapy equipment, and patient recovery in Muzaffarpur."
         path="/gallery"
       />
 

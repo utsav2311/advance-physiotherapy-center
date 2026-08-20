@@ -46,7 +46,7 @@ export default function Home() {
     <>
       <Seo
         title="Best Physiotherapy Clinic in Muzaffarpur"
-        description="Advance Physiotherapy Center in Juran Chapra, Muzaffarpur, led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
+        description="Advance Physiotherapy Centre in Juran Chapra, Muzaffarpur, led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
         path="/"
       />
       <JsonLd
@@ -111,7 +111,7 @@ export default function Home() {
               >
                 <span className="hero-eyebrow-line" />
                 <span className="hero-eyebrow-text">
-                  ADVANCE PHYSIOTHERAPY CENTER • {SITE.city.toUpperCase()} &amp; BEYOND
+                  ADVANCE PHYSIOTHERAPY CENTRE • {SITE.city.toUpperCase()} &amp; BEYOND
                 </span>
               </motion.div>
 
@@ -360,7 +360,7 @@ export default function Home() {
 
               <div className="about-text">
                 <p>
-                  At <strong>Advance Physiotherapy Center</strong>, every patient is personally assessed and
+                  At <strong>Advance Physiotherapy Centre</strong>, every patient is personally assessed and
                   treated by {SITE.doctor}. We identify the underlying mechanical root causes of pain rather
                   than offering temporary fixes.
                 </p>
@@ -446,7 +446,7 @@ export default function Home() {
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-label">Inside Our Center</span>
+            <span className="section-label">Inside Our Centre</span>
             <h2 className="section-title">Clinic & Treatment Facilities</h2>
             <p className="section-subtitle">
               Take a look inside our consultation chamber, electrotherapy bay, and treatment facility in Muzaffarpur.

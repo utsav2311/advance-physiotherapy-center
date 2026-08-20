@@ -18,7 +18,7 @@ export const reviews = [
     initials: 'PK',
     name: 'Pooja Kumari',
     label: 'Frozen Shoulder',
-    text: "Very cooperative and polite behavior. Dr. Shahrukh explained exercises that helped me recover from frozen shoulder without surgery. Best center in Juran Chapra.",
+    text: "Very cooperative and polite behavior. Dr. Shahrukh explained exercises that helped me recover from frozen shoulder without surgery. Best centre in Juran Chapra.",
   },
   {
     initials: 'SK',

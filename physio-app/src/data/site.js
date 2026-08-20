@@ -1,10 +1,7 @@
 // Central site constants — single source of truth for contact/clinic facts
 export const SITE = {
-  name: 'Advance Physiotherapy Center',
-  // TODO: replace with the final production domain once a custom domain is
-  // connected in Vercel. Used for canonical URLs, Open Graph tags, and
-  // structured data / sitemap.xml — update in this one place when it changes.
-  url: 'https://advance-physiotherapy-center.vercel.app',
+  name: 'Advance Physiotherapy Centre',
+  url: 'https://www.advancephysiotherapycentre.in',
   doctor: 'Dr. Shahrukh Firoz',
   credentials: 'B.P.T., M.P.T., Ortho (Jaipur), M.G.A.P.T., M.R.A.P.T.',
   regNo: 'G00525',
@@ -19,12 +16,12 @@ export const SITE = {
   instagramUrl: 'https://www.instagram.com/advancephysiotherapycenter1/',
   instagramHandle: '@advancephysiotherapycenter1',
   facebookUrl: 'https://www.facebook.com/share/1Epac1Hpwb/',
-  facebookHandle: 'Advance Physiotherapy Center',
+  facebookHandle: 'Advance Physiotherapy Centre',
   hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   hoursSunday: 'Sunday: Prior Appointment Only',
   mapsShareUrl: 'https://maps.app.goo.gl/3Yd35TDforCQFABZA',
   mapsEmbedUrl:
-    'https://maps.google.com/maps?q=Advance+physiotherapy+Center,+Juran+Chapra,+Muzaffarpur,+Bihar&ll=26.1271542,85.3757161&z=17&output=embed',
+    'https://maps.google.com/maps?q=Advance+physiotherapy+Centre,+Juran+Chapra,+Muzaffarpur,+Bihar&ll=26.1271542,85.3757161&z=17&output=embed',
 };
 
 export function waLink(message = DEFAULT_WA_MESSAGE) {
@@ -36,7 +33,7 @@ export function waLink(message = DEFAULT_WA_MESSAGE) {
 }
 
 export const DEFAULT_WA_MESSAGE =
-  'Hello Dr. Shahrukh, I would like to book an appointment at Advance Physiotherapy Center. Please let me know the available time.';
+  'Hello Dr. Shahrukh, I would like to book an appointment at Advance Physiotherapy Centre. Please let me know the available time.';
 
 export const hospitals = [
   'Prasad Hospital',

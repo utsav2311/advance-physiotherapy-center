@@ -102,7 +102,7 @@ export const services = [
     icon: 'bolt',
     image: '/images/treatment-electrotherapy-hero.webp',
     cardDescription: 'Advanced IFT, TENS, Ultrasound, and localized heat therapy.',
-    lead: 'Advance Physiotherapy Center is equipped with modern electrotherapy machines that accelerate pain relief, reduce inflammation, and prepare tissue for manual therapy. These modalities are frequently combined with cupping, dry needling, and taping for compounded results.',
+    lead: 'Advance Physiotherapy Centre is equipped with modern electrotherapy machines that accelerate pain relief, reduce inflammation, and prepare tissue for manual therapy. These modalities are frequently combined with cupping, dry needling, and taping for compounded results.',
     symptoms: [
       'Acute muscle spasm and localized swelling',
       'Post-fracture and post-surgical stiffness',

@@ -9,7 +9,7 @@ export default function Faq() {
     <>
       <Seo
         title="Frequently Asked Questions"
-        description="Answers to common questions about physiotherapy sessions, home visits, treatment duration, and what to expect at Advance Physiotherapy Center, Muzaffarpur."
+        description="Answers to common questions about physiotherapy sessions, home visits, treatment duration, and what to expect at Advance Physiotherapy Centre, Muzaffarpur."
         path="/faq"
       />
 

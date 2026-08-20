@@ -14,7 +14,7 @@ export default function About() {
     <>
       <Seo
         title={`About ${SITE.doctor}`}
-        description={`Meet ${SITE.doctor} (${SITE.credentials}), Reg. No. ${SITE.regNo} — lead physiotherapist at Advance Physiotherapy Center, Muzaffarpur. Hospital affiliations, facilities, and clinical credentials.`}
+        description={`Meet ${SITE.doctor} (${SITE.credentials}), Reg. No. ${SITE.regNo} — lead physiotherapist at Advance Physiotherapy Centre, Muzaffarpur. Hospital affiliations, facilities, and clinical credentials.`}
         path="/about"
         image="/images/dr-shahrukh-portrait.webp"
       />
@@ -59,11 +59,11 @@ export default function About() {
                 <p>
                   {SITE.doctor} is an advanced qualified physiotherapist dedicated to restoring
                   pain-free movement for patients across {SITE.city}. As the founder and lead physiotherapist of{' '}
-                  <strong>Advance Physiotherapy Center</strong>, he combines certified manual
+                  <strong>Advance Physiotherapy Centre</strong>, he combines certified manual
                   therapy techniques — including cupping, dry needling, chiropractic, and
                   osteopathy — with modern electrotherapy modalities. Having previously served as
                   consultant physiotherapist across several leading hospitals in the city, he now
-                  dedicates 100% of his clinical practice full-time to Advance Physiotherapy Center.
+                  dedicates 100% of his clinical practice full-time to Advance Physiotherapy Centre.
                 </p>
                 <p>
                   His treatment philosophy centers on identifying the underlying biomechanical
@@ -158,7 +158,7 @@ export default function About() {
             <h2 className="section-title">Hospital Experience & Background</h2>
             <p className="section-subtitle">
               {SITE.doctor} previously provided clinical physiotherapy across these 7+ premier hospitals in {SITE.city},
-              and now brings this extensive hospital experience full-time to Advance Physiotherapy Center.
+              and now brings this extensive hospital experience full-time to Advance Physiotherapy Centre.
             </p>
           </div>
           <div className="hospital-grid">

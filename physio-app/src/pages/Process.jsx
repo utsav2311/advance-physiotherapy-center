@@ -14,7 +14,7 @@ export default function Process() {
     <>
       <Seo
         title="Our Treatment Process"
-        description={`A systematic, evidence-based 4-step recovery pathway used by ${SITE.doctor} at Advance Physiotherapy Center, Muzaffarpur — from assessment to complete functional independence.`}
+        description={`A systematic, evidence-based 4-step recovery pathway used by ${SITE.doctor} at Advance Physiotherapy Centre, Muzaffarpur — from assessment to complete functional independence.`}
         path="/process"
       />
 

@@ -1,4 +1,4 @@
-// Curated photo & video gallery for Advance Physiotherapy Center.
+// Curated photo & video gallery for Advance Physiotherapy Centre.
 // Contains high-resolution optimized WebP images and trimmed, auto-looping HD video clips.
 
 export const galleryItems = [
@@ -192,7 +192,7 @@ export const galleryItems = [
     "type": "image",
     "size": "medium",
     "image": "/images/clinic-ribbon-cutting-ceremony.webp",
-    "alt": "Grand inauguration ribbon cutting at Advance Physiotherapy Center",
+    "alt": "Grand inauguration ribbon cutting at Advance Physiotherapy Centre",
     "caption": "Inauguration Ceremony",
     "category": "Clinic"
   },
@@ -224,7 +224,7 @@ export const galleryItems = [
     "type": "image",
     "size": "small",
     "image": "/images/clinic-front-entrance.webp",
-    "alt": "Advance Physiotherapy Center exterior entrance",
+    "alt": "Advance Physiotherapy Centre exterior entrance",
     "caption": "Official Clinic Entrance",
     "category": "Clinic"
   },
@@ -232,7 +232,7 @@ export const galleryItems = [
     "type": "image",
     "size": "small",
     "image": "/images/clinic-inauguration-entrance.webp",
-    "alt": "Advance Physiotherapy Center grand opening gate",
+    "alt": "Advance Physiotherapy Centre grand opening gate",
     "caption": "Inauguration Gate",
     "category": "Clinic"
   },
