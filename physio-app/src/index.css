@@ -798,29 +798,33 @@ input, select, textarea {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 4.2vw, 3.15rem);
   font-weight: 800;
   color: var(--white);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.25rem;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.15rem;
+  max-width: 640px;
+  text-wrap: balance;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title-accent {
-  background: linear-gradient(135deg, var(--primary-300), var(--primary-100));
+  background: linear-gradient(135deg, var(--primary-300), #e0f2fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  max-width: 520px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  max-width: 540px;
+  text-wrap: pretty;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
 }
 
 .hero-actions {
@@ -2981,13 +2985,14 @@ input, select, textarea {
   }
 
   .hero-title {
-    font-size: clamp(1.85rem, 7vw, 2.5rem);
-    line-height: 1.15;
-    margin-bottom: 0.85rem;
+    font-size: clamp(1.48rem, 5.2vw, 1.95rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.75rem;
   }
 
   .hero-subtitle {
-    font-size: 0.92rem;
+    font-size: 0.90rem;
     line-height: 1.55;
     margin-bottom: 1.25rem;
   }
@@ -3060,6 +3065,17 @@ input, select, textarea {
   .achievement-strip-image { min-height: 220px; aspect-ratio: 16 / 10; }
 }
 
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.35rem, 5.8vw, 1.6rem);
+    line-height: 1.24;
+  }
+  .hero-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 400px) {
   .hero-section {
     min-height: 520px;
@@ -3067,10 +3083,12 @@ input, select, textarea {
     padding-bottom: 2rem;
   }
   .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.28rem;
+    line-height: 1.24;
   }
   .hero-subtitle {
-    font-size: 0.86rem;
+    font-size: 0.82rem;
+    line-height: 1.48;
   }
   .brand-name { font-size: 0.82rem; }
   .brand-sub { font-size: 0.60rem; }
