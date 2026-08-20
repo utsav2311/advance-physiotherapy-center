@@ -664,15 +664,20 @@ input, select, textarea {
 
 /* --- HERO SECTION (Homepage) --- */
 .hero-section {
+  height: 100vh;
+  height: 100dvh;
   min-height: 100vh;
   min-height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
   display: flex;
   align-items: center;
-  padding-top: calc(65px + clamp(2.5rem, 5vw, 4.5rem));
-  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  padding-top: 65px;
+  padding-bottom: 2rem;
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -3038,12 +3043,17 @@ input, select, textarea {
   }
 
   .hero-section {
-    min-height: clamp(560px, 90vh, 700px);
-    min-height: clamp(560px, 90dvh, 700px);
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
     display: flex;
     align-items: flex-end;
-    padding-top: calc(65px + clamp(4rem, 15vh, 8rem));
-    padding-bottom: clamp(2rem, 4vh, 3.25rem);
+    padding-top: calc(56px + 1rem);
+    padding-bottom: calc(1.75rem + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
   }
 
   .hero-grid {
@@ -3287,9 +3297,15 @@ input, select, textarea {
   }
 
   .hero-section {
-    min-height: clamp(540px, 88dvh, 660px);
-    padding-top: calc(60px + clamp(4rem, 16vh, 7.5rem));
-    padding-bottom: 2rem;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    padding-top: calc(52px + 1rem);
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
   }
 
   .hero-content {
@@ -3332,9 +3348,15 @@ input, select, textarea {
   }
 
   .hero-section {
-    min-height: 540px;
-    padding-top: calc(58px + 4rem);
-    padding-bottom: 1.75rem;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    padding-top: calc(48px + 0.75rem);
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
   }
   .hero-content {
     max-width: 62%;
