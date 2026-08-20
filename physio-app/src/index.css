@@ -3101,6 +3101,10 @@ input, select, textarea {
 }
 
 @media (max-width: 640px) {
+  .hero-actions {
+    display: none;
+  }
+
   .featured-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
