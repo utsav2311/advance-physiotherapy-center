@@ -392,7 +392,7 @@ export default function Home() {
                 <div className="review-author">
                   <div className="review-avatar">{r.initials}</div>
                   <div className="review-author-meta">
-                    <span className="name">{r.name}</span>
+                    <strong className="name">{r.name}</strong>
                     <span className="label">{r.label}</span>
                   </div>
                 </div>
