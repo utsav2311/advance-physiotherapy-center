@@ -2009,12 +2009,6 @@ input, select, textarea {
 }
 
 /* --- FAQ --- */
-.faq-section-wrapper {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, var(--white) 0%, rgba(240, 249, 255, 0.5) 50%, var(--white) 100%);
-}
-
 .faq-grid-layout {
   display: grid;
   grid-template-columns: 1.55fr 0.95fr;
