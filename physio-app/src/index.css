@@ -739,10 +739,10 @@ input, select, textarea {
   .hero-slider-overlay {
     background: linear-gradient(
       180deg,
-      rgba(4, 21, 38, 0.76) 0%,
-      rgba(4, 21, 38, 0.6) 35%,
-      rgba(4, 21, 38, 0.72) 70%,
-      rgba(4, 21, 38, 0.85) 100%
+      rgba(4, 21, 38, 0.45) 0%,
+      rgba(4, 21, 38, 0.2) 28%,
+      rgba(4, 21, 38, 0.62) 58%,
+      rgba(4, 21, 38, 0.88) 100%
     );
   }
 }
@@ -3030,10 +3030,12 @@ input, select, textarea {
   }
 
   .hero-section {
-    min-height: clamp(520px, 86vh, 640px);
-    min-height: clamp(520px, 86dvh, 640px);
-    padding-top: calc(65px + clamp(1.25rem, 3.5vw, 2.25rem));
-    padding-bottom: 2.5rem;
+    min-height: clamp(560px, 90vh, 700px);
+    min-height: clamp(560px, 90dvh, 700px);
+    display: flex;
+    align-items: flex-end;
+    padding-top: calc(65px + clamp(4rem, 15vh, 8rem));
+    padding-bottom: clamp(2rem, 4vh, 3.25rem);
   }
 
   .hero-grid {
@@ -3149,6 +3151,16 @@ input, select, textarea {
     height: 38px;
   }
 
+  .hero-section {
+    min-height: clamp(540px, 88dvh, 660px);
+    padding-top: calc(60px + clamp(4rem, 16vh, 7.5rem));
+    padding-bottom: 2rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 0.85rem;
+  }
+
   .hero-title {
     font-size: clamp(1.35rem, 5.8vw, 1.6rem);
     line-height: 1.24;
@@ -3178,9 +3190,9 @@ input, select, textarea {
   }
 
   .hero-section {
-    min-height: 520px;
-    padding-top: calc(58px + 1rem);
-    padding-bottom: 2rem;
+    min-height: 540px;
+    padding-top: calc(58px + 4rem);
+    padding-bottom: 1.75rem;
   }
   .hero-title {
     font-size: 1.25rem;
