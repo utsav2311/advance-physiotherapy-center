@@ -194,7 +194,7 @@ export const services = [
     shortTitle: "Women's Health",
     label: "Women's Health Physiotherapy",
     icon: 'woman',
-    image: '/images/dr-shahrukh-full.webp',
+    image: '/images/service-womens-health.webp',
     cardDescription: 'Pelvic floor strengthening, pregnancy classes, and post-natal recovery.',
     lead: "Pregnancy and childbirth place unique demands on a woman's body. Dr. Shahrukh Firoz offers specialized physiotherapy for pelvic floor weakness, structured pre-natal exercise classes, and post-natal recovery programs — helping women stay strong, mobile, and comfortable through every stage of motherhood.",
     symptoms: [
