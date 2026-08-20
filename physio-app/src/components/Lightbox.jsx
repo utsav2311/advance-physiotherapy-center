@@ -48,9 +48,6 @@ export default function Lightbox({
           <div className="lightbox-top-bar" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-counter">
               <span>{currentIndex + 1}</span> / <span>{images.length}</span>
-              {currentItem.category && (
-                <span className="lightbox-category-badge">{currentItem.category}</span>
-              )}
             </div>
             <button
               type="button"
@@ -119,14 +116,9 @@ export default function Lightbox({
               ) : (
                 <img
                   src={currentItem.image}
-                  alt={currentItem.alt || currentItem.caption || 'Clinic photo'}
+                  alt={currentItem.alt || 'Clinic photo'}
                   className="lightbox-img"
                 />
-              )}
-              {currentItem.caption && (
-                <div className="lightbox-caption-box">
-                  <p className="lightbox-caption-text">{currentItem.caption}</p>
-                </div>
               )}
             </motion.div>
           </div>

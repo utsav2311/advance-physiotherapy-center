@@ -483,17 +483,10 @@ export default function Home() {
                       preload="metadata"
                       className="gallery-video"
                     />
-                    <div className="gallery-video-badge">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="5 3 19 12 5 21 5 3" />
-                      </svg>
-                      <span>HD Video</span>
-                    </div>
                   </div>
                 ) : (
-                  <img src={item.image} alt={item.alt} loading="lazy" />
+                  <img src={item.image} alt={item.alt || 'Clinic photo'} loading="lazy" />
                 )}
-                <div className="gallery-caption"><span>{item.caption}</span></div>
               </Reveal>
             ))}
           </div>
