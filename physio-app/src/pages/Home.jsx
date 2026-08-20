@@ -124,8 +124,7 @@ export default function Home() {
                 variants={fadeUp}
                 custom={1}
               >
-                Move Better.<br />Feel Stronger.<br />
-                <span className="hero-title-accent">Live Better.</span>
+                Expert Physiotherapy &amp; Rehabilitation in <span className="hero-title-accent">{SITE.city}</span>
               </motion.h1>
 
               <motion.p
@@ -135,9 +134,7 @@ export default function Home() {
                 variants={fadeUp}
                 custom={2}
               >
-                Personalized physiotherapy and rehabilitation designed to restore mobility, manage pain, and
-                help you return to an active lifestyle. Guided by {SITE.doctor} — bringing extensive clinical
-                experience across 7+ leading hospitals to his full-time practice at Advance Physiotherapy Center.
+                Personalized treatment for back pain, neck pain, knee problems, sports injuries, post-surgery recovery and more.
               </motion.p>
 
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
