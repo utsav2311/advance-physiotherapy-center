@@ -104,17 +104,15 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-content">
               <motion.div
-                className="hero-badge"
+                className="hero-eyebrow"
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <motion.span
-                  className="hero-badge-dot"
-                  animate={{ scale: [1, 1.3, 1], opacity: [1, 0.6, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <span>Advance Physiotherapy Center • {SITE.city}</span>
+                <span className="hero-eyebrow-line" />
+                <span className="hero-eyebrow-text">
+                  ADVANCE PHYSIOTHERAPY CENTER • {SITE.city.toUpperCase()} &amp; BEYOND
+                </span>
               </motion.div>
 
               <motion.h1
@@ -124,7 +122,7 @@ export default function Home() {
                 variants={fadeUp}
                 custom={1}
               >
-                Expert Physiotherapy &amp; Rehabilitation in <span className="hero-title-accent">{SITE.city}</span>
+                Expert Physiotherapy &amp; Rehabilitation <span className="hero-title-accent">in {SITE.city}.</span>
               </motion.h1>
 
               <motion.p
@@ -137,27 +135,40 @@ export default function Home() {
                 Personalized treatment for back pain, neck pain, knee problems, sports injuries, post-surgery recovery and more.
               </motion.p>
 
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
-                <div className="home-visit-badge" style={{ marginBottom: '1.25rem' }}>
-                  <HomeVisitIcon className="" />
-                  <span>Home Visit Available</span>
-                </div>
-              </motion.div>
-
-              <motion.div className="hero-actions" initial="hidden" animate="visible" variants={fadeUp} custom={4}>
-                <WhatsAppButton className="btn btn-primary btn-lg" />
-                <a href={`tel:${SITE.phonePrimary}`} className="btn btn-secondary btn-lg">
+              <motion.div className="hero-actions" initial="hidden" animate="visible" variants={fadeUp} custom={3}>
+                <WhatsAppButton className="hero-btn-primary" showIcon={false}>
+                  <span>Book Appointment</span>
+                  <svg className="hero-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </WhatsAppButton>
+                <a href={`tel:${SITE.phonePrimary}`} className="hero-btn-secondary">
                   <PhoneIcon />
-                  {SITE.phonePrimaryDisplay}
+                  <span>Call Clinic • {SITE.phonePrimaryDisplay}</span>
                 </a>
               </motion.div>
 
-              <motion.div className="hero-trust" initial="hidden" animate="visible" variants={fadeUp} custom={5}>
-                <span className="hero-trust-stars">★★★★★</span>
-                <span className="hero-trust-text"><strong>5.0 Google Rating</strong> • Verified Reviews</span>
+              <motion.div className="hero-feature-pills" initial="hidden" animate="visible" variants={fadeUp} custom={4}>
+                <div className="hero-pill-chip">
+                  <HomeVisitIcon />
+                  <span>Home Visit Available</span>
+                </div>
+                <div className="hero-pill-chip">
+                  <span className="hero-pill-star">★</span>
+                  <span>5.0 Google Rating</span>
+                </div>
+                <div className="hero-pill-chip">
+                  <span>Verified Reviews</span>
+                </div>
               </motion.div>
             </div>
           </div>
+        </div>
+
+        <div className="hero-scroll-indicator" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </div>
       </section>
 
