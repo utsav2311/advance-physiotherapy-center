@@ -3,12 +3,30 @@
 
 export const galleryItems = [
   {
+    "type": "image",
+    "size": "large",
+    "image": "/images/clinic-front-entrance.webp",
+    "alt": "Advance Physiotherapy Centre Exterior Clinic Entrance",
+    "caption": "Official Clinic Entrance - Juran Chapra",
+    "category": "Clinic",
+    "featured": true
+  },
+  {
     "type": "video",
     "size": "large",
     "video": "/videos/clinic-inauguration-and-walkthrough.mp4",
     "image": "/videos/clinic-inauguration-and-walkthrough-poster.webp",
     "alt": "Clinic Inauguration & Facilities Tour Video",
     "caption": "Clinic Inauguration & Facilities Tour",
+    "category": "Clinic",
+    "featured": true
+  },
+  {
+    "type": "image",
+    "size": "medium",
+    "image": "/images/clinic-entrance-arch-decoration.webp",
+    "alt": "Clinic Entrance Celebration & Floral Arch",
+    "caption": "Clinic Entrance Celebration & Floral Arch",
     "category": "Clinic",
     "featured": true
   },
@@ -222,26 +240,10 @@ export const galleryItems = [
   },
   {
     "type": "image",
-    "size": "small",
-    "image": "/images/clinic-front-entrance.webp",
-    "alt": "Advance Physiotherapy Centre exterior entrance",
-    "caption": "Official Clinic Entrance",
-    "category": "Clinic"
-  },
-  {
-    "type": "image",
-    "size": "small",
+    "size": "medium",
     "image": "/images/clinic-inauguration-entrance.webp",
     "alt": "Advance Physiotherapy Centre grand opening gate",
     "caption": "Inauguration Gate",
-    "category": "Clinic"
-  },
-  {
-    "type": "image",
-    "size": "small",
-    "image": "/images/clinic-entrance-arch-decoration.webp",
-    "alt": "Clinic Entrance Celebration & Floral Arch",
-    "caption": "Clinic Entrance Celebration & Floral Arch",
     "category": "Clinic"
   },
   {

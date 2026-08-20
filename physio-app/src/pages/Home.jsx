@@ -436,7 +436,7 @@ export default function Home() {
           </div>
 
           <div className="gallery-grid">
-            {galleryItems.slice(0, 4).map((item, i) => (
+            {galleryItems.slice(0, 6).map((item, i) => (
               <Reveal
                 key={item.video || item.image}
                 index={i}
