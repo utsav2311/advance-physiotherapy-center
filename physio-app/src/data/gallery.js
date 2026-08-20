@@ -5,6 +5,15 @@ export const galleryItems = [
   {
     "type": "image",
     "size": "large",
+    "image": "/images/clinic-inauguration-balloon-entrance.webp",
+    "alt": "Advance Physiotherapy Centre Entrance & Inauguration Arch",
+    "caption": "Clinic Entrance & Inauguration Arch - Advance Physiotherapy Centre",
+    "category": "Clinic",
+    "featured": true
+  },
+  {
+    "type": "image",
+    "size": "large",
     "image": "/images/clinic-front-entrance.webp",
     "alt": "Advance Physiotherapy Centre Exterior Clinic Entrance",
     "caption": "Official Clinic Entrance - Juran Chapra",
