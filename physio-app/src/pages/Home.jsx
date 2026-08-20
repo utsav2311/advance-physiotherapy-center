@@ -157,9 +157,6 @@ export default function Home() {
                   <span className="hero-pill-star">★</span>
                   <span>5.0 Google Rating</span>
                 </div>
-                <div className="hero-pill-chip">
-                  <span>Verified Reviews</span>
-                </div>
               </motion.div>
             </div>
           </div>
