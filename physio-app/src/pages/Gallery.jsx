@@ -98,10 +98,17 @@ export default function Gallery() {
                 {item.type === 'video' ? (
                   <div className="gallery-video-container">
                     <video
+                      ref={(el) => {
+                        if (el) {
+                          el.muted = true;
+                          el.defaultMuted = true;
+                        }
+                      }}
                       src={item.video}
                       poster={item.image}
                       autoPlay
                       muted
+                      defaultMuted
                       loop
                       playsInline
                       preload="metadata"

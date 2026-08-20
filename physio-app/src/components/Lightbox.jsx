@@ -105,10 +105,18 @@ export default function Lightbox({
             >
               {currentItem.type === 'video' ? (
                 <video
+                  ref={(el) => {
+                    if (el) {
+                      el.muted = true;
+                      el.defaultMuted = true;
+                    }
+                  }}
                   src={currentItem.video}
                   poster={currentItem.image}
                   controls
                   autoPlay
+                  muted
+                  defaultMuted
                   playsInline
                   loop
                   className="lightbox-video"
