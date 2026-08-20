@@ -114,7 +114,8 @@ export default function Home() {
                   animate={{ scale: [1, 1.3, 1], opacity: [1, 0.6, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 />
-                <span>Advance Physiotherapy Center • {SITE.city}</span>
+                <span className="hero-badge-text-desktop">Advance Physiotherapy Center • {SITE.city}</span>
+                <span className="hero-badge-text-mobile">Advance Physiotherapy</span>
               </motion.div>
 
               <motion.h1
@@ -138,7 +139,7 @@ export default function Home() {
               </motion.p>
 
               <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
-                <div className="home-visit-badge" style={{ marginBottom: '1.5rem' }}>
+                <div className="home-visit-badge" style={{ marginBottom: '1.25rem' }}>
                   <HomeVisitIcon className="" />
                   <span>Home Visit Available</span>
                 </div>
@@ -154,7 +155,7 @@ export default function Home() {
 
               <motion.div className="hero-trust" initial="hidden" animate="visible" variants={fadeUp} custom={5}>
                 <span className="hero-trust-stars">★★★★★</span>
-                <span className="hero-trust-text"><strong>5.0 Google Rating</strong> • Verified Reviews</span>
+                <span className="hero-trust-text"><strong>5.0 Rating</strong> • Verified Reviews</span>
               </motion.div>
             </div>
           </div>

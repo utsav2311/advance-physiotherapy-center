@@ -1,11 +1,11 @@
 // Background slide images for the homepage hero carousel.
 // Configured with responsive mobile, tablet & desktop focal positions
-// so key subjects (clinical treatment, biomechanics, conference) are properly displayed.
+// so key subjects (doctor, clinical treatment, biomechanics) are properly framed.
 
 export const heroSlides = [
   {
     image: '/images/medical-conference.webp',
-    mobilePosition: 'center 22%',
+    mobilePosition: '72% 22%',
     tabletPosition: 'center 20%',
     desktopPosition: 'center center',
   },
@@ -17,7 +17,7 @@ export const heroSlides = [
   },
   {
     image: '/images/treatment-electrotherapy-hero.webp',
-    mobilePosition: '55% 22%',
+    mobilePosition: '65% 24%',
     tabletPosition: '52% 25%',
     desktopPosition: 'center 28%',
   },
