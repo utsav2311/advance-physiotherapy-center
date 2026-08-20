@@ -2701,10 +2701,26 @@ input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  word-break: break-word;
+}
+
+.footer-contact p {
+  word-break: break-word;
 }
 
 .footer-contact a {
   color: var(--primary-400);
+}
+
+.site-footer .btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
+  width: 100%;
 }
 
 .footer-bottom {
@@ -3280,6 +3296,10 @@ input, select, textarea {
   .marquee-separator {
     margin-left: 0.85rem;
   }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3447,6 +3467,16 @@ input, select, textarea {
   }
   .detail-cta-card {
     padding: 1.5rem 1.15rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
 
