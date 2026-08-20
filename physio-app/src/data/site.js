@@ -19,7 +19,7 @@ export const SITE = {
   facebookHandle: 'Advance Physiotherapy Centre',
   hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   hoursSunday: 'Sunday: Prior Appointment Only',
-  mapsShareUrl: 'https://maps.app.goo.gl/3Yd35TDforCQFABZA',
+  mapsShareUrl: 'https://maps.app.goo.gl/Tt3rzuXcUSXWoy7g6',
   mapsEmbedUrl:
     'https://maps.google.com/maps?q=Advance+physiotherapy+Centre,+Juran+Chapra,+Muzaffarpur,+Bihar&ll=26.1271542,85.3757161&z=17&output=embed',
 };

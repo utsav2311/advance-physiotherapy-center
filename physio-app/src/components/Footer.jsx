@@ -60,7 +60,11 @@ export default function Footer() {
           <div>
             <h4 className="footer-col-title">Contact</h4>
             <div className="footer-contact">
-              <p>{SITE.addressLine1}, {SITE.addressLine2}</p>
+              <p>
+                <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  {SITE.addressLine1}, {SITE.addressLine2}
+                </a>
+              </p>
               <p>
                 <a href={`tel:${SITE.phonePrimary}`}>{SITE.phonePrimaryDisplay}</a>
                 {' / '}
