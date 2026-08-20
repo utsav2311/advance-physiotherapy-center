@@ -721,6 +721,16 @@ input, select, textarea {
   transform: translateZ(0);
 }
 
+.hero-slider-video-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--slide-desktop-pos, center center);
+  display: block;
+  pointer-events: none;
+  filter: brightness(0.94);
+}
+
 .hero-slider-overlay {
   position: absolute;
   inset: 0;
@@ -739,6 +749,10 @@ input, select, textarea {
 @media (max-width: 768px) {
   .hero-slider-slide {
     background-position: var(--slide-mobile-pos, center 20%);
+  }
+
+  .hero-slider-video-media {
+    object-position: var(--slide-mobile-pos, center center);
   }
 
   .hero-slider-overlay {
