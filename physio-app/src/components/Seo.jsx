@@ -21,7 +21,11 @@ export default function Seo({
   image = '/images/clinic-signboard.webp',
   noindex = false,
 }) {
-  const fullTitle = title ? `${title} | ${SITE.name}` : SITE.name;
+  const fullTitle = title
+    ? title.includes(SITE.name)
+      ? title
+      : `${title} | ${SITE.name}`
+    : SITE.name;
   const canonical = `${SITE.url}${path}`;
   const imageUrl = image.startsWith('http') ? image : `${SITE.url}${image}`;
 

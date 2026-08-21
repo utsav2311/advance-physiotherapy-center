@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Best Physiotherapy Clinic in Muzaffarpur"
+        title="Advance Physiotherapy Centre | Physiotherapy Clinic in Muzaffarpur"
         description="Advance Physiotherapy Centre in Juran Chapra, Muzaffarpur, led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
         path="/"
       />
