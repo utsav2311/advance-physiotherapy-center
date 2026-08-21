@@ -15,7 +15,7 @@ export const SITE = {
   email: 'shahrukhfiroz308@gmail.com',
   instagramUrl: 'https://www.instagram.com/advancephysiotherapycenter1/',
   instagramHandle: '@advancephysiotherapycenter1',
-  facebookUrl: 'https://www.facebook.com/share/1Epac1Hpwb/',
+  facebookUrl: 'https://www.facebook.com/share/1B6hxuVi9W/?mibextid=wwXIfr',
   facebookHandle: 'Advance Physiotherapy Centre',
   hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   hoursSunday: 'Sunday: Prior Appointment Only',
