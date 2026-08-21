@@ -598,13 +598,16 @@ input, select, textarea {
 
 /* --- PAGE HERO (Sub-pages: About, Services, Process, Contact, etc.) --- */
 .page-hero-section {
-  padding: clamp(3.5rem, 7vw, 5.5rem) 0 clamp(2.5rem, 5vw, 3.75rem);
+  padding: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.5rem);
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: var(--navy-950);
+  min-height: 280px;
+  display: flex;
+  align-items: center;
 }
 
 .page-hero-section::before {
@@ -613,9 +616,9 @@ input, select, textarea {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(4, 21, 38, 0.84) 0%,
-    rgba(8, 32, 56, 0.74) 45%,
-    rgba(2, 132, 199, 0.58) 100%
+    rgba(4, 21, 38, 0.80) 0%,
+    rgba(8, 32, 56, 0.68) 45%,
+    rgba(2, 132, 199, 0.50) 100%
   );
   backdrop-filter: blur(1px);
   z-index: 0;
@@ -627,14 +630,15 @@ input, select, textarea {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), transparent);
+  height: 40px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
   z-index: 0;
 }
 
 .page-hero-section .container {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .page-hero-content {
@@ -3825,14 +3829,17 @@ input, select, textarea {
   }
 
   .page-hero-section {
-    padding: 2.5rem 0 1.75rem;
+    padding: 3.5rem 0 2.5rem;
+    min-height: 220px;
+    background-position: center center;
+    background-size: cover;
   }
   .page-hero-title {
-    font-size: clamp(1.45rem, 6vw, 1.95rem);
-    line-height: 1.25;
+    font-size: clamp(1.65rem, 6.8vw, 2.2rem);
+    line-height: 1.2;
   }
   .page-hero-subtitle {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     line-height: 1.55;
   }
 
