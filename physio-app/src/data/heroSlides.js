@@ -14,14 +14,6 @@ export const heroSlides = [
   },
   {
     type: 'image',
-    image: '/images/hero-biomechanics-runner.webp',
-    duration: 5500,
-    mobilePosition: '78% center',
-    tabletPosition: '75% center',
-    desktopPosition: 'center center',
-  },
-  {
-    type: 'image',
     image: '/images/medical-conference.webp',
     duration: 5000,
     mobilePosition: 'center 20%',
