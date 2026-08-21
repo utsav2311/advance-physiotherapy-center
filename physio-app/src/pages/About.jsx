@@ -157,7 +157,7 @@ export default function About() {
             <span className="section-label">Clinical Background</span>
             <h2 className="section-title">Hospital Experience & Background</h2>
             <p className="section-subtitle">
-              {SITE.doctor} previously provided clinical physiotherapy across these 7+ premier hospitals in {SITE.city},
+              {SITE.doctor} previously provided clinical physiotherapy across these 10+ premier hospitals in {SITE.city},
               and now brings this extensive hospital experience full-time to Advance Physiotherapy Centre.
             </p>
           </div>

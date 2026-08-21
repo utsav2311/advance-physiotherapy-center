@@ -51,7 +51,7 @@ const trustStrapItems = [
   },
   {
     icon: <HospitalIcon />,
-    text: <><strong>7+ Hospitals</strong> Experience</>,
+    text: <><strong>10+ Hospitals</strong> Experience</>,
     bg: '#059669',
   },
   {
@@ -266,8 +266,8 @@ export default function Home() {
         <div className="container">
           <div className="stats-grid">
             <StatCounter target={25} suffix="+" label="Conditions Treated" />
-            <StatCounter target={7} suffix="+" label="Hospitals Experience" />
-            <StatCounter target={1000} suffix="+" label="Patients Treated" />
+            <StatCounter target={10} suffix="+" label="Hospitals Experience" />
+            <StatCounter target={2000} suffix="+" label="Patients Treated" />
             <StatCounter target={5} suffix=".0★" label="Google Rating" />
           </div>
         </div>
