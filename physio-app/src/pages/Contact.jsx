@@ -41,7 +41,7 @@ export default function Contact() {
         label="Get In Touch"
         title="Visit Advance Physiotherapy Centre"
         subtitle={`Located in the medical centre of Juran Chapra, ${SITE.city}. Direct appointments and easy directions.`}
-        bgImage="/images/bg-spine-biomech.webp"
+        bgImage="/images/bg-hero-contact.webp"
       />
 
       <section className="section">

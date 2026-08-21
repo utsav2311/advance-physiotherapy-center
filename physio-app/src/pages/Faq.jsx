@@ -19,7 +19,7 @@ export default function Faq() {
         label="Patient Inquiries"
         title="Frequently Asked Questions"
         subtitle="Clear answers to help you prepare for your visit and understand our protocols."
-        bgImage="/images/bg-medical-mesh.webp"
+        bgImage="/images/bg-hero-faq.webp"
       />
 
       <FaqSection items={faqs} showHeader={false} />

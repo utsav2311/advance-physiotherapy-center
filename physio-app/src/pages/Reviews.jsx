@@ -24,7 +24,7 @@ export default function Reviews() {
         label="Verified Feedback"
         title="Patient Reviews"
         subtitle={`Real experiences from patients treated at Advance Physiotherapy Centre across our full range of services.`}
-        bgImage="/images/bg-spine-biomech.webp"
+        bgImage="/images/bg-hero-reviews.webp"
       />
 
       <section className="section reviews-section">

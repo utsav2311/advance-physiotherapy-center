@@ -52,7 +52,7 @@ export default function Gallery() {
         label="Inside Our Clinic"
         title="Clinic Gallery &amp; Video Tour"
         subtitle="Watch authentic therapy clips and browse high-resolution photographs of our clinical facilities."
-        bgImage="/images/bg-medical-mesh.webp"
+        bgImage="/images/bg-hero-gallery.webp"
       />
 
       <section className="section">

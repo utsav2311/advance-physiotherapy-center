@@ -24,7 +24,7 @@ export default function Process() {
         label="Clinical Approach"
         title="Our 4-Step Recovery Pathway"
         subtitle="A systematic, evidence-based approach to help you transition from pain to complete functional independence."
-        bgImage="/images/bg-spine-biomech.webp"
+        bgImage="/images/bg-hero-process.webp"
       />
 
       <section className="section">

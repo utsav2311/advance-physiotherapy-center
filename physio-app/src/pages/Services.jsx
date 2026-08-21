@@ -23,7 +23,7 @@ export default function Services() {
         label="Evidence-Based Care"
         title="Our Physiotherapy Services"
         subtitle={`Comprehensive musculoskeletal and neuromuscular rehabilitation supervised by ${SITE.doctor}.`}
-        bgImage="/images/bg-medical-mesh.webp"
+        bgImage="/images/bg-hero-services.webp"
       />
 
       <section className="section">

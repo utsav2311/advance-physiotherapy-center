@@ -26,7 +26,7 @@ export default function About() {
         label="Clinical Leadership"
         title={`About ${SITE.doctor}`}
         subtitle="Lead Physiotherapist • B.P.T., M.P.T., Ortho (Jaipur) — Dedicated to evidence-based recovery in Muzaffarpur."
-        bgImage="/images/bg-medical-mesh.webp"
+        bgImage="/images/bg-hero-about.webp"
       />
 
       {/* DOCTOR PROFILE */}
