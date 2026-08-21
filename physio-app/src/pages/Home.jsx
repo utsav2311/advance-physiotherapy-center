@@ -320,7 +320,7 @@ export default function Home() {
             <Reveal className="about-content" variant="fade-right" y={0} x={28} delayStep={0.1} index={1}>
               <span className="section-label">Meet Your Physiotherapist</span>
               <h2 className="section-title">Personalized Clinical Healing</h2>
-              <p className="about-role">B.P.T., M.P.T., Ortho (Jaipur) • M.G.A.P.T. • M.R.A.P.T. • Reg. No. {SITE.regNo}</p>
+              <p className="about-role">{SITE.credentials} • {SITE.regNo}</p>
 
               <div className="about-text">
                 <p>

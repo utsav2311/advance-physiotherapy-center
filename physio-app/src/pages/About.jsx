@@ -15,7 +15,7 @@ export default function About() {
     <>
       <Seo
         title={`About ${SITE.doctor}`}
-        description={`Meet ${SITE.doctor} (${SITE.credentials}), Reg. No. ${SITE.regNo} — lead physiotherapist at Advance Physiotherapy Centre, Muzaffarpur. Hospital affiliations, facilities, and clinical credentials.`}
+        description={`Meet ${SITE.doctor} (${SITE.credentials}), ${SITE.regNo} — lead physiotherapist at Advance Physiotherapy Centre, Muzaffarpur. Hospital affiliations, facilities, and clinical credentials.`}
         path="/about"
         image="/images/dr-shahrukh-portrait.webp"
       />
@@ -53,7 +53,7 @@ export default function About() {
               <span className="section-label">Professional Background</span>
               <h2 className="section-title">Clinical Excellence & Compassion</h2>
               <p className="about-role">
-                {SITE.credentials} • Reg. No. {SITE.regNo}
+                {SITE.credentials} • {SITE.regNo}
               </p>
 
               <div className="about-text">
