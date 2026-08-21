@@ -186,26 +186,24 @@ export default function CertificateCollage() {
         {/* --- VIEW 2: LUXURY BENTO GALLERY WALL --- */}
         {viewMode === 'grid' && (
           <div className="achieve-bento-wall">
-            {doctorAchievements.map((item, idx) => {
-              const isLarge = idx === 0 || idx === 7;
-              return (
-                <motion.div
-                  key={item.id}
-                  className={`achieve-bento-tile ${isLarge ? 'is-large' : ''}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, delay: idx * 0.05 }}
-                  onClick={() => setLightboxIndex(idx)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setLightboxIndex(idx);
-                    }
-                  }}
-                  aria-label={`View full certificate: ${item.title}`}
-                >
+            {doctorAchievements.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                className="achieve-bento-tile"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                onClick={() => setLightboxIndex(idx)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setLightboxIndex(idx);
+                  }
+                }}
+                aria-label={`View full certificate: ${item.title}`}
+              >
                   <div className="achieve-tile-media">
                     <img src={item.image} alt={item.alt} loading="lazy" />
                     <div className="achieve-tile-overlay">
@@ -225,8 +223,7 @@ export default function CertificateCollage() {
                     <h4 className="achieve-tile-title">{item.title}</h4>
                   </div>
                 </motion.div>
-              );
-            })}
+            ))}
           </div>
         )}
       </div>

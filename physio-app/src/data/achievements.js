@@ -6,8 +6,8 @@ export const doctorAchievements = [
     regId: 'HFR ID: IN1010015349',
     description:
       'Officially registered under the Healthcare Facility Registry (HFR) of the National Health Authority, Ministry of Health and Family Welfare, Government of India.',
-    image: '/images/achievement-abdm-digital-health.webp',
-    alt: 'National Health Authority ABDM Registration Certificate for Advance Physiotherapy Centre',
+    image: '/images/advance-physiotherapy-abdm-digital-health-registration.webp',
+    alt: 'National Health Authority ABDM Registration Certificate for Advance Physiotherapy Centre Muzaffarpur',
     badge: 'Govt. of India Registered',
     highlight: 'HFR: IN1010015349',
   },
@@ -18,7 +18,7 @@ export const doctorAchievements = [
     regId: 'Reg No. GAPT/22/G00525',
     description:
       'Awarded General Membership as a Qualified Physiotherapy Professional, recognized to practice evidence-based rehabilitation protocols under international clinical standards.',
-    image: '/images/achievement-gapt-membership.webp',
+    image: '/images/dr-shahrukh-gapt-membership-certificate.webp',
     alt: 'Global Association for Physiotherapy Membership Certificate for Dr. Sayed Shahrukh Firoz',
     badge: 'International Membership',
     highlight: 'Reg: G00525',
@@ -27,10 +27,10 @@ export const doctorAchievements = [
     id: 'therapeutic-taping-therapist',
     title: 'Certified On-Field Therapeutic Taping Therapist',
     authority: 'EPLORIS • Level 1 & 2 Clinical Hands-On Certification',
-    regId: 'Ref: EPA/22/0490 • 16 Credit Hours',
+    regId: 'Ref: OFA/22/08498 • 16 Credit Points',
     description:
       'Certified On-Field Therapeutic Taping Therapist (Level 1 & 2) following intensive clinical hands-on and theoretical examination in New Delhi for acute sports injury stabilization.',
-    image: '/images/achievement-therapeutic-taping.webp',
+    image: '/images/dr-shahrukh-therapeutic-taping-competency-certificate.webp',
     alt: 'EPLORIS Certificate of Competency as On-Field Therapeutic Taping Therapist for Dr. Shahrukh Firoz',
     badge: 'Sports Medicine Certified',
     highlight: 'Level 1 & 2 Specialist',
@@ -42,7 +42,7 @@ export const doctorAchievements = [
     regId: 'Dept. of Physiotherapy, IGIMS • 8 Credit Hours',
     description:
       'Completed specialized hands-on clinical workshop on Cricket Injuries: Prevention, Rehabilitation, and Application of Kinesio Taping at IGIMS, Patna.',
-    image: '/images/achievement-igims-sports-kinesio.webp',
+    image: '/images/dr-shahrukh-igims-sports-kinesio-taping-certificate.webp',
     alt: 'IGIMS Patna Certificate in Cricket Injuries Prevention and Kinesio Taping for Dr. Shahrukh Firoz',
     badge: 'Sports Injury Rehabilitation',
     highlight: 'IGIMS Patna Accredited',
@@ -54,7 +54,7 @@ export const doctorAchievements = [
     regId: 'Certificate of Achievement',
     description:
       'Honored with the Certificate of Achievement for providing expert geriatric physiotherapy guidance, mobility restoration, and pain management for elderly citizens in Muzaffarpur.',
-    image: '/images/achievement-senior-citizen-guidance.webp',
+    image: '/images/dr-shahrukh-senior-citizen-programme-certificate.webp',
     alt: 'Certificate of Achievement from Senior Citizen Programme for Dr. Shahrukh Firoz',
     badge: 'Community Recognition',
     highlight: 'Geriatric Care Excellence',
@@ -66,33 +66,9 @@ export const doctorAchievements = [
     regId: 'Certificate of Appreciation',
     description:
       'Awarded for imparting valuable clinical insights, biomechanical expertise, and constructive advancement to the institutional physiotherapy rehabilitation team.',
-    image: '/images/achievement-dr-dude-appreciation.webp',
+    image: '/images/dr-shahrukh-dr-dude-hospital-appreciation-certificate.webp',
     alt: 'Dr. Dude Pocket Hospital Certificate of Appreciation for Dr. Shahrukh Firoz',
     badge: 'Institutional Excellence',
     highlight: 'Clinical Mentorship',
-  },
-  {
-    id: 'world-physio-day',
-    title: 'World Physiotherapy Day & Conference Delegation',
-    authority: 'Indian & International Physiotherapy Assemblies',
-    regId: 'Active Delegate & Presenter',
-    description:
-      'Regular delegate and participant in medical symposiums, orthopedic delegations, and World Physiotherapy Day conferences, keeping clinical practices aligned with modern physical medicine.',
-    image: '/images/award-physiotherapy-hero.webp',
-    alt: 'Dr. Shahrukh Firoz at World Physiotherapy Day symposium and clinical conference',
-    badge: 'Professional Delegation',
-    highlight: 'Conference Delegate',
-  },
-  {
-    id: 'clinic-wall-accreditation',
-    title: 'Clinical Accreditations & Anatomical Board',
-    authority: 'Advance Physiotherapy Centre Consultation Suite',
-    regId: 'Comprehensive Clinic Wall',
-    description:
-      'Complete collection of clinical certifications, musculoskeletal charts (spine, joints, ligaments), and certified therapy accreditations displayed at our consultation chamber.',
-    image: '/images/achievement-clinic-wall-gallery.webp',
-    alt: 'Clinical wall of achievements, licenses, and anatomical diagnostic charts at Advance Physiotherapy Centre',
-    badge: 'Clinic Accreditation',
-    highlight: 'Consultation Suite',
   },
 ];
