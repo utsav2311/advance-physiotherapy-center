@@ -14,6 +14,7 @@ export default function FaqSection({
   title = 'Frequently Asked Questions',
   subtitle = `Everything you need to know about physiotherapy consultations, treatment plans, home visits, and clinic timings with ${SITE.doctor}.`,
   label = 'Patient Inquiries',
+  showHeader = true,
   className = '',
 }) {
   const [openIndex, setOpenIndex] = useState(0);
@@ -25,11 +26,13 @@ export default function FaqSection({
   return (
     <section className={`section faq-section-wrapper ${className}`} id="faqs">
       <div className="container">
-        <div className="section-header text-center">
-          <span className="section-label">{label}</span>
-          <h2 className="section-title">{title}</h2>
-          <p className="section-subtitle">{subtitle}</p>
-        </div>
+        {showHeader && (
+          <div className="section-header text-center">
+            <span className="section-label">{label}</span>
+            <h2 className="section-title">{title}</h2>
+            <p className="section-subtitle">{subtitle}</p>
+          </div>
+        )}
 
         <div className="faq-grid-layout">
           <div className="faq-accordion-list">

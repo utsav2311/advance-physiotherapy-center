@@ -22,7 +22,7 @@ export default function Faq() {
         bgImage="/images/bg-medical-mesh.webp"
       />
 
-      <FaqSection items={faqs} />
+      <FaqSection items={faqs} showHeader={false} />
     </>
   );
 }
