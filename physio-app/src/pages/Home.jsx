@@ -335,7 +335,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <div className="cta-button-group" style={{ marginTop: '1.5rem', justifyContent: 'flex-start' }}>
                 <Link to="/about" className="btn btn-secondary">Full Profile →</Link>
                 <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
               </div>
