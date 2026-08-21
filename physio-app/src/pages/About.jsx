@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
@@ -6,15 +5,12 @@ import HospitalChip from '../components/HospitalChip';
 import FacilityCard from '../components/FacilityCard';
 import WhatsAppButton from '../components/WhatsAppButton';
 import FaqSection from '../components/FaqSection';
-import Lightbox from '../components/Lightbox';
+import CertificateCollage from '../components/CertificateCollage';
 import Seo from '../components/Seo';
 import { SITE, hospitals, facilities } from '../data/site';
 import { aboutFaqs } from '../data/faqs';
-import { doctorAchievements } from '../data/achievements';
 
 export default function About() {
-  const [activeCertIndex, setActiveCertIndex] = useState(null);
-
   return (
     <>
       <Seo
@@ -131,63 +127,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* DOCTOR ACHIEVEMENTS & CERTIFICATIONS */}
-      <section className="section achievements-section" style={{ background: 'var(--gray-50)' }}>
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-label">Verified Credentials</span>
-            <h2 className="section-title">Honors, Accreditations &amp; Registrations</h2>
-            <p className="section-subtitle">
-              Government-registered clinical licenses, international professional memberships,
-              and healthcare leadership awards recognizing {SITE.doctor}'s dedication to clinical excellence.
-            </p>
-          </div>
-
-          <div className="achievements-grid">
-            {doctorAchievements.map((item, idx) => (
-              <Reveal key={item.id} className="achievement-card" delayStep={0.08} index={idx}>
-                <div
-                  className="achievement-card-media"
-                  onClick={() => setActiveCertIndex(idx)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setActiveCertIndex(idx);
-                    }
-                  }}
-                  aria-label={`View full certificate: ${item.title}`}
-                >
-                  <img src={item.image} alt={item.alt} loading="lazy" />
-                  <div className="achievement-zoom-overlay">
-                    <span className="achievement-zoom-btn">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        <line x1="11" y1="8" x2="11" y2="14" />
-                        <line x1="8" y1="11" x2="14" y2="11" />
-                      </svg>
-                      Click to View
-                    </span>
-                  </div>
-                </div>
-
-                <div className="achievement-card-body">
-                  <span className="achievement-badge">{item.badge}</span>
-                  <h3 className="achievement-card-title">{item.title}</h3>
-                  <span className="achievement-authority">{item.authority}</span>
-                  {item.regId && <span className="achievement-reg-tag">{item.regId}</span>}
-                  <p className="achievement-desc">{item.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* DOCTOR ACHIEVEMENTS & CERTIFICATES COLLAGE */}
+      <CertificateCollage />
 
       {/* HOSPITAL EXPERIENCE */}
-      <section className="section">
+      <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="section-header text-center">
             <span className="section-label">Clinical Background</span>
@@ -207,7 +151,7 @@ export default function About() {
       </section>
 
       {/* SPECIALIZED TECHNIQUES */}
-      <section className="section" style={{ background: 'var(--gray-50)' }}>
+      <section className="section">
         <div className="container">
           <div className="section-header text-center">
             <span className="section-label">Specialized Techniques</span>
@@ -230,19 +174,6 @@ export default function About() {
         items={aboutFaqs}
         title={`Doctor & Clinic FAQs`}
         subtitle={`Common questions about ${SITE.doctor}'s qualifications, hospital experience, consultation fees, and appointment booking.`}
-      />
-
-      {/* CERTIFICATE LIGHTBOX */}
-      <Lightbox
-        images={doctorAchievements}
-        currentIndex={activeCertIndex}
-        onClose={() => setActiveCertIndex(null)}
-        onPrev={() =>
-          setActiveCertIndex((curr) => (curr > 0 ? curr - 1 : doctorAchievements.length - 1))
-        }
-        onNext={() =>
-          setActiveCertIndex((curr) => (curr < doctorAchievements.length - 1 ? curr + 1 : 0))
-        }
       />
     </>
   );
