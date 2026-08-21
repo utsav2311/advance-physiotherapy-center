@@ -56,22 +56,16 @@ export default function MobileDrawer({ open, onClose, navLinks }) {
             </div>
 
             <div className="drawer-nav">
-              {navLinks.map((link, i) => (
-                <motion.div
+              {navLinks.map((link) => (
+                <NavLink
                   key={link.to}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.04, duration: 0.35, ease: 'easeOut' }}
+                  to={link.to}
+                  end={link.to === '/'}
+                  onClick={onClose}
+                  className={({ isActive }) => `drawer-link${isActive ? ' active' : ''}`}
                 >
-                  <NavLink
-                    to={link.to}
-                    end={link.to === '/'}
-                    onClick={onClose}
-                    className={({ isActive }) => `drawer-link${isActive ? ' active' : ''}`}
-                  >
-                    {link.label}
-                  </NavLink>
-                </motion.div>
+                  {link.label}
+                </NavLink>
               ))}
             </div>
 

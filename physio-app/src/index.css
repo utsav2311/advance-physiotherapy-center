@@ -208,28 +208,6 @@ input, select, textarea {
   display: none;
 }
 
-/* --- SCROLL PROGRESS BAR --- */
-.scroll-progress-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  z-index: 10000;
-  background: transparent;
-  pointer-events: none;
-}
-
-.scroll-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #d97706 100%);
-  transform-origin: 0%;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
-}
-
-.page-transition-wrapper {
-  width: 100%;
-}
 
 /* --- BUTTONS --- */
 .btn {
