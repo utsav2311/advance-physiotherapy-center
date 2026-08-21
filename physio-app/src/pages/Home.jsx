@@ -288,8 +288,8 @@ export default function Home() {
               <ServiceCard key={service.slug} service={service} index={i} />
             ))}
           </div>
-          <div className="text-center" style={{ marginTop: '2.75rem' }}>
-            <Link to="/services" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>
+          <div className="cta-button-group">
+            <Link to="/services" className="btn btn-secondary">
               Explore All 10+ Specialized Services →
             </Link>
             <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
@@ -462,8 +462,8 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center" style={{ marginTop: '2.5rem' }}>
-            <Link to="/gallery" className="btn btn-secondary" style={{ marginRight: '0.75rem' }}>
+          <div className="cta-button-group">
+            <Link to="/gallery" className="btn btn-secondary">
               View All Photos &amp; Videos ({galleryItems.length}) →
             </Link>
             <WhatsAppButton className="btn btn-primary">Book Consultation</WhatsAppButton>
