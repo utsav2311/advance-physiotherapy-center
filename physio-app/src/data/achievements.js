@@ -24,6 +24,30 @@ export const doctorAchievements = [
     highlight: 'Reg: G00525',
   },
   {
+    id: 'therapeutic-taping-therapist',
+    title: 'Certified On-Field Therapeutic Taping Therapist',
+    authority: 'EPLORIS • Level 1 & 2 Clinical Hands-On Certification',
+    regId: 'Ref: EPA/22/0490 • 16 Credit Hours',
+    description:
+      'Certified On-Field Therapeutic Taping Therapist (Level 1 & 2) following intensive clinical hands-on and theoretical examination in New Delhi for acute sports injury stabilization.',
+    image: '/images/achievement-therapeutic-taping.webp',
+    alt: 'EPLORIS Certificate of Competency as On-Field Therapeutic Taping Therapist for Dr. Shahrukh Firoz',
+    badge: 'Sports Medicine Certified',
+    highlight: 'Level 1 & 2 Specialist',
+  },
+  {
+    id: 'igims-sports-kinesio-taping',
+    title: 'Cricket Injuries & Kinesio Taping Certification',
+    authority: 'Indira Gandhi Institute of Medical Sciences (IGIMS), Patna',
+    regId: 'Dept. of Physiotherapy, IGIMS • 8 Credit Hours',
+    description:
+      'Completed specialized hands-on clinical workshop on Cricket Injuries: Prevention, Rehabilitation, and Application of Kinesio Taping at IGIMS, Patna.',
+    image: '/images/achievement-igims-sports-kinesio.webp',
+    alt: 'IGIMS Patna Certificate in Cricket Injuries Prevention and Kinesio Taping for Dr. Shahrukh Firoz',
+    badge: 'Sports Injury Rehabilitation',
+    highlight: 'IGIMS Patna Accredited',
+  },
+  {
     id: 'senior-citizen-award',
     title: 'Senior Citizen Healthcare Guidance Award',
     authority: 'City Line Senior Citizen Programme • Advance Media Group & Prasad Hospital',
