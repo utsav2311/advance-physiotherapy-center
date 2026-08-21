@@ -301,7 +301,7 @@ export default function Home() {
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
           <div className="about-grid">
-            <Reveal className="about-visual" y={30}>
+            <Reveal className="about-visual" variant="fade-left" y={0} x={28}>
               <div className="about-image-frame">
                 <img
                   src="/images/dr-shahrukh-portrait.webp"
@@ -317,7 +317,7 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal className="about-content" y={30} delayStep={0.1} index={1}>
+            <Reveal className="about-content" variant="fade-right" y={0} x={28} delayStep={0.1} index={1}>
               <span className="section-label">Meet Your Physiotherapist</span>
               <h2 className="section-title">Personalized Clinical Healing</h2>
               <p className="about-role">B.P.T., M.P.T., Ortho (Jaipur) • M.G.A.P.T. • M.R.A.P.T. • Reg. No. {SITE.regNo}</p>
@@ -371,7 +371,7 @@ export default function Home() {
             <h2 className="section-title">What Our Patients Say</h2>
           </div>
 
-          <Reveal className="reviews-summary">
+          <Reveal className="reviews-summary" variant="scale-in">
             <div className="google-badge">
               <GoogleIcon />
               Verified Google Business
@@ -386,7 +386,7 @@ export default function Home() {
 
           <div className="reviews-grid">
             {reviews.slice(0, 3).map((r, i) => (
-              <Reveal key={r.name} index={i} className="review-card" as="article">
+              <Reveal key={r.name} index={i} className="review-card" as="article" variant="fade-up">
                 <div className="stars">★★★★★</div>
                 <p className="text">"{r.text}"</p>
                 <div className="review-author">
@@ -422,7 +422,8 @@ export default function Home() {
               <Reveal
                 key={item.video || item.image}
                 index={i}
-                delayStep={0.08}
+                delayStep={0.07}
+                variant="blur-sharp"
                 className={`gallery-item item-${item.size || 'medium'} ${item.type === 'video' ? 'item-video' : ''}`}
                 onClick={() => setHomeLightboxIndex(i)}
                 tabIndex={0}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useScrolled } from '../hooks/useScrollPosition';
 import WhatsAppButton from './WhatsAppButton';
 import MobileDrawer from './MobileDrawer';
@@ -25,7 +26,12 @@ export default function Header() {
 
   return (
     <>
-      <header className={headerClass}>
+      <motion.header
+        className={headerClass}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      >
         <div className="header-inner">
           <NavLink to="/" className="brand-logo" aria-label="Advance Physiotherapy Centre Home">
             <img
@@ -69,7 +75,7 @@ export default function Header() {
             </button>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} navLinks={NAV_LINKS} />
     </>

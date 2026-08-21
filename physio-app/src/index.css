@@ -208,6 +208,29 @@ input, select, textarea {
   display: none;
 }
 
+/* --- SCROLL PROGRESS BAR --- */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10000;
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #d97706 100%);
+  transform-origin: 0%;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+}
+
+.page-transition-wrapper {
+  width: 100%;
+}
+
 /* --- BUTTONS --- */
 .btn {
   display: inline-flex;
@@ -219,29 +242,44 @@ input, select, textarea {
   font-size: 0.9rem;
   padding: 0.8rem 1.6rem;
   border-radius: var(--radius-md);
-  transition: all var(--duration-base) var(--ease-out);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease;
   cursor: pointer;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
+  will-change: transform;
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
+  transition-duration: 0.08s;
 }
 
 .btn-icon {
   width: 1.1rem;
   height: 1.1rem;
   flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(3px);
 }
 
 .btn-primary {
   background: var(--primary-700);
   color: var(--white);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
 }
 
 .btn-primary:hover {
   background: var(--primary-600);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.38);
   color: var(--white);
 }
 
@@ -257,10 +295,10 @@ input, select, textarea {
 }
 
 .btn-secondary:hover {
-  border-color: var(--gray-300);
-  background: var(--gray-50);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  border-color: var(--primary-300);
+  background: var(--white);
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .btn-lg {
@@ -423,12 +461,33 @@ input, select, textarea {
   color: var(--gray-600);
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-sm);
-  transition: all var(--duration-fast) var(--ease-out);
+  position: relative;
+  transition: color 0.25s var(--ease-out), background 0.25s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background: var(--primary-600);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-link:hover {
   color: var(--gray-900);
-  background: var(--gray-50);
+  background: rgba(2, 132, 199, 0.05);
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .nav-link.active {
@@ -4111,5 +4170,115 @@ input, select, textarea {
   .hero-btn-secondary {
     padding: 0.75rem 1rem;
     font-size: 0.86rem;
+  }
+}
+
+/* ==========================================================================
+   HIGH-END MOTION DESIGN & ACCESSIBILITY SYSTEM
+   ========================================================================== */
+
+/* Enhanced smooth hardware-accelerated image reveal */
+.service-card-image img,
+.featured-card-image img,
+.about-image-frame img,
+.gallery-card-img {
+  transform: translateZ(0);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+  will-change: transform;
+}
+
+.service-card:hover .service-card-image img,
+.featured-card:hover .featured-card-image img {
+  transform: scale(1.055);
+}
+
+.about-image-frame:hover img {
+  transform: scale(1.035);
+}
+
+/* Micro-interaction badge shimmer */
+.section-label {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.section-label:hover {
+  transform: translateY(-1px);
+}
+
+/* Review Card Micro-Interactions */
+.review-card {
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease;
+  will-change: transform;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(2, 132, 199, 0.1);
+  border-color: var(--primary-200);
+}
+
+.review-card:hover .star-icon {
+  transform: scale(1.12);
+  transition: transform 0.2s var(--ease-out);
+}
+
+/* Facility Card & Hospital Chip Micro-Interactions */
+.facility-card,
+.hospital-chip {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease;
+  will-change: transform;
+}
+
+.facility-card:hover,
+.hospital-chip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(2, 132, 199, 0.12);
+  border-color: var(--primary-300);
+}
+
+/* Floating WhatsApp Pulsing Glow */
+.whatsapp-float-btn {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+/* ACCESSIBILITY: Strict Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .scroll-progress-container,
+  .marquee-track,
+  .marquee-track-linear,
+  .hero-scroll-indicator {
+    animation: none !important;
+  }
+
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .service-card:hover,
+  .featured-card:hover,
+  .review-card:hover,
+  .facility-card:hover,
+  .hospital-chip:hover,
+  .about-image-frame:hover img {
+    transform: none !important;
   }
 }
