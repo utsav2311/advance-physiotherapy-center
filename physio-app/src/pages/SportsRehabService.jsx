@@ -165,8 +165,8 @@ export default function SportsRehabService() {
             <div className="spine-hero-visual">
               <div className="spine-hero-frame">
                 <img
-                  src="/images/sports-rehabilitation-muzaffarpur.webp"
-                  alt="Dr. Shahrukh Firoz providing sports physiotherapy assessment and taping in Muzaffarpur"
+                  src="/images/sports-injury-physiotherapy-hero.webp"
+                  alt="Realistic sports injury physiotherapy assessment and athletic rehabilitation in clinic in Muzaffarpur"
                   className="spine-hero-img"
                   width="600"
                   height="338"
@@ -216,8 +216,8 @@ export default function SportsRehabService() {
             <Reveal className="spine-anatomy-card" delayStep={0.1}>
               <div className="spine-diagram-box">
                 <img
-                  src="/images/sports-rehabilitation-exercise.webp"
-                  alt="Modern sports physiotherapy gym exercise station for functional rehabilitation"
+                  src="/images/sports-rehab-functional-exercise.webp"
+                  alt="Educational visual demonstrating controlled functional lower-limb mobility and strength exercises"
                   className="spine-diagram-img"
                   width="500"
                   height="281"

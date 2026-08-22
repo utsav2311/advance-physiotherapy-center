@@ -215,8 +215,8 @@ export default function ElectrotherapyService() {
             <Reveal className="spine-anatomy-card" delayStep={0.1}>
               <div className="spine-diagram-box">
                 <img
-                  src="/images/electrotherapy-treatment-session.webp"
-                  alt="Electrotherapy surface electrode setup in a clean physiotherapy clinic environment"
+                  src="/images/electrotherapy-clinic-setup-ai.webp"
+                  alt="Modern electrotherapy clinic setup with digital modalities and treatment bay in a clean physiotherapy environment"
                   className="spine-diagram-img"
                   width="500"
                   height="281"
