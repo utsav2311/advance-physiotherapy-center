@@ -165,8 +165,8 @@ export default function NeuroRehabService() {
             <div className="spine-hero-visual">
               <div className="spine-hero-frame">
                 <img
-                  src="/images/neurological-rehabilitation-muzaffarpur.webp"
-                  alt="Professional neurological physiotherapy assessment and rehabilitation session in modern clinic in Muzaffarpur"
+                  src="/images/neuro-rehabilitation-ai-hero.webp"
+                  alt="Realistic neurological physiotherapy gait and mobility rehabilitation session in modern Indian clinic in Muzaffarpur"
                   className="spine-hero-img"
                   width="600"
                   height="338"
@@ -327,8 +327,8 @@ export default function NeuroRehabService() {
           <div className="spine-sciatica-showcase" style={{ marginTop: '3rem' }}>
             <div className="spine-sciatica-visual-box">
               <img
-                src="/images/neurological-balance-training.webp"
-                alt="Neurological physiotherapy balance and gait training support in modern clinic"
+                src="/images/neuro-balance-posture-ai.webp"
+                alt="Realistic neurological balance, postural control, and standing rehabilitation training in clinic"
                 className="spine-sciatica-img"
                 width="600"
                 height="338"
