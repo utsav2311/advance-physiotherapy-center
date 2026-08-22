@@ -402,6 +402,14 @@ export default function PediatricIcuService() {
             </div>
 
             <div className="spine-modality-card">
+              <div style={{ marginBottom: '1rem', borderRadius: '10px', overflow: 'hidden' }}>
+                <img
+                  src="/images/burn-rehabilitation-mobility-care.webp"
+                  alt="Gentle passive and active joint mobility preservation care after burns"
+                  style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                  loading="lazy"
+                />
+              </div>
               <div className="spine-mod-icon">🩹</div>
               <h3>Rehabilitation After Burns</h3>
               <p>
@@ -411,6 +419,14 @@ export default function PediatricIcuService() {
             </div>
 
             <div className="spine-modality-card">
+              <div style={{ marginBottom: '1rem', borderRadius: '10px', overflow: 'hidden' }}>
+                <img
+                  src="/images/post-fracture-recovery-mobility.webp"
+                  alt="Joint mobilization and guided strengthening exercises after fracture cast removal"
+                  style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                  loading="lazy"
+                />
+              </div>
               <div className="spine-mod-icon">🦴</div>
               <h3>Post-Fracture Recovery</h3>
               <p>
