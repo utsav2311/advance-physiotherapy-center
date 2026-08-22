@@ -7,6 +7,7 @@ import ElectrotherapyService from './ElectrotherapyService';
 import SportsRehabService from './SportsRehabService';
 import NeuroRehabService from './NeuroRehabService';
 import PostureErgonomicsService from './PostureErgonomicsService';
+import WomensHealthService from './WomensHealthService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -60,6 +61,11 @@ export default function ServiceDetail() {
   // Render comprehensive, dedicated page for Posture & Ergonomics
   if (slug === 'posture-ergonomics') {
     return <PostureErgonomicsService />;
+  }
+
+  // Render comprehensive, dedicated page for Women's Health
+  if (slug === 'womens-health') {
+    return <WomensHealthService />;
   }
 
   const service = getServiceBySlug(slug);
