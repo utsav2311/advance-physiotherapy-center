@@ -5757,6 +5757,7 @@ input, select, textarea {
   .spine-intro-grid,
   .spine-sciatica-showcase,
   .spine-rehab-feature-box,
+  .spine-how-grid,
   .spine-safety-wrapper,
   .spine-doctor-card,
   .spine-local-card {
@@ -5792,23 +5793,86 @@ input, select, textarea {
   }
 }
 
+@media (max-width: 768px) {
+  .spine-how-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .spine-how-card {
+    padding: 1.25rem;
+  }
+
+  .spine-how-card h3 {
+    font-size: 1.18rem;
+    line-height: 1.35;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .spine-sciatica-showcase,
+  .spine-rehab-feature-box {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .spine-pipeline-wrapper {
+    padding: 1.25rem;
+  }
+
+  .spine-pipeline-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .spine-pipe-step {
+    flex: 1 1 100%;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+  }
+
+  .spine-pipe-num {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+
+  .spine-pipe-desc {
+    padding: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .spine-hero-section {
-    padding: 2.5rem 0 2rem;
+    padding: 2.25rem 0 1.75rem;
   }
 
   .spine-hero-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+    line-height: 1.2;
   }
 
   .spine-hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .spine-hero-cta-group .btn {
     width: 100%;
     justify-content: center;
+    text-align: center;
   }
 
   .spine-cards-grid,
@@ -5819,22 +5883,55 @@ input, select, textarea {
   .spine-first-visit-grid,
   .spine-activity-scenarios,
   .spine-why-grid,
-  .spine-pain-map-grid {
+  .spine-pain-map-grid,
+  .spine-how-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .spine-pipe-step {
-    flex: 0 0 100%;
+  .spine-card,
+  .spine-factor-card,
+  .spine-modality-card,
+  .spine-visit-step,
+  .spine-scenario-item,
+  .spine-why-card {
+    padding: 1.15rem;
+  }
+
+  .spine-card-title,
+  .spine-factor-title,
+  .spine-modality-card h3,
+  .spine-visit-step h3,
+  .spine-scenario-item h4,
+  .spine-why-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .spine-final-actions {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .spine-final-actions .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .spine-part-tabs {
+    gap: 0.35rem;
+  }
+
+  .spine-tab-btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.76rem;
+  }
+
+  .spine-pain-btn {
+    padding: 0.75rem 0.95rem;
+    font-size: 0.85rem;
   }
 }
