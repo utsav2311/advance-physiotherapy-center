@@ -707,10 +707,7 @@ export default function ElectrotherapyService() {
             </p>
 
             <div className="spine-final-actions">
-              <WhatsAppButton className="btn btn-primary btn-lg spine-final-wa-btn" message={bookingMessage}>
-                <WhatsAppIcon />
-                <span>Book Appointment</span>
-              </WhatsAppButton>
+              <WhatsAppButton className="btn btn-primary btn-lg spine-final-wa-btn" message={bookingMessage}>Book Appointment</WhatsAppButton>
               <a href={`tel:${SITE.phonePrimary}`} className="btn btn-secondary btn-lg spine-final-call-btn">
                 <PhoneIcon />
                 <span>Call Clinic • {SITE.phonePrimaryDisplay}</span>
