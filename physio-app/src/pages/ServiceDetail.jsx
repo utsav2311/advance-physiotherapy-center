@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import SpineBackPainService from './SpineBackPainService';
 import CervicalNeckService from './CervicalNeckService';
 import KneeArthritisService from './KneeArthritisService';
+import FrozenShoulderService from './FrozenShoulderService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -30,6 +31,11 @@ export default function ServiceDetail() {
   // Render comprehensive, dedicated page for Knee & Joint Arthritis
   if (slug === 'knee-joint-arthritis') {
     return <KneeArthritisService />;
+  }
+
+  // Render comprehensive, dedicated page for Frozen Shoulder
+  if (slug === 'frozen-shoulder') {
+    return <FrozenShoulderService />;
   }
 
   const service = getServiceBySlug(slug);
