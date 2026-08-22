@@ -5045,6 +5045,10 @@ input, select, textarea {
   gap: 1.25rem;
 }
 
+.cervical-activities-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .spine-activity-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
@@ -5773,6 +5777,7 @@ input, select, textarea {
   }
 
   .spine-activities-grid,
+  .cervical-activities-grid,
   .spine-first-visit-grid,
   .spine-why-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -5879,6 +5884,7 @@ input, select, textarea {
   .spine-symptoms-grid,
   .spine-factors-grid,
   .spine-activities-grid,
+  .cervical-activities-grid,
   .spine-modalities-grid,
   .spine-first-visit-grid,
   .spine-activity-scenarios,

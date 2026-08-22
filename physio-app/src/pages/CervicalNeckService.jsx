@@ -642,7 +642,7 @@ export default function CervicalNeckService() {
               Comfortable movement and varied positions can help you manage everyday physical demands.
             </p>
 
-            <div className="spine-activities-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="spine-activities-grid cervical-activities-grid">
               <div className="spine-activity-card">
                 <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', marginBottom: '0.85rem' }}>
                   <img
