@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import SpineBackPainService from './SpineBackPainService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -13,6 +14,12 @@ import { SITE } from '../data/site';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
+
+  // Render comprehensive, dedicated page for Spine & Back Pain
+  if (slug === 'spine-back-pain') {
+    return <SpineBackPainService />;
+  }
+
   const service = getServiceBySlug(slug);
 
   if (!service) {

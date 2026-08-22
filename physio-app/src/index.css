@@ -4359,3 +4359,1325 @@ input, select, textarea {
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   SPINE & BACK PAIN SPECIALIZED SERVICE PAGE STYLES
+   ========================================================================== */
+.spine-service-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- HERO SECTION --- */
+.spine-hero-section {
+  background: linear-gradient(180deg, #f0f7fc 0%, #ffffff 100%);
+  padding: clamp(3.5rem, 6vw, 5rem) 0 clamp(2.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.spine-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.spine-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-700);
+  background: var(--primary-50);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--primary-100);
+  margin-bottom: 1rem;
+}
+
+.spine-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-weight: 900;
+  line-height: 1.18;
+  color: var(--gray-900);
+  letter-spacing: -0.025em;
+  margin-bottom: 1.15rem;
+}
+
+.spine-hero-subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--gray-600);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  max-width: 600px;
+}
+
+.spine-hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.spine-primary-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+}
+
+.spine-call-btn {
+  background: var(--white);
+  border: 1.5px solid var(--gray-300);
+  color: var(--gray-800);
+}
+
+.spine-hero-trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.spine-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--white);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gray-200);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.spine-trust-star {
+  color: #f59e0b;
+}
+
+.spine-trust-check {
+  color: #10b981;
+  font-weight: 800;
+}
+
+.spine-hero-frame {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+.spine-hero-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.spine-hero-card-badge {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.spine-badge-title {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.spine-badge-sub {
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- SECTION 1: INTRODUCTION & ANATOMY --- */
+.spine-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.spine-prose p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--gray-600);
+  margin-bottom: 1.15rem;
+}
+
+.spine-intro-actions {
+  margin-top: 1.75rem;
+}
+
+.spine-anatomy-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.spine-anatomy-tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-700);
+  margin-bottom: 0.35rem;
+}
+
+.spine-anatomy-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.35rem;
+}
+
+.spine-anatomy-caption {
+  font-size: 0.84rem;
+  color: var(--gray-500);
+  margin-bottom: 1.25rem;
+}
+
+.spine-part-tabs {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.spine-tab-btn {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.spine-tab-btn:hover {
+  background: var(--primary-50);
+  color: var(--primary-700);
+}
+
+.spine-tab-btn.is-active {
+  background: var(--primary-600);
+  color: var(--white);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+}
+
+.spine-anatomy-display {
+  background: #f8fafc;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.spine-anatomy-badge-code {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-700);
+  background: var(--primary-50);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.spine-anatomy-part-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.spine-anatomy-part-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin-bottom: 0.85rem;
+}
+
+.spine-anatomy-role-box {
+  font-size: 0.84rem;
+  color: var(--primary-800);
+  background: rgba(2, 132, 199, 0.08);
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary-600);
+}
+
+.spine-disclaimer-note {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- SECTION 2: WHAT IS BACK PAIN CARD --- */
+.spine-centered-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.spine-what-body p {
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--gray-700);
+  margin-bottom: 1.25rem;
+}
+
+.spine-evidence-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--primary-50);
+  border: 1px solid var(--primary-100);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9rem;
+  color: var(--primary-900);
+  line-height: 1.55;
+  margin-top: 1.5rem;
+}
+
+.spine-evidence-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* --- SECTION 3: 6-CARD GRID & PAIN MAP --- */
+.spine-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.spine-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.25s ease;
+}
+
+.spine-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-300);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.1);
+}
+
+.spine-card-num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--primary-600);
+  background: var(--primary-50);
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.spine-card-title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.spine-card-desc {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.spine-note-box {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 0.92rem;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+/* PAIN MAP SILHOUETTE VISUAL */
+.spine-pain-map-container {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.spine-pain-map-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.spine-pain-map-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.spine-pain-map-sub {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+}
+
+.spine-pain-map-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.spine-pain-zone-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.spine-pain-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.15rem;
+  background: #f8fafc;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.spine-pain-btn:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-800);
+}
+
+.spine-pain-btn.is-active {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+}
+
+.spine-pain-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  flex-shrink: 0;
+}
+
+.spine-pain-btn.is-active .spine-pain-indicator {
+  background: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+}
+
+.spine-pain-detail-card {
+  background: #f8fafc;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+}
+
+.spine-pain-detail-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.spine-pain-block {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gray-700);
+}
+
+.spine-pain-block strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary-700);
+  margin-bottom: 0.2rem;
+}
+
+/* --- SECTION 4: SYMPTOMS CHECKLIST --- */
+.spine-symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.spine-symptom-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--white);
+  padding: 1.15rem;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--gray-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.spine-symptom-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.spine-symptom-text {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  line-height: 1.45;
+}
+
+.spine-symptom-footnote {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* --- SECTION 5: CONTRIBUTING FACTORS & ERGONOMICS --- */
+.spine-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.spine-factor-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+}
+
+.spine-factor-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.spine-factor-card p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.spine-activities-box {
+  background: #f8fafc;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.spine-activities-heading {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.35rem;
+}
+
+.spine-activities-sub {
+  font-size: 0.92rem;
+  color: var(--gray-500);
+  margin-bottom: 2rem;
+}
+
+.spine-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.spine-activity-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.35rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.spine-act-icon {
+  font-size: 1.85rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.spine-activity-card h4 {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.45rem;
+}
+
+.spine-activity-card p {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+/* --- SECTION 6: HOW PHYSIOTHERAPY HELPS & PIPELINE --- */
+.spine-how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.spine-how-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.spine-how-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.65rem;
+}
+
+.spine-how-lead {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--primary-700);
+  margin-bottom: 1rem;
+}
+
+.spine-how-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.spine-how-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.55;
+}
+
+.spine-how-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0.35rem;
+  color: var(--primary-600);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.spine-pipeline-wrapper {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.spine-pipeline-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 2.25rem;
+}
+
+.spine-pipeline-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.spine-pipe-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.spine-pipe-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-600);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.spine-pipe-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.spine-pipe-desc {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+  padding: 0 0.25rem;
+}
+
+.spine-pipe-connector {
+  flex: 0 0 40px;
+  height: 2px;
+  background: var(--gray-200);
+  margin-top: 22px;
+}
+
+/* --- SECTION 7: WHAT MAY BE INCLUDED IN PLAN --- */
+.spine-modalities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.spine-modality-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.spine-modality-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-400);
+}
+
+.spine-mod-icon {
+  font-size: 1.85rem;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.spine-modality-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.spine-modality-card p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.spine-guidance-disclaimer {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+/* --- SECTION 8: FIRST VISIT --- */
+.spine-first-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.spine-visit-step {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.spine-visit-step-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary-600);
+  margin-bottom: 0.5rem;
+}
+
+.spine-visit-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.spine-visit-step p {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* --- SECTION 9: SAFETY & URGENT MEDICAL NOTICE --- */
+.spine-safety-wrapper {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.spine-when-lead {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.spine-when-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spine-when-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--gray-700);
+  line-height: 1.55;
+}
+
+.spine-when-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-600);
+  font-weight: 900;
+}
+
+.spine-medical-alert-box {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.08);
+}
+
+.spine-alert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fef3c7;
+  color: #92400e;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.spine-alert-heading {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #78350f;
+  margin-bottom: 0.75rem;
+}
+
+.spine-medical-alert-box p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #78350f;
+  margin-bottom: 1rem;
+}
+
+.spine-alert-footnote {
+  font-size: 0.8rem !important;
+  color: #92400e !important;
+  font-style: italic;
+  margin-bottom: 0 !important;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #fcd34d;
+}
+
+/* --- SECTION 10: EVERYDAY SCENARIOS --- */
+.spine-activity-scenarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.spine-scenario-item {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.35rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.spine-scenario-item h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.45rem;
+}
+
+.spine-scenario-item p {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+/* --- SECTION 11: WHY CHOOSE --- */
+.spine-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.spine-why-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.spine-why-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-50);
+  color: var(--primary-700);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.spine-why-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.45rem;
+}
+
+.spine-why-card p {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+/* --- SECTION 12: DOCTOR PROFILE CARD --- */
+.spine-doctor-card {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.spine-doctor-photo {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-200);
+}
+
+.spine-doctor-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.spine-doctor-name {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-top: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.spine-doctor-creds {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary-700);
+  margin-bottom: 1rem;
+}
+
+.spine-doctor-bio {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+  margin-bottom: 1.25rem;
+}
+
+.spine-doctor-trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.spine-doc-point {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  background: #f8fafc;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gray-200);
+}
+
+.spine-doc-check {
+  color: #10b981;
+  font-weight: 900;
+}
+
+/* --- SECTION 13: LOCAL CLINIC & MAP --- */
+.spine-local-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.spine-local-text p {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+  margin-bottom: 1.25rem;
+}
+
+.spine-local-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.spine-local-details p {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  margin-bottom: 0;
+}
+
+.spine-local-details svg {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-600);
+  flex-shrink: 0;
+}
+
+/* --- SECTION 14: FAQ ACCORDION --- */
+.spine-faq-accordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.spine-faq-item {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.spine-faq-item.is-open {
+  border-color: var(--primary-400);
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.08);
+}
+
+.spine-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  background: transparent;
+  cursor: pointer;
+}
+
+.spine-faq-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--primary-700);
+  flex-shrink: 0;
+}
+
+.spine-faq-answer {
+  padding: 0 1.5rem 1.35rem;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+}
+
+/* --- SECTION 15: FINAL CTA --- */
+.spine-cta-section {
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+}
+
+.spine-final-cta-card {
+  background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%);
+  border-radius: var(--radius-2xl);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 3rem);
+  color: var(--white);
+  box-shadow: 0 16px 48px rgba(2, 132, 199, 0.25);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.spine-final-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--white);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.spine-final-sub {
+  font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+}
+
+.spine-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.spine-final-wa-btn {
+  background: #22c55e;
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.4);
+}
+
+.spine-final-call-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  backdrop-filter: blur(8px);
+}
+
+.spine-final-location {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS FOR SPINE SERVICE PAGE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .spine-hero-grid,
+  .spine-intro-grid,
+  .spine-safety-wrapper,
+  .spine-doctor-card,
+  .spine-local-card {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .spine-cards-grid,
+  .spine-factors-grid,
+  .spine-modalities-grid,
+  .spine-activity-scenarios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spine-activities-grid,
+  .spine-first-visit-grid,
+  .spine-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spine-pipeline-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .spine-pipe-connector {
+    display: none;
+  }
+
+  .spine-pipe-step {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .spine-hero-section {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .spine-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .spine-hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .spine-hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .spine-cards-grid,
+  .spine-symptoms-grid,
+  .spine-factors-grid,
+  .spine-activities-grid,
+  .spine-modalities-grid,
+  .spine-first-visit-grid,
+  .spine-activity-scenarios,
+  .spine-why-grid,
+  .spine-pain-map-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .spine-pipe-step {
+    flex: 0 0 100%;
+  }
+
+  .spine-final-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .spine-final-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
