@@ -6,6 +6,7 @@ import FrozenShoulderService from './FrozenShoulderService';
 import ElectrotherapyService from './ElectrotherapyService';
 import SportsRehabService from './SportsRehabService';
 import NeuroRehabService from './NeuroRehabService';
+import PostureErgonomicsService from './PostureErgonomicsService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -54,6 +55,11 @@ export default function ServiceDetail() {
   // Render comprehensive, dedicated page for Neurological Rehabilitation
   if (slug === 'neurological-rehabilitation') {
     return <NeuroRehabService />;
+  }
+
+  // Render comprehensive, dedicated page for Posture & Ergonomics
+  if (slug === 'posture-ergonomics') {
+    return <PostureErgonomicsService />;
   }
 
   const service = getServiceBySlug(slug);
