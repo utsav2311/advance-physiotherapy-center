@@ -385,6 +385,14 @@ export default function PediatricIcuService() {
 
           <div className="spine-modalities-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
             <div className="spine-modality-card">
+              <div style={{ marginBottom: '1rem', borderRadius: '10px', overflow: 'hidden' }}>
+                <img
+                  src="/images/bedside-physiotherapy-muzaffarpur.webp"
+                  alt="Bedside gentle physiotherapy mobility care session for recovering patient"
+                  style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
+                  loading="lazy"
+                />
+              </div>
               <div className="spine-mod-icon">🛏️</div>
               <h3>Bedside Physiotherapy</h3>
               <p>
