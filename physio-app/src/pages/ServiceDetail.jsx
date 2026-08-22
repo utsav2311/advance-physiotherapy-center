@@ -8,6 +8,7 @@ import SportsRehabService from './SportsRehabService';
 import NeuroRehabService from './NeuroRehabService';
 import PostureErgonomicsService from './PostureErgonomicsService';
 import WomensHealthService from './WomensHealthService';
+import PediatricIcuService from './PediatricIcuService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -66,6 +67,11 @@ export default function ServiceDetail() {
   // Render comprehensive, dedicated page for Women's Health
   if (slug === 'womens-health') {
     return <WomensHealthService />;
+  }
+
+  // Render comprehensive, dedicated page for Pediatric, ICU & Critical Care
+  if (slug === 'pediatric-icu-care') {
+    return <PediatricIcuService />;
   }
 
   const service = getServiceBySlug(slug);
