@@ -4560,6 +4560,22 @@ input, select, textarea {
   margin-bottom: 1.25rem;
 }
 
+.spine-diagram-box {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--gray-200);
+  background: #f1f5f9;
+}
+
+.spine-diagram-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
 .spine-part-tabs {
   display: flex;
   gap: 0.45rem;
@@ -4734,6 +4750,77 @@ input, select, textarea {
   font-size: 0.92rem;
   color: var(--gray-500);
   font-style: italic;
+}
+
+/* SCIATICA PATHWAY VISUAL SHOWCASE */
+.spine-sciatica-showcase {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2.5rem;
+}
+
+.spine-sciatica-visual-box {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.spine-sciatica-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.spine-sciatica-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.spine-sciatica-text p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+  margin-bottom: 1rem;
+}
+
+.spine-sciatica-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.spine-sciatica-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8fafc;
+  border: 1px solid var(--gray-200);
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.spine-sciatica-badge span {
+  color: #0284c7;
+  font-weight: 900;
 }
 
 /* PAIN MAP SILHOUETTE VISUAL */
@@ -5113,6 +5200,74 @@ input, select, textarea {
 }
 
 /* --- SECTION 7: WHAT MAY BE INCLUDED IN PLAN --- */
+.spine-rehab-feature-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  margin-top: 2rem;
+}
+
+.spine-rehab-feature-img-wrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.spine-rehab-feature-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.spine-rehab-feature-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.spine-rehab-feature-text p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+  margin-bottom: 1.15rem;
+}
+
+.spine-rehab-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.spine-rehab-feature-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.spine-rehab-feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 900;
+}
+
 .spine-modalities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5600,6 +5755,8 @@ input, select, textarea {
 @media (max-width: 1024px) {
   .spine-hero-grid,
   .spine-intro-grid,
+  .spine-sciatica-showcase,
+  .spine-rehab-feature-box,
   .spine-safety-wrapper,
   .spine-doctor-card,
   .spine-local-card {

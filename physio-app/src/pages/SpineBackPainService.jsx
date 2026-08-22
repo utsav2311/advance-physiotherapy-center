@@ -5,7 +5,7 @@ import Reveal from '../components/Reveal';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
-import { PhoneIcon, CheckIcon, WarnIcon, ClockIcon, LocationIcon, WhatsAppIcon } from '../components/Icons';
+import { PhoneIcon, ClockIcon, LocationIcon, WhatsAppIcon } from '../components/Icons';
 import { getRelatedServices } from '../data/services';
 import ServiceCard from '../components/ServiceCard';
 import { SITE } from '../data/site';
@@ -23,26 +23,26 @@ export default function SpineBackPainService() {
     cervical: {
       name: 'Cervical Spine (Neck)',
       code: 'C1 – C7',
-      desc: 'Supports the head, enables neck rotation, and protects nerves extending into the shoulders and arms. Poor desk ergonomics or awkward sleeping postures commonly cause stiffness here.',
-      role: 'Head support, cervical rotation, arm nerve pathways',
+      desc: 'Supports head weight (approx. 5 kg) and enables natural rotation. Poor desk posture or awkward sleeping positions commonly cause muscular tightness and nerve impingement here.',
+      role: 'Head rotation, neck mobility, shoulder & arm nerve pathways',
     },
     thoracic: {
       name: 'Thoracic Spine (Mid Back)',
       code: 'T1 – T12',
-      desc: 'Attached to the rib cage to provide torso stability and protect vital organs. Prolonged slouching can lead to mid-back muscle fatigue and restricted chest expansion.',
-      role: 'Ribcage support, rotational stability, posture anchoring',
+      desc: 'Connects with the rib cage to provide torso stability and protect thoracic organs. Prolonged slouching over screens leads to mid-back stiffness and restricted chest expansion.',
+      role: 'Upper body stability, rotational posture, rib cage support',
     },
     lumbar: {
       name: 'Lumbar Spine (Lower Back)',
       code: 'L1 – L5',
-      desc: 'Carries the majority of upper body weight and absorbs impact during bending, lifting, and walking. It is the most common site for mechanical back discomfort and disc strain.',
-      role: 'Weight bearing, bending flexibility, core force transmission',
+      desc: 'Carries the highest mechanical load of the upper body. Intervertebral discs (L4-L5, L5-S1) absorb force during bending and lifting, making this the most common site for strain.',
+      role: 'Weight distribution, shock absorption, core force transfer',
     },
     sacrum: {
       name: 'Sacrum & Coccyx (Base)',
       code: 'S1 – S5 & Tailbone',
-      desc: 'Connects the spine directly to the pelvis at the sacroiliac (SI) joints, transmitting forces from the torso down into the hips and legs during daily activities.',
-      role: 'Pelvic junction, sitting support, SI joint stability',
+      desc: 'Triangular bone connecting the spine to the pelvis via sacroiliac (SI) joints. Transmits movement loads between the torso and legs during walking and stair climbing.',
+      role: 'Pelvic junction, sitting support, SI joint force transmission',
     },
   };
 
@@ -51,17 +51,17 @@ export default function SpineBackPainService() {
     'lower-back': {
       title: 'Lower Back (Lumbar Region)',
       symptoms: 'Aching, stiffness, muscle spasms, or dull tension around the waistline that worsens after prolonged sitting or bending.',
-      insight: 'Most common mechanical issue, often responding well to active core retraining and guided mobility exercises.',
+      insight: 'Most common mechanical presentation, responding effectively to active core retraining and guided mobility exercises.',
     },
     'neck-upper': {
       title: 'Neck & Upper Back Region',
-      symptoms: 'Tightness across the shoulder blades, neck stiffness, and tension headaches from prolonged forward-head postures.',
+      symptoms: 'Tightness across the shoulder blades, neck stiffness, and tension headaches from prolonged forward-head screen postures.',
       insight: 'Addressed through ergonomic workstation adjustments, thoracic mobilization, and neck muscle conditioning.',
     },
     sciatica: {
       title: 'Radiating Leg Symptoms (Sciatica)',
       symptoms: 'Discomfort, tingling, or shooting sensation traveling from the lower back through the buttock down into the thigh or calf.',
-      insight: 'Requires thorough physical assessment to identify whether nerve root irritation is present before guiding movement.',
+      insight: 'Requires thorough clinical assessment to identify whether nerve root irritation is present before guiding movement.',
     },
     sacroiliac: {
       title: 'Sacroiliac (SI) & Pelvic Junction',
@@ -109,7 +109,7 @@ export default function SpineBackPainService() {
         title="Back Pain Physiotherapy in Muzaffarpur | Advance Physiotherapy Centre"
         description="Get personalized physiotherapy for back and spine pain in Muzaffarpur. Advance Physiotherapy Centre provides assessment, exercise-based rehabilitation and mobility-focused care."
         path="/services/spine-back-pain"
-        image="/images/lower-back-pain-rehabilitation.webp"
+        image="/images/spine-back-pain-physiotherapy-hero.webp"
       />
 
       {/* Schema.org MedicalTherapy & Healthcare Facility */}
@@ -181,7 +181,7 @@ export default function SpineBackPainService() {
         ]}
       />
 
-      {/* 3. PREMIUM HERO SECTION */}
+      {/* 3. PREMIUM HERO SECTION WITH AI REALISTIC CLINICAL VISUAL */}
       <header className="spine-hero-section">
         <div className="container">
           <div className="spine-hero-grid">
@@ -223,16 +223,16 @@ export default function SpineBackPainService() {
             <div className="spine-hero-visual">
               <div className="spine-hero-frame">
                 <img
-                  src="/images/lower-back-pain-rehabilitation.webp"
-                  alt="Physiotherapy assessment and rehabilitation for spine and back pain at Advance Physiotherapy Centre Muzaffarpur"
+                  src="/images/spine-back-pain-physiotherapy-hero.webp"
+                  alt="Physiotherapy assessment and spine biomechanics evaluation for lower back pain at Advance Physiotherapy Centre"
                   className="spine-hero-img"
                   width="600"
-                  height="460"
+                  height="450"
                   loading="eager"
                 />
                 <div className="spine-hero-card-badge">
-                  <span className="spine-badge-title">Advance Physiotherapy Centre</span>
-                  <span className="spine-badge-sub">Evidence-Based Spinal Rehabilitation</span>
+                  <span className="spine-badge-title">Spine Biomechanics &amp; Assessment</span>
+                  <span className="spine-badge-sub">Personalized 1-on-1 Evaluation by Dr. Shahrukh Firoz</span>
                 </div>
               </div>
             </div>
@@ -272,14 +272,26 @@ export default function SpineBackPainService() {
               </div>
             </Reveal>
 
-            {/* EDUCATIONAL SPINE ANATOMY VISUAL */}
+            {/* EDUCATIONAL SPINE ANATOMY VISUAL WITH 3D DIAGRAM */}
             <Reveal className="spine-anatomy-card" delayStep={0.1}>
               <div className="spine-anatomy-header">
                 <span className="spine-anatomy-tag">Interactive Anatomy Guide</span>
                 <h3 className="spine-anatomy-heading">Regions of the Human Spine</h3>
                 <p className="spine-anatomy-caption">
-                  Select a spinal region below to understand its role in posture and daily movement.
+                  Explore each spinal segment below to understand its anatomical role in posture and movement.
                 </p>
+              </div>
+
+              {/* Visual 3D Spine Illustration */}
+              <div className="spine-diagram-box">
+                <img
+                  src="/images/spine-anatomy-educational-diagram.webp"
+                  alt="Educational 3D Diagram of the human spine showing Cervical, Thoracic, Lumbar, and Sacrum vertebrae"
+                  className="spine-diagram-img"
+                  width="500"
+                  height="375"
+                  loading="lazy"
+                />
               </div>
 
               {/* Anatomy Tabs */}
@@ -343,7 +355,7 @@ export default function SpineBackPainService() {
         </div>
       </section>
 
-      {/* 6. SECTION 3 — COMMON PROBLEMS WE MAY HELP WITH & PAIN MAP */}
+      {/* 6. SECTION 3 — COMMON PROBLEMS WE MAY HELP WITH, SCIATICA VISUAL & PAIN MAP */}
       <section className="section spine-problems-section">
         <div className="container">
           <div className="section-header text-center">
@@ -376,7 +388,7 @@ export default function SpineBackPainService() {
 
             <div className="spine-card">
               <div className="spine-card-num">03</div>
-              <h3 className="spine-card-title">Sciatica</h3>
+              <h3 className="spine-card-title">Sciatica &amp; Nerve Irritation</h3>
               <p className="spine-card-desc">
                 Pain or other symptoms that may travel from the lower back toward the buttock or leg. Symptoms vary from
                 person to person and require appropriate clinical assessment.
@@ -418,8 +430,46 @@ export default function SpineBackPainService() {
             </p>
           </div>
 
+          {/* EDUCATIONAL SCIATICA PATHWAY VISUAL SHOWCASE */}
+          <div className="spine-sciatica-showcase">
+            <div className="spine-sciatica-visual-box">
+              <img
+                src="/images/sciatica-nerve-pathway-anatomy.webp"
+                alt="Medical 3D illustration showing how the sciatic nerve extends from the L4, L5, and S1 lumbar spine vertebrae down through the hip and posterior leg"
+                className="spine-sciatica-img"
+                width="600"
+                height="450"
+                loading="lazy"
+              />
+            </div>
+            <div className="spine-sciatica-text">
+              <span className="section-label">Nerve Path Visualizer</span>
+              <h3 className="spine-sciatica-heading">Understanding Sciatica &amp; Radiating Symptoms</h3>
+              <p>
+                The <strong>sciatic nerve</strong> is the longest nerve in the human body, originating from nerve roots
+                in the lower lumbar spine (L4, L5) and sacrum (S1, S2, S3).
+              </p>
+              <p>
+                When irritation, mechanical pressure, or muscle tension occurs near these nerve roots or around the deep
+                pelvic muscles (such as the piriformis), symptoms can travel down the buttock into the back of the thigh,
+                calf, or foot.
+              </p>
+              <div className="spine-sciatica-points">
+                <div className="spine-sciatica-badge">
+                  <span>✓</span> Lumbar Disc Pressure Assessment
+                </div>
+                <div className="spine-sciatica-badge">
+                  <span>✓</span> Nerve Mobilization &amp; Decompression
+                </div>
+                <div className="spine-sciatica-badge">
+                  <span>✓</span> Targeted Hip &amp; Core Conditioning
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* PAIN AREA SILHOUETTE INTERACTIVE VISUAL */}
-          <div className="spine-pain-map-container">
+          <div className="spine-pain-map-container" style={{ marginTop: '3.5rem' }}>
             <div className="spine-pain-map-header">
               <span className="section-label">Symptom Localization</span>
               <h3 className="spine-pain-map-title">Where Do You Feel Your Discomfort?</h3>
@@ -591,7 +641,7 @@ export default function SpineBackPainService() {
         </div>
       </section>
 
-      {/* 9. SECTION 6 — HOW PHYSIOTHERAPY HELPS & ROADMAP */}
+      {/* 9. SECTION 6 — HOW PHYSIOTHERAPY HELPS & PIPELINE */}
       <section className="section spine-process-section" style={{ background: '#f8fafc' }}>
         <div className="container">
           <div className="section-header text-center">
@@ -667,7 +717,7 @@ export default function SpineBackPainService() {
         </div>
       </section>
 
-      {/* 10. SECTION 7 — WHAT MAY BE INCLUDED IN YOUR PLAN */}
+      {/* 10. SECTION 7 — WHAT MAY BE INCLUDED IN YOUR PLAN WITH REHAB VISUAL */}
       <section className="section spine-plan-section">
         <div className="container">
           <div className="section-header text-center">
@@ -678,7 +728,34 @@ export default function SpineBackPainService() {
             </p>
           </div>
 
-          <div className="spine-modalities-grid">
+          {/* Featured Visual Exercise Rehabilitation Showcase */}
+          <div className="spine-rehab-feature-box">
+            <div className="spine-rehab-feature-img-wrap">
+              <img
+                src="/images/spine-rehab-exercise-therapy.webp"
+                alt="Patient performing guided lumbar core stability and spinal mobility exercise under physiotherapist supervision"
+                className="spine-rehab-feature-img"
+                width="600"
+                height="450"
+                loading="lazy"
+              />
+            </div>
+            <div className="spine-rehab-feature-text">
+              <span className="section-label">Supervised Exercise Therapy</span>
+              <h3 className="spine-rehab-feature-title">Active Movement &amp; Core Muscle Stabilization</h3>
+              <p>
+                Passive treatments (such as heat or massage) can provide temporary comfort, but <strong>progressive exercise therapy</strong> is the gold standard for restoring long-term spinal strength, muscle coordination, and movement confidence.
+              </p>
+              <ul className="spine-rehab-feature-list">
+                <li><strong>Deep Lumbar Core Retraining:</strong> Activates supporting abdominal and multifidus muscles.</li>
+                <li><strong>Controlled Range-of-Motion:</strong> Restores comfortable spinal flexion and extension.</li>
+                <li><strong>Postural Endurance Conditioning:</strong> Builds stamina for prolonged sitting and standing.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 6 Modality Cards */}
+          <div className="spine-modalities-grid" style={{ marginTop: '2.5rem' }}>
             <div className="spine-modality-card">
               <div className="spine-mod-icon">🏋️‍♂️</div>
               <h3>Exercise Therapy</h3>
