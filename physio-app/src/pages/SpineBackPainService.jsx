@@ -321,7 +321,7 @@ export default function SpineBackPainService() {
           </div>
 
           {/* 4 Concise Cards */}
-          <div className="spine-cards-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-cards-grid">
             <div className="spine-card">
               <div className="spine-card-num">01</div>
               <h3 className="spine-card-title">Lower Back Pain</h3>
@@ -442,7 +442,7 @@ export default function SpineBackPainService() {
           </div>
 
           {/* 4 Concise Cards */}
-          <div className="spine-modalities-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-modalities-grid">
             <div className="spine-modality-card">
               <div className="spine-mod-icon">🏋️‍♂️</div>
               <h3>Exercise Therapy</h3>
@@ -486,7 +486,7 @@ export default function SpineBackPainService() {
             <p className="section-subtitle">A clear, patient-friendly 3-step walkthrough of your initial appointment.</p>
           </div>
 
-          <div className="spine-first-visit-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="spine-first-visit-grid">
             <div className="spine-visit-step">
               <div className="spine-visit-step-num">01</div>
               <h3>Discuss</h3>

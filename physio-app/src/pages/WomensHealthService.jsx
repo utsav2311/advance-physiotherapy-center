@@ -252,7 +252,7 @@ export default function WomensHealthService() {
             </p>
           </div>
 
-          <div className="spine-cards-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-cards-grid">
             <div className="spine-card">
               <div className="spine-card-num">01</div>
               <h3 className="spine-card-title">Pregnancy-Related Back &amp; Pelvic Discomfort</h3>
@@ -311,7 +311,7 @@ export default function WomensHealthService() {
             </p>
           </div>
 
-          <div className="spine-cards-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', marginBottom: '3rem' }}>
+          <div className="spine-cards-grid">
             <div className="spine-card" style={{ borderLeft: '4px solid var(--primary-600)' }}>
               <span className="section-label" style={{ marginBottom: '0.5rem' }}>Stage 1</span>
               <h3 className="spine-card-title">During Pregnancy</h3>
@@ -427,7 +427,7 @@ export default function WomensHealthService() {
             </p>
           </div>
 
-          <div className="spine-modalities-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-modalities-grid">
             <div className="spine-modality-card">
               <div className="spine-mod-icon">🚶‍♀️</div>
               <h3>Movement &amp; Mobility</h3>
@@ -468,7 +468,7 @@ export default function WomensHealthService() {
 
           {/* 5-Step Animated Process */}
           <div className="spine-pipeline-wrapper">
-            <div className="spine-pipeline-steps" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
+            <div className="spine-pipeline-steps">
               <div className="spine-pipe-step">
                 <div className="spine-pipe-num">01</div>
                 <div className="spine-pipe-name">Assess</div>
@@ -567,7 +567,7 @@ export default function WomensHealthService() {
             </p>
           </div>
 
-          <div className="spine-cards-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-cards-grid">
             <div className="spine-card">
               <div className="spine-card-num">01</div>
               <h3 className="spine-card-title">During Pregnancy</h3>
@@ -614,7 +614,7 @@ export default function WomensHealthService() {
             </p>
           </div>
 
-          <div className="spine-first-visit-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="spine-first-visit-grid">
             <div className="spine-visit-step">
               <div className="spine-visit-step-num">01</div>
               <h3>Discuss</h3>
@@ -653,15 +653,7 @@ export default function WomensHealthService() {
                 Women&apos;s health concerns can be deeply personal. Our clinical approach is built on respect, clear
                 communication, patient dignity, and full consent before every assessment.
               </p>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '1rem',
-                  marginTop: '1.5rem',
-                  textAlign: 'left',
-                }}
-              >
+              <div className="spine-first-visit-grid" style={{ marginTop: '1.5rem', textAlign: 'left' }}>
                 <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: '8px', border: '1px solid var(--gray-200)' }}>
                   <strong>🔒 Respectful Communication</strong>
                   <p style={{ fontSize: '0.88rem', color: 'var(--gray-600)', margin: '0.5rem 0 0' }}>

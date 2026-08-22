@@ -5809,10 +5809,38 @@ input, select, textarea {
 }
 
 @media (max-width: 768px) {
+  .spine-hero-grid,
+  .spine-intro-grid,
+  .spine-sciatica-showcase,
+  .spine-rehab-feature-box,
+  .spine-how-grid,
+  .spine-safety-wrapper,
+  .spine-doctor-card,
+  .spine-local-card {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem;
+  }
+
+  .spine-cards-grid,
+  .spine-symptoms-grid,
+  .spine-factors-grid,
+  .spine-activities-grid,
+  .cervical-activities-grid,
+  .spine-modalities-grid,
+  .spine-first-visit-grid,
+  .spine-activity-scenarios,
+  .spine-why-grid,
+  .spine-pain-map-grid,
   .spine-how-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem;
+  }
+
+  .spine-visit-step,
+  .spine-card,
+  .spine-modality-card,
+  .spine-why-card {
+    padding: 1.25rem;
   }
 
   .spine-how-card {
@@ -5828,7 +5856,7 @@ input, select, textarea {
 
   .spine-sciatica-showcase,
   .spine-rehab-feature-box {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     padding: 1.25rem;
     gap: 1.5rem;
   }

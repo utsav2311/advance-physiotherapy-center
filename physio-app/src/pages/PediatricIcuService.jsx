@@ -257,7 +257,7 @@ export default function PediatricIcuService() {
             </p>
           </div>
 
-          <div className="spine-cards-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-cards-grid">
             <div className="spine-card">
               <div className="spine-card-num">01</div>
               <h3 className="spine-card-title">Gross Motor Skills</h3>
@@ -383,7 +383,7 @@ export default function PediatricIcuService() {
             </p>
           </div>
 
-          <div className="spine-modalities-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="spine-modalities-grid">
             <div className="spine-modality-card">
               <div style={{ marginBottom: '1rem', borderRadius: '10px', overflow: 'hidden' }}>
                 <img
@@ -452,7 +452,7 @@ export default function PediatricIcuService() {
 
           {/* 5-Step Animated Process */}
           <div className="spine-pipeline-wrapper">
-            <div className="spine-pipeline-steps" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
+            <div className="spine-pipeline-steps">
               <div className="spine-pipe-step">
                 <div className="spine-pipe-num">01</div>
                 <div className="spine-pipe-name">Assess</div>
@@ -518,7 +518,7 @@ export default function PediatricIcuService() {
             </p>
           </div>
 
-          <div className="spine-first-visit-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="spine-first-visit-grid">
             <div className="spine-visit-step">
               <div className="spine-visit-step-num">01</div>
               <h3>Discuss</h3>

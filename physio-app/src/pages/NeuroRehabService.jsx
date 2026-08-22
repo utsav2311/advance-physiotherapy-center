@@ -253,7 +253,7 @@ export default function NeuroRehabService() {
             </p>
           </div>
 
-          <div className="spine-cards-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="spine-cards-grid">
             <div className="spine-card">
               <div className="spine-card-num">01</div>
               <h3 className="spine-card-title">Stroke Rehabilitation</h3>
@@ -369,7 +369,7 @@ export default function NeuroRehabService() {
 
           {/* 5-Step Animated Process */}
           <div className="spine-pipeline-wrapper" style={{ marginBottom: '3rem' }}>
-            <div className="spine-pipeline-steps" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
+            <div className="spine-pipeline-steps">
               <div className="spine-pipe-step">
                 <div className="spine-pipe-num">01</div>
                 <div className="spine-pipe-name">Assess</div>
@@ -443,7 +443,7 @@ export default function NeuroRehabService() {
             </p>
           </div>
 
-          <div className="spine-modalities-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="spine-modalities-grid">
             <div className="spine-modality-card">
               <div className="spine-mod-icon">🚶‍♂️</div>
               <h3>Gait Training</h3>
@@ -564,7 +564,7 @@ export default function NeuroRehabService() {
             <p className="section-subtitle">A clear, reassuring 3-step walkthrough of your initial appointment.</p>
           </div>
 
-          <div className="spine-first-visit-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="spine-first-visit-grid">
             <div className="spine-visit-step">
               <div className="spine-visit-step-num">01</div>
               <h3>Discuss</h3>
