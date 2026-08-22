@@ -5,6 +5,7 @@ import KneeArthritisService from './KneeArthritisService';
 import FrozenShoulderService from './FrozenShoulderService';
 import ElectrotherapyService from './ElectrotherapyService';
 import SportsRehabService from './SportsRehabService';
+import NeuroRehabService from './NeuroRehabService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -48,6 +49,11 @@ export default function ServiceDetail() {
   // Render comprehensive, dedicated page for Sports Rehabilitation
   if (slug === 'sports-rehabilitation') {
     return <SportsRehabService />;
+  }
+
+  // Render comprehensive, dedicated page for Neurological Rehabilitation
+  if (slug === 'neurological-rehabilitation') {
+    return <NeuroRehabService />;
   }
 
   const service = getServiceBySlug(slug);
