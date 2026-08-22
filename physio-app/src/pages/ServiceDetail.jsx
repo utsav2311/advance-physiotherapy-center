@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import SpineBackPainService from './SpineBackPainService';
+import CervicalNeckService from './CervicalNeckService';
 import Breadcrumb from '../components/Breadcrumb';
 import Reveal from '../components/Reveal';
 import ServiceCard from '../components/ServiceCard';
@@ -18,6 +19,11 @@ export default function ServiceDetail() {
   // Render comprehensive, dedicated page for Spine & Back Pain
   if (slug === 'spine-back-pain') {
     return <SpineBackPainService />;
+  }
+
+  // Render comprehensive, dedicated page for Cervical & Neck Care
+  if (slug === 'cervical-neck-care') {
+    return <CervicalNeckService />;
   }
 
   const service = getServiceBySlug(slug);
