@@ -1371,6 +1371,13 @@ input, select, textarea {
   flex: 1;
 }
 
+.service-card-reveal,
+.featured-card-reveal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .service-card-link {
   display: inline-flex;
   align-items: center;
@@ -1383,8 +1390,11 @@ input, select, textarea {
   transition: gap var(--duration-fast) var(--ease-out);
 }
 
-.service-card-link:hover {
+.service-card-link:hover,
+.service-card:hover .service-card-link,
+.featured-card:hover .service-card-link {
   gap: 0.6rem;
+  color: var(--primary-800);
 }
 
 /* Featured Service Cards */
