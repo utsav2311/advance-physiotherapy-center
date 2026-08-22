@@ -5332,8 +5332,10 @@ input, select, textarea {
 /* --- SECTION 8: FIRST VISIT --- */
 .spine-first-visit-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .spine-visit-step {
