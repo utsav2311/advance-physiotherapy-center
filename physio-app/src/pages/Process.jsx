@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumb';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FaqItem from '../components/FaqItem';
 import Seo from '../components/Seo';
 import JsonLd from '../components/JsonLd';
 import { PhoneIcon, LocationIcon, ClockIcon } from '../components/Icons';
@@ -675,26 +676,15 @@ export default function Process() {
             </p>
           </div>
 
-          <div className="faq-list" style={{ maxWidth: 850, margin: '0 auto' }}>
+          <div className="faq-list" style={{ maxWidth: 850, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {faqs.map((faq, idx) => (
-              <div className={`faq-item ${openFaq === idx ? 'open' : ''}`} key={idx}>
-                <button
-                  type="button"
-                  className="faq-question"
-                  onClick={() => toggleFaq(idx)}
-                  aria-expanded={openFaq === idx}
-                >
-                  <span>{faq.q}</span>
-                  <span className="faq-toggle" aria-hidden="true">
-                    {openFaq === idx ? '−' : '+'}
-                  </span>
-                </button>
-                {openFaq === idx && (
-                  <div className="faq-answer">
-                    <p>{faq.a}</p>
-                  </div>
-                )}
-              </div>
+              <FaqItem
+                key={faq.q}
+                item={faq}
+                isOpen={openFaq === idx}
+                onToggle={() => toggleFaq(idx)}
+                index={idx}
+              />
             ))}
           </div>
         </div>
