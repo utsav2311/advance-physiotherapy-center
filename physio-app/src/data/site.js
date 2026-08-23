@@ -19,7 +19,8 @@ export const SITE = {
   facebookHandle: 'Advance Physiotherapy Centre',
   hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   hoursSunday: 'Sunday: Prior Appointment Only',
-  mapsShareUrl: 'https://maps.app.goo.gl/Tt3rzuXcUSXWoy7g6',
+  mapsShareUrl:
+    'https://www.google.com/maps/place/Advance+physiotherapy+Centre/@26.1268321,85.3772257,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed10c2000f7221:0x3fc200c770000000!8m2!3d26.1268321!4d85.3772257!16s%2Fg%2F11s0fhy227!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D',
   mapsEmbedUrl:
     'https://maps.google.com/maps?q=Advance+physiotherapy+Center,+Zila+parishad+market,+Juran+Chapra,+Brahmapura,+Muzaffarpur,+Bihar+842001&t=&z=17&ie=UTF8&iwloc=&output=embed',
 };
