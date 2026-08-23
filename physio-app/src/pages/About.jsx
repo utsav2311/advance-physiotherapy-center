@@ -163,9 +163,17 @@ export default function About() {
           </div>
           <div className="facility-grid">
             {facilities.map((f, i) => (
-              <FacilityCard key={f.name} name={f.name} icon={f.icon} index={i} />
+              <FacilityCard
+                key={f.name}
+                name={f.name}
+                icon={f.icon}
+                image={f.image}
+                desc={f.desc}
+                tag={f.tag}
+                index={i}
+                isHomeVisit={f.isHomeVisit}
+              />
             ))}
-            <FacilityCard name="Home Visit Service" index={facilities.length} isHomeVisit />
           </div>
         </div>
       </section>

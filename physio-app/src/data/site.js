@@ -47,11 +47,61 @@ export const hospitals = [
 ];
 
 export const facilities = [
-  { name: 'Dry Cupping', icon: 'cupping' },
-  { name: 'Wet Cupping (Hijama)', icon: 'cupping' },
-  { name: 'Fire Cupping', icon: 'fire' },
-  { name: 'Dry Needling', icon: 'needle' },
-  { name: 'Chiropractic & Osteopathy', icon: 'spine' },
-  { name: 'All Taping (Kinesio)', icon: 'tape' },
-  { name: 'Electrotherapy Modalities', icon: 'bolt' },
+  {
+    name: 'Dry Cupping',
+    icon: 'cupping',
+    image: '/images/facility-dry-cupping.webp',
+    desc: 'Targeted myofascial decompression and blood circulation enhancement for muscle tightness.',
+    tag: 'Myofascial Release',
+  },
+  {
+    name: 'Wet Cupping (Hijama)',
+    icon: 'cupping',
+    image: '/images/facility-wet-cupping-hijama.webp',
+    desc: 'Sterile clinical Hijama therapy to relieve chronic muscle tension and promote recovery.',
+    tag: 'Detox & Circulation',
+  },
+  {
+    name: 'Fire Cupping',
+    icon: 'fire',
+    image: '/images/facility-fire-cupping.webp',
+    desc: 'Traditional heated glass vacuum cups for deep tissue muscle relaxation and chronic spasm relief.',
+    tag: 'Deep Relaxation',
+  },
+  {
+    name: 'Dry Needling',
+    icon: 'needle',
+    image: '/images/facility-dry-needling.webp',
+    desc: 'Precision trigger point therapy using sterile filiform needles to deactivate muscular knots.',
+    tag: 'Trigger Point Therapy',
+  },
+  {
+    name: 'Chiropractic & Osteopathy',
+    icon: 'spine',
+    image: '/images/facility-chiropractic-osteopathy.webp',
+    desc: 'Gentle spinal mobilization, joint realignment, and manual decompression techniques.',
+    tag: 'Spinal Alignment',
+  },
+  {
+    name: 'All Taping (Kinesio)',
+    icon: 'tape',
+    image: '/images/facility-kinesio-taping.webp',
+    desc: 'Neuromuscular elastic kinesiology taping for joint stability, pain modulation, and sports rehab.',
+    tag: 'Joint Stabilization',
+  },
+  {
+    name: 'Electrotherapy Modalities',
+    icon: 'bolt',
+    image: '/images/facility-electrotherapy.webp',
+    desc: 'Clinical TENS, IFT, and Therapeutic Ultrasound for acute pain relief and deep healing.',
+    tag: 'Pain Modulation',
+  },
+  {
+    name: 'Home Visit Service',
+    icon: 'home',
+    image: '/images/facility-home-visit-service.webp',
+    desc: 'Personalized bedside physiotherapy and post-surgery rehabilitation at your home in Muzaffarpur.',
+    tag: 'Home Care Available',
+    isHomeVisit: true,
+  },
 ];
