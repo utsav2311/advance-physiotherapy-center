@@ -16,7 +16,7 @@ import { services, homeImportantSlugs } from '../data/services';
 import { reviews, ratingSummary } from '../data/reviews';
 import { processSteps } from '../data/process';
 import { faqs } from '../data/faqs';
-import { galleryItems } from '../data/gallery';
+import { galleryItems, homeGalleryItems } from '../data/gallery';
 import { heroSlides } from '../data/heroSlides';
 import { SITE } from '../data/site';
 import {
@@ -418,13 +418,13 @@ export default function Home() {
           </div>
 
           <div className="gallery-grid">
-            {galleryItems.slice(0, 6).map((item, i) => (
+            {homeGalleryItems.map((item, i) => (
               <Reveal
-                key={item.video || item.image}
+                key={item.image}
                 index={i}
                 delayStep={0.07}
                 variant="blur-sharp"
-                className={`gallery-item item-${item.size || 'medium'} ${item.type === 'video' ? 'item-video' : ''}`}
+                className={`gallery-item item-${item.size || 'medium'}`}
                 onClick={() => setHomeLightboxIndex(i)}
                 tabIndex={0}
                 role="button"
@@ -436,29 +436,12 @@ export default function Home() {
                   }
                 }}
               >
-                {item.type === 'video' ? (
-                  <div className="gallery-video-container">
-                    <video
-                      ref={(el) => {
-                        if (el) {
-                          el.muted = true;
-                          el.defaultMuted = true;
-                        }
-                      }}
-                      src={item.video}
-                      poster={item.image}
-                      autoPlay
-                      muted
-                      defaultMuted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      className="gallery-video"
-                    />
-                  </div>
-                ) : (
-                  <img src={item.image} alt={item.alt || 'Clinic photo'} loading="lazy" />
-                )}
+                <img
+                  src={item.image}
+                  alt={item.alt || 'Clinic photo'}
+                  loading="lazy"
+                  decoding="async"
+                />
               </Reveal>
             ))}
           </div>
@@ -550,11 +533,11 @@ export default function Home() {
 
       {/* Full View Lightbox Modal for Homepage Preview */}
       <Lightbox
-        images={galleryItems}
+        images={homeGalleryItems}
         currentIndex={homeLightboxIndex}
         onClose={() => setHomeLightboxIndex(null)}
-        onPrev={() => setHomeLightboxIndex((prev) => (prev === null ? null : (prev - 1 + galleryItems.length) % galleryItems.length))}
-        onNext={() => setHomeLightboxIndex((prev) => (prev === null ? null : (prev + 1) % galleryItems.length))}
+        onPrev={() => setHomeLightboxIndex((prev) => (prev === null ? null : (prev - 1 + homeGalleryItems.length) % homeGalleryItems.length))}
+        onNext={() => setHomeLightboxIndex((prev) => (prev === null ? null : (prev + 1) % homeGalleryItems.length))}
       />
     </>
   );

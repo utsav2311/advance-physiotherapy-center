@@ -1,6 +1,58 @@
 // Curated photo & video gallery for Advance Physiotherapy Centre.
 // Contains high-resolution optimized WebP images and trimmed, auto-looping HD video clips.
 
+// Curated 6 landscape photos for Homepage Gallery Preview (No videos, perfectly framed)
+export const homeGalleryItems = [
+  {
+    type: 'image',
+    size: 'large',
+    image: '/images/clinic-front-entrance.webp',
+    alt: 'Advance Physiotherapy Centre Exterior Clinic Entrance in Muzaffarpur',
+    caption: 'Official Clinic Entrance - Juran Chapra',
+    category: 'Clinic',
+  },
+  {
+    type: 'image',
+    size: 'large',
+    image: '/images/dr-shahrukh-consultation-chamber.webp',
+    alt: 'Dr. Shahrukh Firoz in consultation chamber with patient',
+    caption: 'Doctor Consultation Chamber',
+    category: 'Consultation',
+  },
+  {
+    type: 'image',
+    size: 'medium',
+    image: '/images/dr-shahrukh-consultation-desk-assessment.webp',
+    alt: 'Dr. Shahrukh Firoz in Patient Consultation & Clinical Assessment',
+    caption: 'Dr. Shahrukh Firoz in Patient Consultation',
+    category: 'Consultation',
+  },
+  {
+    type: 'image',
+    size: 'medium',
+    image: '/images/clinic-therapy-bay-overview.webp',
+    alt: 'Modern Physical Therapy & Rehabilitation Bay at Advance Physiotherapy Centre',
+    caption: 'Modern Physical Therapy & Rehabilitation Bay',
+    category: 'Clinic',
+  },
+  {
+    type: 'image',
+    size: 'large',
+    image: '/images/patient-cupping-therapy-session.webp',
+    alt: 'Targeted Cupping & Decompression Therapy for Back Pain Relief',
+    caption: 'Targeted Cupping Therapy for Back Pain Relief',
+    category: 'Treatment',
+  },
+  {
+    type: 'image',
+    size: 'medium',
+    image: '/images/dr-shahrukh-sports-award-felicitation.webp',
+    alt: 'Dr. Shahrukh Firoz receiving sports physiotherapy felicitation award',
+    caption: 'Sports Physiotherapy Felicitation',
+    category: 'Awards',
+  },
+];
+
 export const galleryItems = [
   {
     "type": "image",
