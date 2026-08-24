@@ -1,0 +1,68 @@
+// Standard Therapy Packages Catalog for Advance Physiotherapy Centre
+
+export const PACKAGE_CATALOG = [
+  {
+    id: 'pkg-single-clinic',
+    name: 'Single Clinic Consultation & Therapy',
+    type: 'In-Clinic',
+    sessions: 1,
+    price: 400,
+    description: 'Comprehensive physical examination, diagnosis, manual therapy, and initial modality session.',
+  },
+  {
+    id: 'pkg-spine-7',
+    name: '7-Day Spine & Sciatica Decompression Package',
+    type: 'In-Clinic',
+    sessions: 7,
+    price: 2400,
+    description: 'Daily lumbar traction, dry cupping, spinal mobilization, core stabilization, and electrotherapy.',
+  },
+  {
+    id: 'pkg-knee-10',
+    name: '10-Day Knee Osteoarthritis & Joint Rehab',
+    type: 'In-Clinic',
+    sessions: 10,
+    price: 3200,
+    description: 'VMO strengthening, joint mobilization, ultrasound therapy, kinesio taping, and functional gait training.',
+  },
+  {
+    id: 'pkg-frozen-shoulder-12',
+    name: '12-Day Frozen Shoulder Mobility Protocol',
+    type: 'In-Clinic',
+    sessions: 12,
+    price: 3800,
+    description: 'Capsular stretching, Maitland mobilization, dry needling, finger ladder, and theraband resistance training.',
+  },
+  {
+    id: 'pkg-hijama-cupping',
+    name: 'Targeted Hijama (Wet Cupping) Clinical Session',
+    type: 'In-Clinic',
+    sessions: 1,
+    price: 800,
+    description: 'Sterile medical wet cupping for back stiffness, toxin clearance, and myofascial pain decompression.',
+  },
+  {
+    id: 'pkg-single-home',
+    name: 'Single Home Visit Physiotherapy',
+    type: 'Home Visit',
+    sessions: 1,
+    price: 700,
+    description: 'Personalized bedside rehabilitation at patient’s residence anywhere in Muzaffarpur.',
+  },
+  {
+    id: 'pkg-stroke-home-15',
+    name: '15-Day Stroke / Neuro Rehabilitation (Home Care)',
+    type: 'Home Visit',
+    sessions: 15,
+    price: 9000,
+    description: 'Intensive daily bedside motor retraining, balance training, bed mobility, and transfer facilitation.',
+  },
+  {
+    id: 'pkg-post-op-home-10',
+    name: '10-Day Post-Surgery / Fracture Rehab (Home Care)',
+    type: 'Home Visit',
+    sessions: 10,
+    price: 6000,
+    description: 'Post-TKR/THR, ORIF fracture rehabilitation, passive ROM, swelling control, and ambulation.',
+  },
+];

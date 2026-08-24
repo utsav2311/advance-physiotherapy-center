@@ -10,10 +10,15 @@ import Reviews from './pages/Reviews';
 import Faq from './pages/Faq';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import CrmLayout from './crm/components/CrmLayout';
 
 export default function AppRoutes() {
   return (
     <Routes>
+      {/* Isolated CRM Portal for Dr. Shahrukh & Clinic Staff */}
+      <Route path="crm/*" element={<CrmLayout />} />
+
+      {/* Public Facing Website (100% locked and untouched) */}
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
