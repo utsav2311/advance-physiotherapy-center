@@ -101,6 +101,12 @@ async function prerender() {
         finalHtml = finalHtml.replace(/<title>.*?<\/title>/i, `<title>${pageTitle}</title>`);
       }
 
+      // Deduplicate meta description if custom page description exists
+      const hasPageDesc = metaTags.some((t) => /name=["']description["']/i.test(t));
+      if (hasPageDesc) {
+        finalHtml = finalHtml.replace(/<meta\s+name=["']description["'][^>]*>\s*/gi, '');
+      }
+
       // Inject custom meta tags and Schema.org scripts into <head>
       const headAdditions = [
         ...metaTags,
