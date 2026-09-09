@@ -12,10 +12,12 @@ export default function Layout() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const isHome = pathname === '/';
+
   return (
     <>
       <Header />
-      <main id="main-content">
+      <main id="main-content" className={isHome ? 'is-home-main' : 'is-subpage'}>
         <Outlet />
       </main>
       <Footer />
