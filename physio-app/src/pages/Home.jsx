@@ -345,19 +345,16 @@ export default function Home() {
       </section>
 
       {/* PROCESS PREVIEW (Skiper104 Scroll Reveal Grid Cards) */}
-      <section className="section" id="process-pathway">
+      <section className="section process-pathway-section" id="process-pathway">
         <div className="container">
-          <div className="section-header text-center">
-            <span className="section-label">How We Help You Heal</span>
-            <h2 className="section-title">Our 4-Step Recovery Pathway</h2>
-            <p className="section-subtitle">
-              A systematic clinical approach from acute pain to complete functional independence.
-            </p>
-          </div>
+          <Skiper104
+            steps={processSteps}
+            label="How We Help You Heal"
+            title="Our 4-Step Recovery Pathway"
+            subtitle="A systematic clinical approach from acute pain to complete functional independence."
+          />
 
-          <Skiper104 steps={processSteps} expandable={true} />
-
-          <div className="text-center" style={{ marginTop: '2.5rem' }}>
+          <div className="text-center process-explore-btn-wrap">
             <Link to="/process" className="btn btn-secondary">Explore Full Process & First Visit Guide →</Link>
           </div>
         </div>
