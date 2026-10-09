@@ -13,11 +13,11 @@ export default function Footer() {
               <img src="/images/clinic-logo.webp" alt="Advance Physiotherapy Centre" className="brand-logo-img" width="130" height="65" />
               <span className="brand-text">
                 <span className="brand-name">Advance Physiotherapy Centre</span>
-                <span className="brand-sub">Juran Chapra, {SITE.city}</span>
+                <span className="brand-sub">Juran Chapra &amp; Zero Mile, {SITE.city}</span>
               </span>
             </Link>
             <p className="footer-brand-text">
-              Personalized physiotherapy and rehabilitation care in {SITE.city}. Helping you restore natural mobility and live pain-free.
+              Personalized physiotherapy and rehabilitation care across 2 clinic locations in {SITE.city}. Helping you restore natural mobility and live pain-free.
             </p>
             <div className="footer-social-wrap" style={{ marginTop: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
               <a
@@ -58,30 +58,43 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="footer-col-title">Contact</h4>
+            <h4 className="footer-col-title">Our Clinics</h4>
             <div className="footer-contact">
-              <p>
-                <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  {SITE.addressLine1}, {SITE.addressLine2}
-                </a>
-              </p>
-              <p>
+              <div className="footer-branch-card" style={{ marginBottom: '0.85rem' }}>
+                <p style={{ fontWeight: 700, color: 'var(--white)', fontSize: '0.86rem', marginBottom: '0.2rem' }}>
+                  🏥 Main Clinic · Juran Chapra
+                </p>
+                <p style={{ fontSize: '0.80rem', lineHeight: '1.45', marginBottom: '0.25rem' }}>
+                  <a href={SITE.branches[0].mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gray-300)' }}>
+                    {SITE.branches[0].addressLine1}, {SITE.branches[0].addressLine2}
+                  </a>
+                </p>
+                <p style={{ fontSize: '0.75rem', color: 'var(--primary-300)' }}>
+                  Mon – Sat: 9:00 AM – 6:00 PM
+                </p>
+              </div>
+
+              <div className="footer-branch-card" style={{ marginBottom: '0.85rem' }}>
+                <p style={{ fontWeight: 700, color: 'var(--white)', fontSize: '0.86rem', marginBottom: '0.2rem' }}>
+                  ✨ Branch 2 · New Zero Mile
+                </p>
+                <p style={{ fontSize: '0.80rem', lineHeight: '1.45', marginBottom: '0.25rem' }}>
+                  <a href={SITE.branches[1].mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gray-300)' }}>
+                    {SITE.branches[1].addressLine1}, {SITE.branches[1].addressLine2}
+                  </a>
+                </p>
+                <p style={{ fontSize: '0.75rem', color: 'var(--accent-300, #38bdf8)' }}>
+                  Mon – Sun: 8:00 AM – 8:00 PM (All 7 Days)
+                </p>
+              </div>
+
+              <p style={{ marginTop: '0.5rem', paddingTop: '0.6rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
                 <a href={`tel:${SITE.phonePrimary}`}>{SITE.phonePrimaryDisplay}</a>
                 {' / '}
                 <a href={`tel:${SITE.phoneSecondary}`}>{SITE.phoneSecondaryDisplay}</a>
               </p>
               <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
-              <p>
-                <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="footer-instagram-link">
-                  <InstagramIcon className="footer-mini-icon" /> {SITE.instagramHandle}
-                </a>
-              </p>
-              <p>
-                <a href={SITE.facebookUrl} target="_blank" rel="noopener noreferrer" className="footer-facebook-link">
-                  <FacebookIcon className="footer-mini-icon" /> Advance Physiotherapy Centre
-                </a>
-              </p>
-              <p>{SITE.hours} • Home Visit Available</p>
+              <p style={{ fontSize: '0.78rem', color: 'var(--gray-400)' }}>Home Visits Available across Muzaffarpur</p>
             </div>
           </div>
 

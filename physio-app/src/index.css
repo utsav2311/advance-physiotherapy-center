@@ -2816,6 +2816,324 @@ input, select, textarea {
   display: block;
 }
 
+/* --- MULTI-BRANCH SELECTOR & DUAL BRANCH UI --- */
+
+.branch-selector-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.branch-selector-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.branch-selector-eyebrow {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-600);
+  margin-bottom: 0.35rem;
+}
+
+.branch-selector-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.branch-selector-sub {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.branch-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.branch-tab-btn {
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.branch-tab-btn:hover {
+  border-color: var(--primary-300);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.branch-tab-btn.active {
+  background: #f0fdfa;
+  border-color: var(--primary-600);
+  box-shadow: 0 4px 14px -2px rgba(15, 118, 110, 0.16);
+}
+
+.branch-tab-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.branch-tab-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.25;
+}
+
+.branch-tab-btn.active .branch-tab-name {
+  color: var(--primary-900);
+}
+
+.branch-tab-landmark {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.branch-tab-status-mini {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.branch-tab-btn.active .branch-tab-status-mini {
+  background: var(--primary-100);
+  color: var(--primary-800);
+}
+
+/* Branch badges */
+.branch-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.22rem 0.65rem;
+  border-radius: 9999px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.branch-badge-main {
+  background: var(--primary-50);
+  color: var(--primary-700);
+  border: 1px solid var(--primary-200);
+}
+
+.branch-badge-new {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.branch-active-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.branch-active-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.branch-features-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.branch-feature-pill {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 9999px;
+  padding: 0.2rem 0.6rem;
+  line-height: 1.4;
+}
+
+/* Map Badge Overlay */
+.contact-map {
+  position: relative;
+}
+
+.map-badge-overlay {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--gray-200);
+  border-radius: 9999px;
+  padding: 0.35rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.map-badge-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-700);
+}
+
+.map-badge-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+/* Both Clinics Overview Cards */
+.branch-overview-section {
+  width: 100%;
+}
+
+.branch-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  width: 100%;
+}
+
+.branch-overview-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.branch-overview-card:hover {
+  border-color: var(--primary-300);
+  box-shadow: var(--shadow-md);
+}
+
+.branch-overview-card.is-active-card {
+  border-color: var(--primary-500);
+  background: #fafcfe;
+}
+
+.branch-overview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.branch-current-indicator {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary-700);
+  background: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.branch-overview-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.branch-overview-address {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.branch-overview-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  font-size: 0.82rem;
+}
+
+.branch-overview-meta strong {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-500);
+  margin-bottom: 0.15rem;
+}
+
+.branch-overview-meta p {
+  color: var(--gray-800);
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.branch-overview-actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.branch-overview-actions .btn {
+  flex: 1;
+  min-width: 130px;
+  text-align: center;
+  justify-content: center;
+}
+
 .visit-tips-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4388,6 +4706,41 @@ input, select, textarea {
   }
   .visit-tip-card {
     padding: 1.25rem 1rem;
+  }
+  .branch-tabs {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .branch-tab-btn {
+    padding: 0.95rem 1rem;
+  }
+  .branch-tab-name {
+    font-size: 0.98rem;
+  }
+  .branch-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  .branch-overview-card {
+    padding: 1.15rem 1rem;
+  }
+  .branch-overview-meta {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .branch-overview-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .branch-overview-actions .btn {
+    width: 100%;
+  }
+  .branch-features-pills {
+    gap: 0.35rem;
+  }
+  .branch-feature-pill {
+    font-size: 0.72rem;
+    padding: 0.18rem 0.5rem;
   }
   .detail-cta-card {
     padding: 1.5rem 1.15rem;

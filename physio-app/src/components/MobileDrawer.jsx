@@ -55,7 +55,7 @@ export default function MobileDrawer({ open, onClose, navLinks }) {
                 <img src="/images/clinic-logo.webp" alt="Logo" className="brand-logo-img" width="100" height="50" />
                 <span className="brand-text">
                   <span className="brand-name">Advance Physiotherapy</span>
-                  <span className="brand-sub">Juran Chapra, Muzaffarpur</span>
+                  <span className="brand-sub">Juran Chapra &amp; Zero Mile, Muzaffarpur</span>
                 </span>
               </NavLink>
               <button
@@ -98,8 +98,8 @@ export default function MobileDrawer({ open, onClose, navLinks }) {
                 <WhatsAppButton className="btn btn-primary btn-block drawer-wa-btn" />
               </div>
               <div className="drawer-contact-info">
-                <p><strong>Hours:</strong> {SITE.hours}</p>
-                <p><strong>Location:</strong> {SITE.addressLine1}, {SITE.city}</p>
+                <p><strong>Locations:</strong> Juran Chapra &amp; Zero Mile, Muzaffarpur</p>
+                <p><strong>Hours:</strong> Mon–Sat 9AM–6PM | Mon–Sun 8AM–8PM</p>
               </div>
             </div>
           </motion.aside>

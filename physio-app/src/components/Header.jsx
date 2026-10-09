@@ -37,7 +37,7 @@ export default function Header() {
             />
             <span className="brand-text">
               <span className="brand-name">Advance Physiotherapy Centre</span>
-              <span className="brand-sub">Juran Chapra, Muzaffarpur</span>
+              <span className="brand-sub">Juran Chapra &amp; Zero Mile, Muzaffarpur</span>
             </span>
           </NavLink>
 

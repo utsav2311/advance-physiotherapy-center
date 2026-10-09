@@ -18,7 +18,8 @@ import { processSteps } from '../data/process';
 import { faqs } from '../data/faqs';
 import { galleryItems, homeGalleryItems } from '../data/gallery';
 import { heroSlides } from '../data/heroSlides';
-import { SITE } from '../data/site';
+import { SITE, BRANCHES } from '../data/site';
+import { useClinicStatus } from '../hooks/useClinicStatus';
 import {
   PhoneIcon,
   LocationIcon,
@@ -100,12 +101,15 @@ const trustStrapItems = [
 export default function Home() {
   const importantServices = services.filter((s) => homeImportantSlugs.includes(s.slug));
   const [homeLightboxIndex, setHomeLightboxIndex] = useState(null);
+  const [homeBranchId, setHomeBranchId] = useState('juran-chapra');
+  const activeHomeBranch = BRANCHES.find((b) => b.id === homeBranchId) || BRANCHES[0];
+  const homeBranchStatus = useClinicStatus(activeHomeBranch.id);
 
   return (
     <>
       <Seo
-        title="Advance Physiotherapy Centre | Physiotherapy Clinic in Muzaffarpur"
-        description="Advance Physiotherapy Centre in Juran Chapra, Muzaffarpur, led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
+        title="Advance Physiotherapy Centre | 2 Clinics in Muzaffarpur (Juran Chapra & Zero Mile)"
+        description="Advance Physiotherapy Centre across 2 clinic branches in Muzaffarpur (Juran Chapra & Zero Mile), led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
         path="/"
       />
       <JsonLd
@@ -120,7 +124,7 @@ export default function Home() {
           email: SITE.email,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: SITE.addressLine1,
+            streetAddress: BRANCHES[0].addressLine1,
             addressLocality: SITE.city,
             addressRegion: 'Bihar',
             postalCode: '842001',
@@ -128,8 +132,8 @@ export default function Home() {
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 26.1271542,
-            longitude: 85.3757161,
+            latitude: BRANCHES[0].geo.latitude,
+            longitude: BRANCHES[0].geo.longitude,
           },
           openingHoursSpecification: [
             {
@@ -146,13 +150,67 @@ export default function Home() {
             jobTitle: 'Physiotherapist',
             description: SITE.credentials,
           },
-          hasMap: SITE.mapsShareUrl,
+          hasMap: BRANCHES[0].mapsShareUrl,
           priceRange: '$$',
           aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: ratingSummary.score,
             reviewCount: reviews.length,
           },
+          department: [
+            {
+              '@type': 'MedicalClinic',
+              name: BRANCHES[0].name,
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: BRANCHES[0].addressLine1,
+                addressLocality: SITE.city,
+                addressRegion: 'Bihar',
+                postalCode: '842001',
+                addressCountry: 'IN',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: BRANCHES[0].geo.latitude,
+                longitude: BRANCHES[0].geo.longitude,
+              },
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                  opens: '09:00',
+                  closes: '18:00',
+                },
+              ],
+              hasMap: BRANCHES[0].mapsShareUrl,
+            },
+            {
+              '@type': 'MedicalClinic',
+              name: BRANCHES[1].name,
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: BRANCHES[1].addressLine1,
+                addressLocality: SITE.city,
+                addressRegion: 'Bihar',
+                postalCode: '842001',
+                addressCountry: 'IN',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: BRANCHES[1].geo.latitude,
+                longitude: BRANCHES[1].geo.longitude,
+              },
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                  opens: '08:00',
+                  closes: '20:00',
+                },
+              ],
+              hasMap: BRANCHES[1].mapsShareUrl,
+            },
+          ],
         }}
       />
 
@@ -170,7 +228,7 @@ export default function Home() {
               >
                 <span className="hero-eyebrow-line" />
                 <span className="hero-eyebrow-text">
-                  ADVANCE PHYSIOTHERAPY CENTRE • {SITE.city.toUpperCase()} &amp; BEYOND
+                  ADVANCE PHYSIOTHERAPY CENTRE • 2 CLINICS IN {SITE.city.toUpperCase()}
                 </span>
               </motion.div>
 
@@ -455,40 +513,102 @@ export default function Home() {
       {/* ALL FAQS SECTION */}
       <FaqSection items={faqs} />
 
-      {/* CONTACT PREVIEW */}
+      {/* CONTACT PREVIEW - 2 CLINIC LOCATIONS */}
       <section className="section" style={{ background: 'var(--gray-50)' }}>
         <div className="container">
-          <div className="contact-grid">
+          <div className="section-header text-center" style={{ marginBottom: '2rem' }}>
+            <span className="section-label">Clinic Locations</span>
+            <h2 className="section-title">Visit Our Clinics in Muzaffarpur</h2>
+            <p className="section-subtitle">
+              We now serve patients across two accessible clinic locations — Juran Chapra (Main Clinic) &amp; New Zero Mile Branch.
+            </p>
+          </div>
+
+          {/* HOME BRANCH TABS */}
+          <div className="branch-tabs" role="tablist" aria-label="Home Clinic Locations">
+            {BRANCHES.map((b) => {
+              const isSelected = b.id === homeBranchId;
+              return (
+                <button
+                  key={b.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isSelected}
+                  className={`branch-tab-btn ${isSelected ? 'active' : ''}`}
+                  onClick={() => setHomeBranchId(b.id)}
+                >
+                  <div className="branch-tab-top">
+                    <span className={`branch-badge branch-badge-${b.isMain ? 'main' : 'new'}`}>
+                      {b.tag}
+                    </span>
+                    <span className="branch-tab-status-mini">
+                      {b.id === 'zero-mile' ? 'Open 7 Days' : 'Mon–Sat'}
+                    </span>
+                  </div>
+                  <strong className="branch-tab-name">{b.shortName}</strong>
+                  <span className="branch-tab-landmark">📍 {b.landmark}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="contact-grid" style={{ marginTop: '2.5rem' }}>
             <Reveal>
-              <span className="section-label">Clinic Address</span>
-              <h2 className="section-title">Visit Our Clinic</h2>
-              <p className="section-subtitle">
-                Centrally located in the medical hub of Juran Chapra, {SITE.city}.
+              <div className="branch-active-header">
+                <span className={`branch-badge branch-badge-${activeHomeBranch.isMain ? 'main' : 'new'}`}>
+                  {activeHomeBranch.tag}
+                </span>
+                <span className="branch-active-label">{activeHomeBranch.branchLabel}</span>
+              </div>
+              <h3 className="section-title" style={{ marginTop: '0.4rem', marginBottom: '0.4rem', fontSize: '1.65rem' }}>
+                {activeHomeBranch.shortName}
+              </h3>
+              <p className="section-subtitle" style={{ marginBottom: '1rem' }}>
+                📍 {activeHomeBranch.landmark}. Walk-ins &amp; appointments welcome.
               </p>
+
+              <div className="home-visit-badge" style={{ margin: '0.75rem 0 1.25rem' }}>
+                <span className="status-dot" style={{ background: 'var(--success)' }} />
+                <span>{homeBranchStatus}</span>
+              </div>
 
               <div className="contact-details">
                 <div className="contact-item">
                   <div className="contact-item-icon"><LocationIcon /></div>
                   <div>
-                    <h5>Location</h5>
+                    <h5>Address</h5>
                     <p>
-                      <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                        {SITE.addressLine1}, {SITE.addressLine2}
+                      <a href={activeHomeBranch.mapsShareUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                        {activeHomeBranch.fullAddress}
                       </a>
                     </p>
                   </div>
                 </div>
+
                 <div className="contact-item">
-                  <div className="contact-item-icon"><PhoneIcon /></div>
+                  <div className="contact-item-icon"><ClockIcon /></div>
                   <div>
-                    <h5>Phone & WhatsApp</h5>
+                    <h5>Hours</h5>
                     <p>
-                      <a href={`tel:${SITE.phonePrimary}`}>{SITE.phonePrimaryDisplay}</a>
-                      {' / '}
-                      <a href={`tel:${SITE.phoneSecondary}`}>{SITE.phoneSecondaryDisplay}</a>
+                      <strong>{activeHomeBranch.hours}</strong>
+                      <br />
+                      {activeHomeBranch.hoursSunday} • Bedside home visits on request
                     </p>
                   </div>
                 </div>
+
+                <div className="contact-item">
+                  <div className="contact-item-icon"><PhoneIcon /></div>
+                  <div>
+                    <h5>Phone &amp; WhatsApp</h5>
+                    <p>
+                      <a href={`tel:${activeHomeBranch.phonePrimary}`}>{activeHomeBranch.phonePrimaryDisplay}</a>
+                      {' / '}
+                      <a href={`tel:${activeHomeBranch.phoneSecondary}`}>{activeHomeBranch.phoneSecondaryDisplay}</a>
+                    </p>
+                  </div>
+                </div>
+
                 <div className="contact-item">
                   <div className="contact-item-icon"><EmailIcon /></div>
                   <div>
@@ -496,27 +616,30 @@ export default function Home() {
                     <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
                   </div>
                 </div>
-                <div className="contact-item">
-                  <div className="contact-item-icon"><ClockIcon /></div>
-                  <div>
-                    <h5>Hours</h5>
-                    <p><strong>{SITE.hours}</strong><br />{SITE.hoursSunday} • Home visits by appointment</p>
-                  </div>
-                </div>
               </div>
 
               <div className="contact-actions">
-                <WhatsAppButton className="btn btn-primary btn-lg">Book on WhatsApp</WhatsAppButton>
-                <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
+                <WhatsAppButton
+                  message={`Hello Dr. Shahrukh, I would like to book an appointment at Advance Physiotherapy Centre (${activeHomeBranch.shortName}). Please let me know the available time.`}
+                  className="btn btn-primary btn-lg"
+                >
+                  Book at {activeHomeBranch.shortName.split(' ')[0]}
+                </WhatsAppButton>
+                <a href={activeHomeBranch.mapsShareUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
                   Open in Maps ↗
                 </a>
               </div>
             </Reveal>
 
             <Reveal className="contact-map" index={1}>
+              <div className="map-badge-overlay">
+                <span className="map-badge-tag">{activeHomeBranch.tag}</span>
+                <span className="map-badge-name">{activeHomeBranch.shortName}</span>
+              </div>
               <iframe
-                title="Clinic Location"
-                src={SITE.mapsEmbedUrl}
+                key={activeHomeBranch.id}
+                title={`Map of ${activeHomeBranch.name}`}
+                src={activeHomeBranch.mapsEmbedUrl}
                 width="100%"
                 height="100%"
                 allowFullScreen

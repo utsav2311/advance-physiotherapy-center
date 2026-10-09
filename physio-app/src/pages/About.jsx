@@ -138,7 +138,7 @@ export default function About() {
             <h2 className="section-title">Hospital Experience & Background</h2>
             <p className="section-subtitle">
               {SITE.doctor} previously provided clinical physiotherapy across these 10+ premier hospitals in {SITE.city},
-              and now brings this extensive hospital experience full-time to Advance Physiotherapy Centre.
+              and now brings this extensive hospital experience full-time to Advance Physiotherapy Centre across both Juran Chapra and Zero Mile clinics.
             </p>
           </div>
           <div className="hospital-grid">

@@ -4,3 +4,4 @@ physio-app/dist/
 .DS_Store
 .vercel
 *.log
+scratch-chrome/

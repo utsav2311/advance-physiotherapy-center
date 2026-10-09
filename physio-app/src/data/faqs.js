@@ -19,8 +19,8 @@ export const allFaqs = [
   },
   {
     id: 'location',
-    q: 'Where is the clinic located?',
-    a: 'We are at Zila Parishad Market, Near Apollo Dental Hospital, Juran Chapra Road, Brahmapura, Muzaffarpur, Bihar – 842001, with easy ground parking.',
+    q: 'Where are your clinic branches located in Muzaffarpur?',
+    a: 'Advance Physiotherapy Centre has two branches in Muzaffarpur: 1) Main Clinic: Zila Parishad Market, Near Apollo Dental Hospital, Juran Chapra Road, Brahmapura (Mon–Sat 9:00 AM – 6:00 PM); 2) Branch 2: Near Kali Mandir, New Zero Mile, Shekhpur (Open All 7 Days: 8:00 AM – 8:00 PM). Both clinics offer easy ground parking and direct highway/city accessibility.',
   },
   {
     id: 'booking',

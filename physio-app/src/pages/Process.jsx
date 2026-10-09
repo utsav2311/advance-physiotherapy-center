@@ -155,7 +155,7 @@ export default function Process() {
 
               <div className="process-location-tag">
                 <LocationIcon />
-                <span>Juran Chapra · Muzaffarpur</span>
+                <span>Juran Chapra &amp; Zero Mile · Muzaffarpur</span>
               </div>
             </Reveal>
 

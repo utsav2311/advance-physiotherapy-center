@@ -1,3 +1,71 @@
+export const BRANCHES = [
+  {
+    id: 'juran-chapra',
+    name: 'Advance Physiotherapy Centre – Juran Chapra (Main Clinic)',
+    shortName: 'Juran Chapra (Main Clinic)',
+    branchLabel: 'Branch 1 · Main Clinic',
+    tag: 'Main Clinic',
+    isMain: true,
+    landmark: 'Near Apollo Dental Hospital',
+    addressLine1: 'Zila Parishad Market, Near Apollo Dental Hospital',
+    addressLine2: 'Juran Chapra Road, Brahmapura, Muzaffarpur, Bihar – 842001',
+    fullAddress: 'Zila Parishad Market, Near Apollo Dental Hospital, Juran Chapra Road, Brahmapura, Muzaffarpur, Bihar – 842001',
+    phonePrimary: '+918340276169',
+    phonePrimaryDisplay: '+91 83402 76169',
+    phoneSecondary: '+919155486434',
+    phoneSecondaryDisplay: '+91 91554 86434',
+    hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
+    hoursSunday: 'Sunday: Prior Appointment Only',
+    hoursDisplay: 'Mon – Sat: 9:00 AM – 6:00 PM | Sun: By Appointment',
+    mapsShareUrl:
+      'https://www.google.com/maps/place/Advance+physiotherapy+Centre/@26.1268321,85.3772257,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed10c2000f7221:0x3fc200c770000000!8m2!3d26.1268321!4d85.3772257!16s%2Fg%2F11s0fhy227!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D',
+    mapsEmbedUrl:
+      'https://maps.google.com/maps?q=Advance+physiotherapy+Center,+Zila+parishad+market,+Juran+Chapra,+Brahmapura,+Muzaffarpur,+Bihar+842001&t=&z=17&ie=UTF8&iwloc=&output=embed',
+    geo: {
+      latitude: 26.1268321,
+      longitude: 85.3772257,
+    },
+    features: [
+      'Main Physiotherapy & Rehab Centre',
+      'Advanced Cupping & Dry Needling Clinic',
+      'Chiropractic & Spine Mobilization',
+      'Ground Floor Convenient Parking',
+    ],
+  },
+  {
+    id: 'zero-mile',
+    name: 'Advance Physiotherapy Centre – Zero Mile Branch',
+    shortName: 'Zero Mile Branch',
+    branchLabel: 'Branch 2 · New Branch',
+    tag: 'New Branch',
+    isMain: false,
+    landmark: 'Near Kali Mandir, New Zero Mile',
+    addressLine1: 'Kali mandir, New Zero Mile',
+    addressLine2: 'Shekhpur, Muzaffarpur, Bihar – 842001',
+    fullAddress: 'Kali mandir, New Zero Mile, Shekhpur, Muzaffarpur, Bihar – 842001',
+    phonePrimary: '+918340276169',
+    phonePrimaryDisplay: '+91 83402 76169',
+    phoneSecondary: '+919155486434',
+    phoneSecondaryDisplay: '+91 91554 86434',
+    hours: 'Mon – Sun: 8:00 AM – 8:00 PM',
+    hoursSunday: 'Open All 7 Days: 8:00 AM – 8:00 PM',
+    hoursDisplay: 'Mon – Sun: 8:00 AM – 8:00 PM (All 7 Days Open)',
+    mapsShareUrl: 'https://maps.google.com/?cid=1822839956426460216',
+    mapsEmbedUrl:
+      'https://maps.google.com/maps?q=Advance+Physiotherapy+Centre,+Kali+mandir,+New+Zero+Mile,+Muzaffarpur,+Shekhpur,+Bihar+842001&t=&z=17&ie=UTF8&iwloc=&output=embed',
+    geo: {
+      latitude: 26.139558,
+      longitude: 85.3639168,
+    },
+    features: [
+      'Open All 7 Days (8:00 AM – 8:00 PM)',
+      'Direct Highway & NH-28 Bypass Access',
+      'Full Clinical Pain Relief & Rehab',
+      'Spacious Patient Parking Facility',
+    ],
+  },
+];
+
 // Central site constants — single source of truth for contact/clinic facts
 export const SITE = {
   name: 'Advance Physiotherapy Centre',
@@ -6,8 +74,9 @@ export const SITE = {
   credentials: 'B.P.T., M.P.T., Ortho (Jaipur)',
   regNo: 'IAP No. 63969',
   city: 'Muzaffarpur',
-  addressLine1: 'Zila Parishad Market, Near Apollo Dental Hospital',
-  addressLine2: 'Juran Chapra Road, Brahmapura, Muzaffarpur, Bihar – 842001',
+  branches: BRANCHES,
+  addressLine1: BRANCHES[0].addressLine1,
+  addressLine2: BRANCHES[0].addressLine2,
   phonePrimary: '+918340276169',
   phonePrimaryDisplay: '+91 83402 76169',
   phoneSecondary: '+919155486434',
@@ -17,12 +86,10 @@ export const SITE = {
   instagramHandle: '@advancephysiotherapycenter1',
   facebookUrl: 'https://www.facebook.com/share/1B6hxuVi9W/?mibextid=wwXIfr',
   facebookHandle: 'Advance Physiotherapy Centre',
-  hours: 'Mon – Sat: 9:00 AM – 6:00 PM',
-  hoursSunday: 'Sunday: Prior Appointment Only',
-  mapsShareUrl:
-    'https://www.google.com/maps/place/Advance+physiotherapy+Centre/@26.1268321,85.3772257,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed10c2000f7221:0x3fc200c770000000!8m2!3d26.1268321!4d85.3772257!16s%2Fg%2F11s0fhy227!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D',
-  mapsEmbedUrl:
-    'https://maps.google.com/maps?q=Advance+physiotherapy+Center,+Zila+parishad+market,+Juran+Chapra,+Brahmapura,+Muzaffarpur,+Bihar+842001&t=&z=17&ie=UTF8&iwloc=&output=embed',
+  hours: BRANCHES[0].hours,
+  hoursSunday: BRANCHES[0].hoursSunday,
+  mapsShareUrl: BRANCHES[0].mapsShareUrl,
+  mapsEmbedUrl: BRANCHES[0].mapsEmbedUrl,
 };
 
 export function waLink(message = DEFAULT_WA_MESSAGE) {
