@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Advance Physiotherapy Centre | 2 Clinics in Muzaffarpur (Juran Chapra & Zero Mile)"
+        title="Advance Physiotherapy Centre | Best Physiotherapy in Muzaffarpur"
         description="Advance Physiotherapy Centre across 2 clinic branches in Muzaffarpur (Juran Chapra & Zero Mile), led by Dr. Shahrukh Firoz (B.P.T., M.P.T., Ortho). Evidence-based physiotherapy, pain management, spine, joint & sports rehabilitation. Home visits available."
         path="/"
       />
